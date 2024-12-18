@@ -14,5 +14,6 @@ namespace EntityLayer
         public string?SmallTitle {  get; set; }
         public string?BigTitle {  get; set; }
         public string?Section {  get; set; }
+        public string?Section22 {  get; set; }
     }
 }
