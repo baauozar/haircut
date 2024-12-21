@@ -7,14 +7,8 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Interfaces
 {
-    public interface ICompanyService
+    public interface ICompanyService : IGenericService<Company>
     {
-        Task<Company?> GetByIdAsync(int id);
-        Task<IEnumerable<Company>> GetAllAsync();
-       
-
-        Task AddAsync(Company company);
-        Task UpdateAsync(Company company);
-        Task<bool> DeleteAsync(int id);
+   
     }
 }

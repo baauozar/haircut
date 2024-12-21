@@ -7,14 +7,10 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Interfaces
 {
-    public interface IHaircutMenuItemService
+    public interface IHaircutMenuItemService : IGenericService<HaircutMenuItem>
     {
-        Task<HaircutMenuItem?> GetByIdAsync(int id);
-        Task<IEnumerable<HaircutMenuItem>> GetAllAsync();
+       
         Task<IEnumerable<HaircutMenuItem>> GetAllWithCategoryAsync();
 
-        Task AddAsync(HaircutMenuItem item);
-        Task UpdateAsync(HaircutMenuItem item);
-        Task<bool> DeleteAsync(int id);
     }
 }

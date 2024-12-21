@@ -3,8 +3,9 @@ using EntityLayer;
 using HaircuteUI.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 
-namespace HaircuteUI.Controllers
+namespace HaircuteUI.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class HaircutServicesController : Controller
     {
         private readonly IHaircutServicesService _service;
@@ -118,7 +119,7 @@ namespace HaircuteUI.Controllers
             // Delete sub-services not in VM
             var toDelete = existingSubs.Where(es => !vmSubs.Any(vs => vs.Id == es.Id)).ToList();
             foreach (var del in toDelete)
-                await _subService.DeleteAsync(del.Id);
+                await _subService.SoftDeleteAsync(del.Id);
 
             // Add or update subs from VM
             foreach (var vs in vmSubs)
@@ -149,10 +150,10 @@ namespace HaircuteUI.Controllers
 
         public async Task<IActionResult> Delete(int id)
         {
-            await _service.DeleteAsync(id);
+            await _service.SoftDeleteAsync(id);
             // If cascade delete isn't set, also delete sub-services manually:
             var subs = await _subService.GetByServiceIdAsync(id);
-            foreach (var s in subs) await _subService.DeleteAsync(s.Id);
+            foreach (var s in subs) await _subService.SoftDeleteAsync(s.Id);
 
             return RedirectToAction(nameof(Index));
         }

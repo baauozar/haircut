@@ -15,7 +15,7 @@ namespace EntityLayer
         public string? OpeningHours { get; set; }
         public string? NewsletterText { get; set; }
         public string? SocialMediaLinksJson { get; set; } 
-        public string?   Services { get; set; } 
-
+        public string?   Services { get; set; }
+        public bool IsDeleted { get; set; } = false;
     }
 }

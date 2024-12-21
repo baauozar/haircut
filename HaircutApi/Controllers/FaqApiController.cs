@@ -19,7 +19,7 @@ namespace HaircutApi.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Faq>> Get(int id)
         {
-            var faq = await _faqService.GetFaqByIdAsync(id);
+            var faq = await _faqService.GetByIdAsync(id);
             if (faq == null) return NotFound();
             return faq;
         }
@@ -27,7 +27,7 @@ namespace HaircutApi.Controllers
         [HttpGet("all")]
         public async Task<ActionResult> GetAll()
         {
-            var faqs = await _faqService.GetAllFaqsAsync();
+            var faqs = await _faqService.GetAllAsync();
             return Ok(faqs);
         }
 
@@ -37,27 +37,27 @@ namespace HaircutApi.Controllers
             if (string.IsNullOrWhiteSpace(faq.quastion) || string.IsNullOrWhiteSpace(faq.Answer))
                 return BadRequest("Question and Answer cannot be empty.");
 
-            await _faqService.AddFaqAsync(faq);
+            await _faqService.AddAsync(faq);
             return CreatedAtAction(nameof(Get), new { id = faq.Id }, faq);
         }
 
         [HttpPut("{id}")]
         public async Task<ActionResult> Update(int id, Faq updatedFaq)
         {
-            var existing = await _faqService.GetFaqByIdAsync(id);
+            var existing = await _faqService.GetByIdAsync(id);
             if (existing == null) return NotFound();
 
             existing.quastion = updatedFaq.quastion;
             existing.Answer = updatedFaq.Answer;
 
-            await _faqService.UpdateFaqAsync(existing);
+            await _faqService.UpdateAsync(existing);
             return NoContent();
         }
 
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
         {
-            await _faqService.DeleteFaqAsync(id);
+            await _faqService.SoftDeleteAsync(id);
             return NoContent();
         }
     }

@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Interfaces;
+using BusinessLayer.Services;
 using EntityLayer;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -60,8 +61,11 @@ namespace HaircutApi.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
         {
-            await _CompanyService.DeleteAsync(id);
-            return NoContent();
+            bool result = await _CompanyService.SoftDeleteAsync(id);
+            if (result)
+                return NoContent(); // 204 No Content
+            else
+                return NotFound();    // 404 Not Found
         }
     }
 }

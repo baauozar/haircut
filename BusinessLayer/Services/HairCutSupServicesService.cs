@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Interfaces;
 using DataLayer.Abstract;
+using DataLayer.Concrete;
 using EntityLayer;
 using System;
 using System.Collections.Generic;
@@ -9,46 +10,18 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Services
 {
-    public class HairCutSupServicesService : IHairCutSupServicesService
+    public class HairCutSupServicesService : GenericService<HaircutSupService>, IHairCutSupServicesService
     {
-        private readonly IHairCutSupServicesDal _dal;
 
-        public HairCutSupServicesService(IHairCutSupServicesDal dal)
+        private readonly IHairCutSupServicesDal _hairCutSupServices;
+        public HairCutSupServicesService(IHairCutSupServicesDal hairCutSupServices) : base(hairCutSupServices)
         {
-            _dal = dal;
+
+            _hairCutSupServices = hairCutSupServices;
         }
 
-        public async Task<HaircutSupService?> GetByIdAsync(int id) => await _dal.GetByIdAsync(id);
-        public async Task<IEnumerable<HaircutSupService>> GetAllAsync() => await _dal.GetAllAsync();
         public async Task<IEnumerable<HaircutSupService>> GetByServiceIdAsync(int serviceId)
-            => await _dal.GetByServiceIdAsync(serviceId);
+            => await _hairCutSupServices.GetByServiceIdAsync(serviceId);
 
-        public async Task AddAsync(HaircutSupService supService)
-        {
-            if (string.IsNullOrWhiteSpace(supService.Name))
-                throw new System.ArgumentException("Name required.");
-            await _dal.AddAsync(supService);
-      
-        }
-
-        public async Task UpdateAsync(HaircutSupService supService)
-        {
-            await _dal.UpdateAsync(supService);
-            
-        }
-
-        public async Task<bool> DeleteAsync(int id)
-        {
-            var entity = await _dal.GetByIdAsync(id);
-            if (entity == null)
-            {
-                // Optionally, log the attempt to delete a non-existent entity
-                return false;
-            }
-
-            return await _dal.DeleteAsync(id);
-
-
-        }
     }
 }

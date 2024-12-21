@@ -20,7 +20,8 @@ namespace EntityLayer
         // Path to the image displayed in the info card (stored in wwwroot)
         [StringLength(200)]
         public string? ImagePath { get; set; }
+        public bool IsDeleted { get; set; } = false;
 
-       
+
     }
 }

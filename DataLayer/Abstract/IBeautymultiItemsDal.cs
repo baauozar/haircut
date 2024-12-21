@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataLayer.Abstract
 {
-    public interface IBeautyServiesItemDal : IGenericRepository<BeautyServiesItem>
+    public interface IBeautymultiItemsDal : IGenericRepository<BeautyServiesItem>
     {
     }
 }

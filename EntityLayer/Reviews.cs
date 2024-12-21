@@ -14,5 +14,6 @@ namespace EntityLayer
         public int? Rating { get; set; }
         public string? Service { get; set; }
         public string ?Opinion { get; set; }
+        public bool IsDeleted { get; set; } = false;
     }
 }

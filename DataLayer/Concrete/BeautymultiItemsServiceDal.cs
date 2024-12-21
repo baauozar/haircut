@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace DataLayer.Concrete
 {
-    public class BeautyServiesItemDal : GenericRepository<BeautyServiesItem>, IBeautyServiesItemDal
+    public class BeautymultiItemsServiceDal : GenericRepository<BeautyServiesItem>, IBeautymultiItemsDal
     {
-        public BeautyServiesItemDal(Context context) : base(context)
+        public BeautymultiItemsServiceDal(Context context) : base(context)
         {
         }
 

@@ -9,6 +9,6 @@ namespace DataLayer.Abstract
 {
     public interface IBeautyItemsDal : IGenericRepository<BeautyItem>
     {
-      
+        Task<IEnumerable<BeautyItem>> GetByCategoryIdAsync(int categoryId);
     }
 }

@@ -22,6 +22,7 @@ namespace DataLayer
         public DbSet<BeautyCategory>? BeautyCategories { get; set; }
         public DbSet<BeautyItem>? BeautyItems { get; set; }
         public DbSet<BeautyCardInfo>? BeautyCardInfos { get; set; }
+        public DbSet<BeautyServiesItem>? BeautyServiesItems { get; set; }
         public DbSet<BeautysServices>? BeautysServices { get; set; }
         public DbSet<Company>? Companies { get; set; }
         public DbSet<Contact>? Contacts { get; set; }

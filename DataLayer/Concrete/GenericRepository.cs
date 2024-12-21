@@ -22,14 +22,23 @@ namespace DataLayer.Concrete
 
         public virtual async Task<IEnumerable<T>> GetAllAsync()
         {
-            return await _dbSet.Where(e => !EF.Property<bool>(e, "IsDeleted")).ToListAsync();
+            return await _dbSet
+                .AsNoTracking()
+                .Where(e => !EF.Property<bool>(e, "IsDeleted"))
+                .ToListAsync();
         }
 
         public virtual async Task<T> GetByIdAsync(int id)
         {
+            // Assuming the primary key is named "Id"
             var entity = await _dbSet.FindAsync(id);
-            if (entity != null && EF.Property<bool>(entity, "IsDeleted"))
+            if (entity == null)
                 return null;
+
+            bool isDeleted = EF.Property<bool>(entity, "IsDeleted");
+            if (isDeleted)
+                return null; // Entity is soft-deleted
+
             return entity;
         }
 
@@ -46,29 +55,23 @@ namespace DataLayer.Concrete
             await _context.SaveChangesAsync();
             return entity;
         }
-
-        public virtual async Task<bool> DeleteAsync(int id)
+        public virtual async Task<bool> SoftDeleteAsync(int id)
         {
             var entity = await GetByIdAsync(id);
             if (entity == null)
                 return false;
 
-            // Soft delete: set IsDeleted to true if the property exists
-            var property = entity.GetType().GetProperty("IsDeleted");
-            if (property != null && property.PropertyType == typeof(bool))
-            {
-                property.SetValue(entity, true);
-                _dbSet.Update(entity);
-            }
-            else
-            {
-                // Physical delete if IsDeleted not present
-                _dbSet.Remove(entity);
-            }
+            // Set 'IsDeleted' to true
+            _context.Entry(entity).Property("IsDeleted").CurrentValue = true;
 
+            // Save changes to the database
             await _context.SaveChangesAsync();
+
             return true;
         }
+
+
+        
 
         public virtual async Task<bool> RestoreAsync(int id)
         {
@@ -88,5 +91,6 @@ namespace DataLayer.Concrete
             // Cannot restore if IsDeleted not present
             return false;
         }
+  
     }
 }

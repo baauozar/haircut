@@ -19,7 +19,7 @@ namespace HaircutApi.Controllers
             _categoryService = categoryService;
             _itemsService = itemsService;
         }
-/*
+
         [HttpGet("{id}")]
         public async Task<ActionResult<BeautyCategoryDto>> Get(int id)
         {
@@ -30,13 +30,13 @@ namespace HaircutApi.Controllers
             {
                 Id = cat.Id,
                 Name = cat.Name ?? "",
-              
-                Items = (cat.BeautyItems ?? new List<BeautyItems>()).Select(i => new BeautyItemsDto
+
+                Items = (cat.BeautyItems?? new List<BeautyItem>()).Select(i => new BeautyItemsDto
                 {
                     Id = i.Id,
                     ServiceName = i.ServiceName ?? "",
-                    Price = i.Price,
-                    DisplayOrder = i.DisplayOrder
+                    Price = i.Price
+                    
                 }).ToList()
             };
 
@@ -52,7 +52,7 @@ namespace HaircutApi.Controllers
             var cat = new BeautyCategory
             {
                 Name = dto.Name,
-              
+
             };
 
             await _categoryService.AddAsync(cat);
@@ -62,11 +62,11 @@ namespace HaircutApi.Controllers
             {
                 foreach (var itm in dto.Items)
                 {
-                    var newItem = new BeautyItems
+                    var newItem = new BeautyItem
                     {
                         ServiceName = itm.ServiceName,
                         Price = itm.Price,
-                      
+
                         BeautyCategoryId = cat.Id
                     };
                     await _itemsService.AddAsync(newItem);
@@ -74,12 +74,12 @@ namespace HaircutApi.Controllers
             }
 
             return CreatedAtAction(nameof(Get), new { id = cat.Id }, cat);
-        }*/
+        }
 
         [HttpPut("{id}")]
         public async Task<ActionResult> Update(int id, BeautyCategoryDto dto)
         {
-            var existing = await _categoryService.GetByIdAsync(id);
+            var existing = await _categoryService.GetCategoryWithItemsAsync(id);
             if (existing == null) return NotFound();
 
             existing.Name = dto.Name;
@@ -93,7 +93,7 @@ namespace HaircutApi.Controllers
 
             // Delete not in DTO
             var toDelete = existingItems.Where(ei => !dtoItems.Any(di => di.Id == ei.Id)).ToList();
-            foreach (var del in toDelete) await _itemsService.DeleteAsync(del.Id);
+            foreach (var del in toDelete) await _itemsService.SoftDeleteAsync(del.Id);
 
             // Add or Update
             foreach (var di in dtoItems)
@@ -123,10 +123,10 @@ namespace HaircutApi.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
         {
-            await _categoryService.DeleteAsync(id);
+            await _categoryService.SoftDeleteAsync(id);
             var items = (await _itemsService.GetAllAsync()).Where(i => i.BeautyCategoryId == id);
             foreach (var it in items)
-                await _itemsService.DeleteAsync(it.Id);
+                await _itemsService.SoftDeleteAsync(it.Id);
 
             return NoContent();
         }

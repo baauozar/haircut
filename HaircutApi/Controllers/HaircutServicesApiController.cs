@@ -82,7 +82,7 @@ namespace HaircutApi.Controllers
             // Delete those not in DTO
             var toDelete = existingSubs.Where(es => !dtoSubs.Any(ds => ds.Id == es.Id)).ToList();
             foreach (var del in toDelete)
-                await _subServicesService.DeleteAsync(del.Id);
+                await _subServicesService.SoftDeleteAsync(del.Id);
 
             // Add or update
             foreach (var ds in dtoSubs)
@@ -114,10 +114,10 @@ namespace HaircutApi.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
         {
-            await _servicesService.DeleteAsync(id);
+            await _servicesService.SoftDeleteAsync(id);
             // If no cascade delete, also remove sub-services:
             var subs = await _subServicesService.GetByServiceIdAsync(id);
-            foreach (var s in subs) await _subServicesService.DeleteAsync(s.Id);
+            foreach (var s in subs) await _subServicesService.SoftDeleteAsync(s.Id);
 
             return NoContent();
         }

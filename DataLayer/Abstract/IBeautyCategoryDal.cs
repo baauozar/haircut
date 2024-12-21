@@ -10,13 +10,13 @@ namespace DataLayer.Abstract
     public interface IBeautyCategoryDal : IGenericRepository<BeautyCategory>
     {
         // Returns a single BeautyCategory with its associated BeautyItems
-      
+
 
         // Returns a collection of BeautyItems for a specific category
-        Task<IEnumerable<BeautyItem>> GetBeautyItemsByCategoryIdAsync(int categoryId);
+        Task<BeautyCategory?> GetCategoryWithItemsAsync(int id);
 
         // Adds a new BeautyItem to a category
-        Task<BeautyItem> AddBeautyItemAsync(BeautyItem item);
+
 
     }
 }

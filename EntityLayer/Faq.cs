@@ -15,6 +15,6 @@ namespace EntityLayer
         public string? quastion { get; set; }
         [Required, MaxLength(1000)]
         public string? Answer { get; set; }
-       
+        public bool IsDeleted { get; set; } = false;
     }
 }

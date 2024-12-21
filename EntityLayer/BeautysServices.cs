@@ -19,6 +19,7 @@ namespace EntityLayer
 
         [StringLength(1000)]
         public string? Description { get; set; }
+        public bool IsDeleted { get; set; } = false;
 
     }
 }

@@ -13,8 +13,10 @@ namespace DataLayer.Abstract
         Task<T> GetByIdAsync(int id);
         Task<T> AddAsync(T entity);
         Task<T> UpdateAsync(T entity);
-        Task<bool> DeleteAsync(int id);
-        Task<bool> RestoreAsync(int id);
+      
+        Task<bool> RestoreAsync(int id); 
+        Task<bool> SoftDeleteAsync(int id);
+      
     }
     
     

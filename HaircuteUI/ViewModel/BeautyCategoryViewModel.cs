@@ -7,10 +7,12 @@ namespace HaircuteUI.ViewModel
         public int Id { get; set; }
 
         [Required, StringLength(100)]
-        public string Name { get; set; } = string.Empty;
+        public string? Name { get; set; }
 
-        
+        [StringLength(200)]
+        public string? IconPath { get; set; }
 
+        public bool IsDeleted { get; set; }
 
         public List<BeautyItemsViewModel> Items { get; set; } = new();
     }

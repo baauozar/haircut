@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Interfaces;
 using DataLayer.Abstract;
+using DataLayer.Concrete;
 using EntityLayer;
 using System;
 using System.Collections.Generic;
@@ -9,43 +10,18 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Services
 {
-    public class BeautyItemsService : IBeautyItemsService
+    public class BeautyItemsService : GenericService<BeautyItem>, IBeautyItemsService
     {
-        private readonly IBeautyItemsDal _dal;
-        public BeautyItemsService(IBeautyItemsDal dal)
+
+        private readonly IBeautyItemsDal _beautyitemRepository;
+        public BeautyItemsService(IBeautyItemsDal categoryRepository) : base(categoryRepository)
         {
-            _dal = dal;
+
+            _beautyitemRepository = categoryRepository;
         }
-
-        public async Task<BeautyItem?> GetByIdAsync(int id) => await _dal.GetByIdAsync(id);
-        public async Task<IEnumerable<BeautyItem>> GetAllAsync() => await _dal.GetAllAsync();
-     
-        public async Task AddAsync(BeautyItem item)
+        public async Task<IEnumerable<BeautyItem>> GetByCategoryIdAsync(int categoryId)
         {
-            if (string.IsNullOrWhiteSpace(item.ServiceName))
-                throw new System.ArgumentException("ServiceName required.");
-            await _dal.AddAsync(item);
-          
-        }
-
-        public async Task UpdateAsync(BeautyItem item)
-        {
-            await _dal.UpdateAsync(item);
-        
-        }
-
-        public async Task<bool> DeleteAsync(int id)
-        {
-            var entity = await _dal.GetByIdAsync(id);
-            if (entity == null)
-            {
-                // Optionally, log the attempt to delete a non-existent entity
-                return false;
-            }
-
-            return await _dal.DeleteAsync(id);
-
-
+            return await _beautyitemRepository.GetByCategoryIdAsync(categoryId);
         }
     }
 }

@@ -7,15 +7,9 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Interfaces
 {
-    public interface IHairCutTeammemberService
+    public interface IHairCutTeammemberService : IGenericService<HairCutTeammember>
     {
-        Task<HairCutTeammember?> GetByIdAsync(int id);
-        Task<IEnumerable<HairCutTeammember>> GetAllAsync();
-     
-    
+      
 
-        Task AddAsync(HairCutTeammember member);
-        Task UpdateAsync(HairCutTeammember member);
-        Task<bool> DeleteAsync(int id);
     }
 }

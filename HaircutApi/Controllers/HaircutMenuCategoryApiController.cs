@@ -18,13 +18,13 @@ namespace HaircutApi.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetCategoryWithItems(int id)
+     /*   public async Task<IActionResult> GetCategoryWithItems(int id)
         {
             var dto = await _menuCategoryService.GetHaircutMenuItemsByCategoryIdAsync(id);
             if (dto == null) return NotFound();
 
             return Ok(dto);
-        }
+        }*/
 
         [HttpPost]
         public async Task<IActionResult> Create(HaircutMenuCategoryDto dto)
@@ -44,7 +44,7 @@ namespace HaircutApi.Controllers
             };
 
             // Pass the entity to the service
-          /*  await _menuCategoryService.AddHaircutMenuItemAsync(haircut);*/
+            await _menuCategoryService.AddAsync(haircut);
 
             return Ok();
         }
@@ -53,7 +53,7 @@ namespace HaircutApi.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            await _menuCategoryService.DeleteAsync(id);
+            await _menuCategoryService.SoftDeleteAsync(id);
             return NoContent();
         }
     }

@@ -9,38 +9,15 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Services
 {
-    public class CompanyService : ICompanyService
+    public class CompanyService : GenericService<Company>, ICompanyService
     {
-        private readonly ICompanyDal _dal;
+        private readonly ICompanyDal _companyRepository;
 
-        public CompanyService(ICompanyDal dal)
+        public CompanyService(ICompanyDal companyRepository) : base(companyRepository)
         {
-            _dal = dal;
+            _companyRepository = companyRepository;
         }
 
-        public async Task<Company?> GetByIdAsync(int id) => await _dal.GetByIdAsync(id);
-        public async Task<IEnumerable<Company>> GetAllAsync() => await _dal.GetAllAsync();
-      
-        public async Task AddAsync(Company company)
-        {
-            if (string.IsNullOrWhiteSpace(company.bigTitle))
-                throw new System.ArgumentException("big Title is required.");
-            await _dal.AddAsync(company);
-           
-        }
 
-        public async Task UpdateAsync(Company company)
-        {
-            await _dal.UpdateAsync(company);
-            
-        }
-
-        public async Task DeleteAsync(int id)
-        {
-            await _dal.GetByIdAsync(id);
-            await _dal.DeleteAsync(id);
-            
-            
-        }
     }
 }

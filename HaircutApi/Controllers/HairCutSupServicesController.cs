@@ -82,7 +82,7 @@ namespace HaircutApi.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            await _service.DeleteAsync(id);
+            await _service.SoftDeleteAsync(id);
             return NoContent();
         }
     }

@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Interfaces;
 using DataLayer.Abstract;
+using DataLayer.Concrete;
 using EntityLayer;
 using System;
 using System.Collections.Generic;
@@ -9,41 +10,16 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Services
 {
-    public class HairCutTeammemberService : IHairCutTeammemberService
+    public class HairCutTeammemberService : GenericService<HairCutTeammember>, IHairCutTeammemberService
     {
-        private readonly IHairCutTeammemberDal _dal;
+        private readonly IHairCutTeammemberDal _hairCutTeammember;
 
-        public HairCutTeammemberService(IHairCutTeammemberDal dal)
+        public HairCutTeammemberService(IHairCutTeammemberDal hairCutTeammember) : base(hairCutTeammember)
         {
-            _dal = dal;
+            _hairCutTeammember = hairCutTeammember;
         }
 
-        public async Task<HairCutTeammember?> GetByIdAsync(int id) => await _dal.GetByIdAsync(id);
-        public async Task<IEnumerable<HairCutTeammember>> GetAllAsync() => await _dal.GetAllAsync();
-      
-       
 
-        public async Task AddAsync(HairCutTeammember member)
-        {
-            if (string.IsNullOrWhiteSpace(member.Name))
-                throw new System.ArgumentException("Name is required.");
-            await _dal.AddAsync(member);
-           
-        }
-
-        public async Task UpdateAsync(HairCutTeammember member)
-        {
-            await _dal.UpdateAsync(member);
-           
-        }
-
-        public async Task DeleteAsync(int id)
-        {
-               await _dal.GetByIdAsync(id);
-           
-                await _dal.DeleteAsync(id);
-          
-            
-        }
     }
 }
+

@@ -11,32 +11,22 @@ namespace DataLayer.Concrete
 {
     public class BeautyCategoryDal : GenericRepository<BeautyCategory>, IBeautyCategoryDal
     {
-        private new readonly Context _context;
+       
         public BeautyCategoryDal(Context context) : base(context)
         {
-            _context = context;
+            
         }
-        public async Task<IEnumerable<BeautyItem>> GetBeautyItemsByCategoryIdAsync(int categoryId)
+        public async Task<BeautyCategory?> GetCategoryWithItemsAsync(int id)
         {
-            return await _context.BeautyItems
-                                 .Where(bi => bi.BeautyCategoryId == categoryId && !bi.IsDeleted)
-                                 .ToListAsync();
+            return await _dbSet
+                .Include(c => c.BeautyItems)
+                .FirstOrDefaultAsync(c => c.Id == id);
         }
 
-        public async Task<BeautyItem> AddBeautyItemAsync(BeautyItem item)
-        {
-            await _context.BeautyItems.AddAsync(item);
-            await _context.SaveChangesAsync();
-            return item;
-        }
 
-        public override async Task<BeautyCategory> UpdateAsync(BeautyCategory entity)
-        {
-            _context.BeautyCategories.Update(entity);
-            await _context.SaveChangesAsync();
-            return entity;
-        }
 
-      
+
+
+
     }
 }

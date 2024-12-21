@@ -14,10 +14,14 @@ builder.Services.AddDbContext<Context>(options =>
 
 
 // Register Repositories (Dal)
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+builder.Services.AddScoped(typeof(IGenericService<>), typeof(GenericService<>));
+
+
 builder.Services.AddScoped<IBeautyCardInfoDal, BeautyCardInfoDal>();
 builder.Services.AddScoped<IBeautyCategoryDal, BeautyCategoryDal>();
 builder.Services.AddScoped<IBeautyItemsDal, BeautyItemsDal>();
-builder.Services.AddScoped<IBeautyServiesItemDal, BeautyServiesItemDal>();
+builder.Services.AddScoped<IBeautymultiItemsDal, BeautymultiItemsServiceDal>();
 builder.Services.AddScoped<IBeautysServicesDal, BeautysServicesDal>();
 builder.Services.AddScoped<ICompanyDal, CompanyDal>();
 builder.Services.AddScoped<IContactDal, ContactDal>();
@@ -34,8 +38,8 @@ builder.Services.AddScoped<IHairCutTeammemberDal, HairCutTeammemberDal>();
 builder.Services.AddScoped<IBeautyCardInfoService, BeautyCardInfoService>();
 builder.Services.AddScoped<IBeautyCategoryService, BeautyCategoryService>();
 builder.Services.AddScoped<IBeautyItemsService, BeautyItemsService>();
-builder.Services.AddScoped<IBeautyServiesItemService, BeautyServiesItemService>();
-builder.Services.AddScoped<IBeautysServicesService, BeautysServicesService>();
+builder.Services.AddScoped<IBeautymultiItemsService, BeautymultiItems>();
+builder.Services.AddScoped<IBeautysServices, BeautysServices>();
 builder.Services.AddScoped<ICompanyService, CompanyService>();
 builder.Services.AddScoped<IContactService, ContactService>();
 builder.Services.AddScoped<IFaqService, FaqService>();
@@ -53,7 +57,8 @@ builder.Services.AddScoped<IHairCutTeammemberService, HairCutTeammemberService>(
 
 
 
-
+builder.Services.AddEndpointsApiExplorer();
+/*builder.Services.AddSwaggerGen();*/
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -71,8 +76,15 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+        name: "areas",
+        pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
+    endpoints.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}/{id?}");
+});
 
 app.Run();

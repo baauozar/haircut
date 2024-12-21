@@ -7,13 +7,8 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Interfaces
 {
-    public interface IFaqService
+    public interface IFaqService : IGenericService<Faq>
     {
-        Task<Faq?> GetFaqByIdAsync(int id);
-        Task<IEnumerable<Faq>> GetAllFaqsAsync();
-        Task AddFaqAsync(Faq faq);
-        Task UpdateFaqAsync(Faq faq);
-        Task<bool> DeleteFaqAsync(int id);
-
+    
     }
 }

@@ -23,7 +23,8 @@ namespace EntityLayer
 
         [Required]
         public string? ImagePath { get; set; }
+        public bool IsDeleted { get; set; } = false;
 
-      
+
     }
 }

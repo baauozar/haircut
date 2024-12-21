@@ -3,8 +3,9 @@ using EntityLayer;
 using HaircuteUI.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 
-namespace HaircuteUI.Controllers
+namespace HaircuteUI.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class HaircutMenuCategoryController : Controller
     {
         private readonly IHaircutMenuCategoryService _menuCategoryService;
@@ -20,13 +21,13 @@ namespace HaircuteUI.Controllers
             return View(categories);
         }
 
-    /*    public async Task<IActionResult> Details(int id)
+        public async Task<IActionResult> Details(int id)
         {
-         *//*   var category = await _menuCategoryService.GetCategoryWithMenuItemsAsync(id);
+            var category = await _menuCategoryService.GetByIdAsync(id);
             if (category == null) return NotFound();
 
-            return View(category);*//*
-        }*/
+            return View(category);
+        }
 
         [HttpPost]
         public async Task<IActionResult> Create(HaircutMenuCategoryViewModel viewModel)
@@ -34,23 +35,23 @@ namespace HaircuteUI.Controllers
             if (!ModelState.IsValid)
                 return View(viewModel);
 
-         
             var entity = new HaircutMenuCategory
             {
                 Name = viewModel.Name,
                 HaircutMenuItems = viewModel.MenuItems?.Select(item => new HaircutMenuItem
                 {
-                    Id = item.Id,           
+                    Id = item.Id,
                     Name = item.Name,
                     Price = item.Price
                 }).ToList() ?? new List<HaircutMenuItem>()
             };
 
             // Pass the entity to the service
-           /* await _menuCategoryService.AddAsync(entity);*/
+            await _menuCategoryService.AddAsync(entity);
 
             return RedirectToAction(nameof(Index));
         }
+
 
     }
 }

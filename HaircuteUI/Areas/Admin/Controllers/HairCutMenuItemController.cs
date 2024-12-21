@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace HaircuteUI.Controllers
+namespace HaircuteUI.Areas.Admin.Controllers
 {
-    public class HaircutServicesCategoryController : Controller
+    [Area("Admin")]
+    public class HairCutMenuItemController : Controller
     {
         public IActionResult Index()
         {

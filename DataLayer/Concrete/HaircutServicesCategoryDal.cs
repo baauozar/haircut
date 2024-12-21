@@ -38,7 +38,7 @@ namespace DataLayer.Concrete
             return service;
         }
 
-        public override async Task<bool> DeleteAsync(int id)
+        public  async Task<bool> DeleteAsync(int id)
         {
             var category = await _context.HaircutServicesCategories
                                          .Include(hsc => hsc.HaircutServices)

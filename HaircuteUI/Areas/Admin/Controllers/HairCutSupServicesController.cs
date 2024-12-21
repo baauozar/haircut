@@ -3,8 +3,9 @@ using EntityLayer;
 using HaircuteUI.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 
-namespace HaircuteUI.Controllers
+namespace HaircuteUI.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class HairCutSupServicesController : Controller
     {
         private readonly IHairCutSupServicesService _service;
@@ -109,7 +110,7 @@ namespace HaircuteUI.Controllers
         [HttpPost, ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            await _service.DeleteAsync(id);
+            await _service.SoftDeleteAsync(id);
             return RedirectToAction(nameof(Index));
         }
     }

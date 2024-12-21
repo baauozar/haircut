@@ -2,13 +2,14 @@
 using EntityLayer;
 using Microsoft.AspNetCore.Mvc;
 
-namespace HaircuteUI.Controllers
+namespace HaircuteUI.Areas.Admin.Controllers
 {
-    public class HairCutTeammemberController : Controller
+    [Area("Admin")]
+    public class BeautyServicesItemController : Controller
     {
-        private readonly IHairCutTeammemberService _service;
+        private readonly IBeautymultiItemsService _service;
 
-        public HairCutTeammemberController(IHairCutTeammemberService service)
+        public BeautyServicesItemController(IBeautymultiItemsService service)
         {
             _service = service;
         }
@@ -22,7 +23,7 @@ namespace HaircuteUI.Controllers
         public IActionResult Create() => View();
 
         [HttpPost]
-        public async Task<IActionResult> Create(HairCutTeammember model)
+        public async Task<IActionResult> Create(BeautyServiesItem model)
         {
             if (!ModelState.IsValid) return View(model);
             await _service.AddAsync(model);
@@ -37,7 +38,7 @@ namespace HaircuteUI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(HairCutTeammember model)
+        public async Task<IActionResult> Edit(BeautyServiesItem model)
         {
             if (!ModelState.IsValid) return View(model);
             await _service.UpdateAsync(model);
@@ -46,7 +47,7 @@ namespace HaircuteUI.Controllers
 
         public async Task<IActionResult> Delete(int id)
         {
-            await _service.DeleteAsync(id);
+            await _service.SoftDeleteAsync(id);
             return RedirectToAction(nameof(Index));
         }
     }

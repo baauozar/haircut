@@ -11,8 +11,7 @@ namespace EntityLayer
     {
         public int Id { get; set; }
 
-        // For ordering them
-        public int DisplayOrder { get; set; }
+       
 
         [Required, StringLength(50)]
         public string? NumberText { get; set; } // e.g., "01", "02"
@@ -23,5 +22,6 @@ namespace EntityLayer
 
         [StringLength(200)]
         public string? ImagePath { get; set; }
+        public bool IsDeleted { get; set; } = false;
     }
 }

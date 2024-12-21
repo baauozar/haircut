@@ -12,6 +12,6 @@ namespace DataLayer.Abstract
         Task<IEnumerable<HaircutMenuItem>> GetHaircutMenuItemsByCategoryIdAsync(int categoryId);
 
 
-        Task<HaircutMenuItem> AddHaircutMenuItemAsync(HaircutMenuItem item);
+   
     }
 }

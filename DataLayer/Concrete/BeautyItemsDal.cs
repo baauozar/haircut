@@ -14,7 +14,13 @@ namespace DataLayer.Concrete
         public BeautyItemsDal(Context context) : base(context)
         {
         }
-    
-        
+        public async Task<IEnumerable<BeautyItem>> GetByCategoryIdAsync(int categoryId)
+        {
+            return await _dbSet
+                .Where(item => item.BeautyCategoryId == categoryId && !item.IsDeleted)
+                .ToListAsync();
+        }
+
+
     }
 }

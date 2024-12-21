@@ -19,5 +19,6 @@ namespace EntityLayer
         public string? Email { get; set; }
         [Required, MaxLength(100)]
         public string? Message { get; set; }
+        public bool IsDeleted { get; set; } = false;
     }
 }
