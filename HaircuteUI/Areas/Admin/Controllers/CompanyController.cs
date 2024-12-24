@@ -2,6 +2,7 @@
 using EntityLayer;
 using HaircuteUI.ViewModel;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Cryptography.Xml;
 
 namespace HaircuteUI.Areas.Admin.Controllers
 {
@@ -59,20 +60,9 @@ namespace HaircuteUI.Areas.Admin.Controllers
             };
             await _service.AddAsync(company);
 
-            // Fetch updated list
-            var list = await _service.GetAllAsync();
-            var updateModel = list.Select(f => new CompanyViewModal
-            {
-                Id = f.Id,
-                smallTitle = f.smallTitle,
-                bigTitle = f.bigTitle,
-                BaackgroundTitle = f.BaackgroundTitle,
-                Section = f.Section,
-                Signature = f.Signature
-
-            }).ToList();
+            TempData["NotificationMessage"] = "Company details created successfully!";
             // Return partial with updated data
-            return PartialView("_CompanyList", updateModel);
+            return Json(new {success=true});
         }
 
         // GET: Company/Edit/5
@@ -111,42 +101,22 @@ namespace HaircuteUI.Areas.Admin.Controllers
             company.BaackgroundTitle = vm.BaackgroundTitle;
             company.Section = vm.Section;
             company.Signature = vm.Signature;
-
             await _service.UpdateAsync(company);
 
-            // Fetch updated list
-            var list = await _service.GetAllAsync();
-            var updateModel = list.Select(f => new CompanyViewModal
-            {
-                Id = f.Id,
-                smallTitle = f.smallTitle,
-                bigTitle = f.bigTitle,
-                BaackgroundTitle = f.BaackgroundTitle,
-                Section = f.Section,
-                Signature = f.Signature
-            }).ToList();
-            return PartialView("_CompanyList", updateModel);
+            TempData["NotificationMessage"] = "Company Details Edit successfully!"; 
+          
+            return Json(new {success=true});
         }
 
         // POST: Company/Delete/5 (Soft Delete)
         [HttpPost]
-        [ValidateAntiForgeryToken]
+   
         public async Task<IActionResult> Delete(int id)
         {
             await _service.SoftDeleteAsync(id); // Soft delete (IsDeleted = true)
 
-            // Fetch updated list
-            var list = await _service.GetAllAsync();
-            var udpateModel = list.Select(f => new CompanyViewModal
-            {
-                Id = f.Id,
-                smallTitle = f.smallTitle,
-                bigTitle = f.bigTitle,
-                BaackgroundTitle = f.BaackgroundTitle,
-                Section = f.Section,
-                Signature = f.Signature
-            }).ToList();
-            return PartialView("_CompanyList", udpateModel);
+            TempData["NotificationMessage"] = "Company Details Deleted successfully!";
+            return Json(new {success=true});
         }
     }
 }

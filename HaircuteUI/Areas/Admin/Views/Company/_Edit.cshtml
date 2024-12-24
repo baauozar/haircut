@@ -1,0 +1,123 @@
+﻿<div class="bootstrap-modal">
+    <div class="modal fade bd-example-modal-lg-edit" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Company Information</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-validation">
+                        <form class="needs-validation" id="CompanyEdit">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="Id" value="" id="editCompanyId" />
+                            <div class="row">
+                                <!-- Question Field -->
+                                <div class="col-md-6">
+                                    <div class="mb-3 row">
+                                        <label for="question" class="col-lg-4 col-form-label">
+                                            Small Title
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-8">
+                                            <input type="text" id="editsmallTitle" class="form-control" name="smallTitle" placeholder="Enter a small title" required>
+                                            <div class="invalid-feedback">
+                                                small title Can't be empty
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="mb-3 row">
+                                        <label for="answer1" class="col-lg-4 col-form-label">
+                                            Big Title
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-8">
+                                            <input type="text" id="editbigTitle" class="form-control" name="bigTitle" placeholder="Enter a big title" required>
+                                            <div class="invalid-feedback">
+                                                big title Can't be empty
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <div class="mb-3 row">
+                                        <label for="answer2" class="col-lg-4 col-form-label">
+                                            Baackground Title
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-8">
+                                            <input type="text" id="editBackgroundTitle" class="form-control" name="BaackgroundTitle" placeholder="Enter a background title" required>
+                                            <div class="invalid-feedback">
+                                                Baackground Title Can't be empty
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <div class="mb-3 row">
+                                        <label for="answer3" class="col-lg-4 col-form-label">
+                                            Section
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-8">
+                                            <input type="text" id="editSection" class="form-control" name="Section" placeholder="Enter a Section " required>
+                                            <div class="invalid-feedback">
+                                                Section Can't be empty
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <div class="mb-3 row">
+                                        <label for="answer4" class="col-lg-4 col-form-label">
+                                            Signature
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-8">
+                                            <input type="text" id="editSignature" class="form-control signature-field" name="Signature" placeholder="Signature Image path" required>
+                                            <div class="invalid-feedback">
+                                                Signature Can't be empty
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
+                                <button id="btnEditCompany" type="button" class="btn me-2 btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@* <script>
+    // Get the input field
+    const questionInput = document.getElementById('questionInput');
+    const answerInput = document.getElementById('answerInput');
+
+    // Add an input event listener
+    questionInput.addEventListener('input', function () {
+        // Replace any invalid characters with an empty string
+        this.value = this.value.replace(/[^A-Za-z\s\?]/g, '');
+    }); answerInput.addEventListener('input', function () {
+        // Replace any invalid characters with an empty string
+        this.value = this.value.replace(/[^A-Za-z\s\?]/g, '');
+    });
+</script> *@

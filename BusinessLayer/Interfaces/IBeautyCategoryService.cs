@@ -11,6 +11,6 @@ namespace BusinessLayer.Interfaces
     public interface IBeautyCategoryService : IGenericService<BeautyCategory>
     {
 
-        Task<BeautyCategory?> GetCategoryWithItemsAsync(int id);
+        
     }
 }

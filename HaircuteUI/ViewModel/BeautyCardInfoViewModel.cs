@@ -13,5 +13,6 @@ namespace HaircuteUI.ViewModel
         [StringLength(500, ErrorMessage = "Description cannot exceed 500 characters.")]
         public string? Description { get; set; } 
         public string? ImagePath { get; set; }
+        public bool IsDeleted { get; set; }
     }
 }

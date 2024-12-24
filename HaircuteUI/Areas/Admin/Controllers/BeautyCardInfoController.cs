@@ -53,19 +53,10 @@ namespace HaircuteUI.Areas.Admin.Controllers
             };
 
             await _service.AddAsync(entity);
-
-            // Refresh the list of non-deleted cards
-            var list = await _service.GetAllAsync();
-            var updatedModel = list.Select(c => new BeautyCardInfoViewModel
-            {
-                Id = c.Id,
-                Title = c.Title,
-                Description = c.Description,
-                ImagePath = c.ImagePath
-            }).ToList();
+            TempData["NotificationMessage"] = "Beauty Card Information Has been added successfully!";
 
             // Return the updated partial list
-            return PartialView("_BeautyCardInfoList", updatedModel);
+            return Json(new {success=true});
         }
 
         // GET: BeautyCardInfo/Edit/5
@@ -104,42 +95,19 @@ namespace HaircuteUI.Areas.Admin.Controllers
             entity.ImagePath = vm.ImagePath;
 
             await _service.UpdateAsync(entity);
-
-            // Refresh the list of non-deleted cards
-            var list = await _service.GetAllAsync();
-            var updatedModel = list.Select(c => new BeautyCardInfoViewModel
-            {
-                Id = c.Id,
-                Title = c.Title,
-                Description = c.Description,
-                ImagePath = c.ImagePath
-            }).ToList();
-
-            // Return the updated partial list
-            return PartialView("_BeautyCardInfoList", updatedModel);
+            TempData["NotificationMessage"] = "Beauty Card Information Details Has Been Edit successfully!";
+            return Json(new {success=true});
         }
 
         // POST: BeautyCardInfo/Delete/5
         // Soft deletes the card info (IsDeleted = true) and returns updated partial list
         [HttpPost]
-        [ValidateAntiForgeryToken]
+      
         public async Task<IActionResult> Delete(int id)
         {
             await _service.SoftDeleteAsync(id);
-            // SoftDeleteAsync should set IsDeleted = true internally
-
-            // Refresh the list of non-deleted cards
-            var list = await _service.GetAllAsync();
-            var updatedModel = list.Select(c => new BeautyCardInfoViewModel
-            {
-                Id = c.Id,
-                Title = c.Title,
-                Description = c.Description,
-                ImagePath = c.ImagePath
-            }).ToList();
-
-            // Return updated partial
-            return PartialView("_BeautyCardInfoList", updatedModel);
+            TempData["NotificationMessage"] = "Card Information Has been Deleted successfully!";
+            return Json(new {success=true});
         }
     }
 }

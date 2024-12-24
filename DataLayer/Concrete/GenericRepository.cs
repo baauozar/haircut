@@ -32,14 +32,9 @@ namespace DataLayer.Concrete
         {
             // Assuming the primary key is named "Id"
             var entity = await _dbSet.FindAsync(id);
-            if (entity == null)
-                return null;
+         
 
-            bool isDeleted = EF.Property<bool>(entity, "IsDeleted");
-            if (isDeleted)
-                return null; // Entity is soft-deleted
-
-            return entity;
+            return entity!;
         }
 
         public virtual async Task<T> AddAsync(T entity)

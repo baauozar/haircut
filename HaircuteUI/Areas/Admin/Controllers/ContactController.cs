@@ -27,7 +27,8 @@ namespace HaircuteUI.Areas.Admin.Controllers
                 LastName = f.LastName ?? "",
                 phonenumber = f.phonenumber ?? "",
                 Email = f.Email,
-                Message = f.Message
+                Message = f.Message,
+                IsDeleted = f.IsDeleted
             }).ToList();
             return View(model);
         }
@@ -55,22 +56,12 @@ namespace HaircuteUI.Areas.Admin.Controllers
                 Message = vm.Message
 
             };
-            var list = await _service.GetAllAsync();
-            var updatedModel = list.Select(f => new ContactViewModal
-            {
-                Id = f.Id,
-                Name = f.Name ?? "",
-                LastName = f.LastName ?? "",
-                phonenumber = f.phonenumber ?? "",
-                Email = f.Email ?? "",
-                Message = f.Message ?? ""
-            }).ToList();
+            await _service.AddAsync(contact);
+            TempData["NotificationMessage"] = "Faq created successfully!";
 
-            // Return updated partial
-
-            return PartialView("_ContactList", updatedModel);
+            return Json(new{ success = true}); 
         }
-
+/*
         // GET: Contact/Edit/5
         public async Task<IActionResult> Edit(int id)
         {
@@ -106,21 +97,10 @@ namespace HaircuteUI.Areas.Admin.Controllers
             contact.phonenumber = vm.phonenumber;
             contact.Email = vm.Email;
             contact.Message = vm.Message;
-            await _service.UpdateAsync(contact);
-
-            // Return updated partial
-            var list = await _service.GetAllAsync();
-            var updateModel = list.Select(f => new ContactViewModal
-            {
-                Id = f.Id,
-                Name = f.Name,
-                LastName = f.LastName,
-                phonenumber = f.phonenumber,
-                Email = f.Email,
-                Message = f.Message
-            }).ToList();
-            return PartialView("_ContactList", updateModel);
-        }
+          //  await _service.UpdateAsync(contact);
+            TempData["NotificationMessage"] = "Contact Update successfully!";
+            return Json(new { success = true});
+        }*/
 
         // POST: Contact/Delete/5 (Soft Delete)
         [HttpPost]
@@ -128,18 +108,8 @@ namespace HaircuteUI.Areas.Admin.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             await _service.SoftDeleteAsync(id);
-
-            var list = await _service.GetAllAsync();
-            var updateModel = list.Select(f => new ContactViewModal
-            {
-                Id = f.Id,
-                Name = f.Name,
-                LastName = f.LastName,
-                phonenumber = f.phonenumber,
-                Email = f.Email,
-                Message = f.Message
-            }).ToList();
-            return PartialView("_ContactList", updateModel);
+            TempData["NotificationMessage"] = "Contact Deleted successfully!";
+            return Json(new{ success = true });
         }
     }
 }

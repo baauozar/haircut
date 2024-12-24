@@ -8,5 +8,6 @@
         public string? BaackgroundTitle { get; set; }
         public string? Section { get; set; }
         public string? Signature { get; set; }
+        public bool IsDeleted { get; set; }
     }
 }

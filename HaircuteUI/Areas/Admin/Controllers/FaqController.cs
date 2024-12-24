@@ -22,8 +22,9 @@ namespace HaircuteUI.Areas.Admin.Controllers
             var model = faqs.Select(f => new FaqViewModel
             {
                 Id = f.Id,
-                Quastion = f.quastion ?? "",
-                Answer = f.Answer ?? ""
+                quastion = f.quastion ?? "",
+                Answer = f.Answer ?? "",
+                IsDeleted = f.IsDeleted,
             }).ToList();
 
             return View(model);
@@ -38,29 +39,40 @@ namespace HaircuteUI.Areas.Admin.Controllers
         // POST: Faq/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+   
         public async Task<IActionResult> Create(FaqViewModel vm)
         {
+            // If model is invalid, return a JSON response that indicates an error
             if (!ModelState.IsValid)
-                return PartialView("_Create", vm);
+            {
+                // Collect any errors to show in console (or you can return them to display)
+                var errors = ModelState.Values.SelectMany(v => v.Errors)
+                                              .Select(e => e.ErrorMessage)
+                                              .ToList();
 
+                return Json(new
+                {
+                    success = false,
+                    message = "Validation failed",
+                    errors
+                });
+            }
+
+            // If valid, create the entity
             var faq = new Faq
             {
-                quastion = vm.Quastion,
-                Answer = vm.Answer
+                quastion = vm.quastion,
+                Answer = vm.Answer,
+                IsDeleted = false
             };
 
             await _faqService.AddAsync(faq);
-
-            // Return updated partial
-            var list = await _faqService.GetAllAsync();
-            var updatedModel = list.Select(f => new FaqViewModel
+            TempData["NotificationMessage"] = "Faq created successfully!";
+        
+            return Json(new
             {
-                Id = f.Id,
-                Quastion = f.quastion ?? "",
-                Answer = f.Answer ?? ""
-            }).ToList();
-
-            return PartialView("_FaqList", updatedModel);
+                success = true
+            });
         }
 
         // GET: Faq/Edit/5
@@ -72,8 +84,9 @@ namespace HaircuteUI.Areas.Admin.Controllers
             var vm = new FaqViewModel
             {
                 Id = faq.Id,
-                Quastion = faq.quastion ?? "",
-                Answer = faq.Answer ?? ""
+                quastion = faq.quastion ?? "",
+                Answer = faq.Answer ?? "",
+                IsDeleted = faq.IsDeleted
             };
             return PartialView("_Edit", vm);
         }
@@ -84,44 +97,52 @@ namespace HaircuteUI.Areas.Admin.Controllers
         public async Task<IActionResult> Edit(FaqViewModel vm)
         {
             if (!ModelState.IsValid)
-                return PartialView("_Edit", vm);
+            {
+                var errors = ModelState.Values.SelectMany(v => v.Errors)
+                                              .Select(e => e.ErrorMessage)
+                                              .ToList();
 
+                return Json(new
+                {
+                    success = false,
+                    message = "Validation failed",
+                    errors
+                });
+            }
             var faq = await _faqService.GetByIdAsync(vm.Id);
             if (faq == null) return NotFound();
 
-            faq.quastion = vm.Quastion;
+            faq.quastion = vm.quastion;
             faq.Answer = vm.Answer;
+            faq.IsDeleted = vm.IsDeleted;
+        
+
 
             await _faqService.UpdateAsync(faq);
 
-            // Return updated partial
-            var list = await _faqService.GetAllAsync();
-            var updatedModel = list.Select(f => new FaqViewModel
+            TempData["NotificationMessage"] = "Faq updated successfully!";
+            return Json(new
             {
-                Id = f.Id,
-                Quastion = f.quastion ?? "",
-                Answer = f.Answer ?? ""
-            }).ToList();
-
-            return PartialView("_FaqList", updatedModel);
+                success = true
+            });
         }
+
 
         // POST: Faq/Delete/5 (Soft Delete)
         [HttpPost]
-        [ValidateAntiForgeryToken]
+      
         public async Task<IActionResult> Delete(int id)
         {
             await _faqService.SoftDeleteAsync(id);
 
-            var list = await _faqService.GetAllAsync();
-            var updatedModel = list.Select(f => new FaqViewModel
-            {
-                Id = f.Id,
-                Quastion = f.quastion ?? "",
-                Answer = f.Answer ?? ""
-            }).ToList();
+            TempData["NotificationMessage"] = "Item Deleted successfully!";
 
-            return PartialView("_FaqList", updatedModel);
+
+            return Json(new
+            {
+                success = true
+               
+            });
         }
     }
 }

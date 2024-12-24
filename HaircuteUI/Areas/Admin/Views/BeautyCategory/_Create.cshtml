@@ -1,0 +1,61 @@
+﻿<div class="bootstrap-modal">
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add Beauty Category Information</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-validation">
+                        <form class="needs-validation" id="BeautyCategoryAdd">
+                            @Html.AntiForgeryToken()
+                            <div class="row">
+                                <div class="col-xl-12">
+
+
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-5 col-form-label">
+                                            Category Name
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" name="Name"  placeholder="Enter a Category Name" required>
+                                            <div class="invalid-feedback">
+                                                Category name Can't be empty
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-5 col-form-label">
+                                            Icon Path
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" name="IconPath" placeholder="Enter icon path" required>
+                                            <div class="invalid-feedback">
+                                                Icon Path Can't be empty
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
+                                <button id="btnSubmitBeautyCategory" type="button" class="btn me-2 btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+

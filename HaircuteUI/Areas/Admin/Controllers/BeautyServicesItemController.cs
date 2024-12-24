@@ -7,9 +7,9 @@ namespace HaircuteUI.Areas.Admin.Controllers
     [Area("Admin")]
     public class BeautyServicesItemController : Controller
     {
-        private readonly IBeautymultiItemsService _service;
+        private readonly IBeautyServiesItemService _service;
 
-        public BeautyServicesItemController(IBeautymultiItemsService service)
+        public BeautyServicesItemController(IBeautyServiesItemService service)
         {
             _service = service;
         }

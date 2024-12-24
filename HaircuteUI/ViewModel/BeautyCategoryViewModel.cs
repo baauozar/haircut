@@ -14,6 +14,6 @@ namespace HaircuteUI.ViewModel
 
         public bool IsDeleted { get; set; }
 
-        public List<BeautyItemsViewModel> Items { get; set; } = new();
+       
     }
 }

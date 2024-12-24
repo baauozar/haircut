@@ -21,11 +21,6 @@ namespace BusinessLayer.Services
             _beautycategoryRepository = categoryRepository;
         }
 
-        public async Task<BeautyCategory?> GetCategoryWithItemsAsync(int id)
-        {
-            return await _beautycategoryRepository.GetCategoryWithItemsAsync(id);
-        }
-
        
     }
 }

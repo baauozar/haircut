@@ -1,0 +1,78 @@
+﻿<div class="bootstrap-modal">
+    <div class="modal fade bd-example-modal-lg-edit" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Beauty Card Information</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-validation">
+                        <form class="needs-validation" id="BeautyCardInfoEdit">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="Id" value="" id="editBeautyCardId" />
+                            <div class="row">
+                                <!-- Question Field -->
+                                <div class="col-md-6">
+                                    <div class="mb-3 row">
+                                        <label for="question" class="col-lg-4 col-form-label">
+                                             Title
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-8">
+                                            <input type="text" id="edittitle" class="form-control" name="Title" placeholder="Enter a title" required>
+                                            <div class="invalid-feedback">
+                                                Title Can't be empty
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="mb-3 row">
+                                        <label for="answer1" class="col-lg-4 col-form-label">
+                                            Description
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-8">
+                                            <input type="text" id="editdescription" class="form-control" name="Description" placeholder="Enter a Description" required>
+                                            <div class="invalid-feedback">
+                                                Description Can't be empty
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <div class="mb-3 row">
+                                        <label for="answer2" class="col-lg-4 col-form-label">
+                                            ImagePath 
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-8">
+                                            <input type="text" id="editimagepath" class="form-control" name="ImagePath" placeholder="Enter an ImagePath" required>
+                                            <div class="invalid-feedback">
+                                                ImagePath Can't be empty
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
+                                <button id="btnEditBeautyCard" type="button" class="btn me-2 btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

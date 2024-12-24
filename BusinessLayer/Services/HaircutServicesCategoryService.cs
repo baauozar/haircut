@@ -20,12 +20,6 @@ namespace BusinessLayer.Services
 
             _haircutservicescategoryRepository = haircutservicescategoryRepository;
         }
-        public async Task<HaircutServicesCategory?> GetCategoryWithServicesAndSubsAsync(int categoryId)
-            => await _haircutservicescategoryRepository.GetCategoryWithServicesAndSubsAsync(categoryId);
-
-      
-        
-
       
     }
 }

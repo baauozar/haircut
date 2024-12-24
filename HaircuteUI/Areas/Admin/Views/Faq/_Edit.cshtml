@@ -1,0 +1,62 @@
+﻿<div class="bootstrap-modal">
+    <div class="modal fade bd-example-modal-lg-edit" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Faq Edit Information</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-validation">
+                        <form class="needs-validation" id="FaqEdit">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="Id" value="" id="editFaqId" />
+                            <div class="row">
+                                <div class="col-xl-12">
+
+                                    <!-- Center-align the content -->
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-5 col-form-label">
+                                            Quastion
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" name="quastion" id="editquastion" placeholder="Enter a quation" required>
+                                            <div class="invalid-feedback">
+                                                Quastion Can't be empty
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Add other form elements here -->
+                                    <!-- Center-align the content -->
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-5 col-form-label">
+                                            Answer
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" name="Answer" id="editAnswer" placeholder="Enter Answer" required>
+                                            <div class="invalid-feedback">
+                                                Answer Can't be empty
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
+                                <button id="btnEditFaq" type="button" class="btn me-2 btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

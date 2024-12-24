@@ -12,12 +12,13 @@ namespace BusinessLayer.Services
 {
     public class BeautyItemsService : GenericService<BeautyItem>, IBeautyItemsService
     {
-
         private readonly IBeautyItemsDal _beautyitemRepository;
-        public BeautyItemsService(IBeautyItemsDal categoryRepository) : base(categoryRepository)
-        {
+        private readonly IBeautyCategoryDal _categoryService; // Inject category service
 
-            _beautyitemRepository = categoryRepository;
+        public BeautyItemsService(IBeautyItemsDal beautyitemRepository, IBeautyCategoryDal categoryService) : base(beautyitemRepository)
+        {
+            _beautyitemRepository = beautyitemRepository;
+            _categoryService = categoryService;
         }
         public async Task<IEnumerable<BeautyItem>> GetByCategoryIdAsync(int categoryId)
         {

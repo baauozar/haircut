@@ -1,8 +1,6 @@
 ﻿using BusinessLayer.Interfaces;
-using DataLayer.Concrete;
 using EntityLayer;
 using HaircutApi.EntityDto;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HaircutApi.Controllers
@@ -12,18 +10,18 @@ namespace HaircutApi.Controllers
     public class HaircutServicesApiController : ControllerBase
     {
         private readonly IHaircutServicesService _servicesService;
-        private readonly IHairCutSupServicesService _subServicesService;
+      
 
-        public HaircutServicesApiController(IHaircutServicesService servicesService, IHairCutSupServicesService subServicesService)
+        public HaircutServicesApiController(IHaircutServicesService servicesService)
         {
             _servicesService = servicesService;
-            _subServicesService = subServicesService;
+       
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<HaircutService>> Get(int id)
         {
-            var hs = await _servicesService.GetServiceWithSubServicesAsync(id);
+            var hs = await _servicesService.GetByIdAsync(id);
             if (hs == null) return NotFound();
             return hs;
         }
@@ -44,20 +42,6 @@ namespace HaircutApi.Controllers
 
             await _servicesService.AddAsync(entity);
 
-            // Add sub-services from DTO
-            if (dto.SubServices != null)
-            {
-                foreach (var sub in dto.SubServices)
-                {
-                    var s = new HaircutSupService
-                    {
-                        Name = sub.Name,
-                        Description = sub.Description,
-                        ServiceId = entity.Id
-                    };
-                    await _subServicesService.AddAsync(s);
-                }
-            }
 
             return CreatedAtAction(nameof(Get), new { id = entity.Id }, entity);
         }
@@ -75,38 +59,8 @@ namespace HaircutApi.Controllers
 
             await _servicesService.UpdateAsync(existing);
 
-            // Handle sub-services
-            var existingSubs = await _subServicesService.GetByServiceIdAsync(id);
-            var dtoSubs = dto.SubServices ?? new List<HairCutSupServicesDto>();
-
-            // Delete those not in DTO
-            var toDelete = existingSubs.Where(es => !dtoSubs.Any(ds => ds.Id == es.Id)).ToList();
-            foreach (var del in toDelete)
-                await _subServicesService.SoftDeleteAsync(del.Id);
-
-            // Add or update
-            foreach (var ds in dtoSubs)
-            {
-                if (ds.Id == 0)
-                {
-                    // New
-                    var newSub = new HaircutSupService
-                    {
-                        Name = ds.Name,
-                        Description = ds.Description,
-                        ServiceId = id
-                    };
-                    await _subServicesService.AddAsync(newSub);
-                }
-                else
-                {
-                    // Update existing
-                    var es = existingSubs.First(x => x.Id == ds.Id);
-                    es.Name = ds.Name;
-                    es.Description = ds.Description;
-                    await _subServicesService.UpdateAsync(es);
-                }
-            }
+         // New
+                    
 
             return NoContent();
         }
@@ -116,8 +70,6 @@ namespace HaircutApi.Controllers
         {
             await _servicesService.SoftDeleteAsync(id);
             // If no cascade delete, also remove sub-services:
-            var subs = await _subServicesService.GetByServiceIdAsync(id);
-            foreach (var s in subs) await _subServicesService.SoftDeleteAsync(s.Id);
 
             return NoContent();
         }

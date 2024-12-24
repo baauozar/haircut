@@ -29,7 +29,7 @@ namespace HaircuteUI.Areas.Admin.Controllers
             return View(category);
         }
 
-        [HttpPost]
+ /*       [HttpPost]
         public async Task<IActionResult> Create(HaircutMenuCategoryViewModel viewModel)
         {
             if (!ModelState.IsValid)
@@ -38,7 +38,7 @@ namespace HaircuteUI.Areas.Admin.Controllers
             var entity = new HaircutMenuCategory
             {
                 Name = viewModel.Name,
-                HaircutMenuItems = viewModel.MenuItems?.Select(item => new HaircutMenuItem
+                HaircutMenuItems = viewModel.ite?.Select(item => new HaircutMenuItem
                 {
                     Id = item.Id,
                     Name = item.Name,
@@ -51,7 +51,7 @@ namespace HaircuteUI.Areas.Admin.Controllers
 
             return RedirectToAction(nameof(Index));
         }
-
+*/
 
     }
 }

@@ -21,5 +21,6 @@ namespace HaircuteUI.ViewModel
         public string? Description { get; set; }
 
         public bool IsDeleted { get; set; }
+        public string? CategoryName { get; set; }
     }
 }

@@ -9,17 +9,17 @@ namespace HaircutApi.Controllers
     [ApiController]
     public class BeautyServiesItemApiController : ControllerBase
     {
-        private readonly IBeautymultiItemsService _BeautymultiItemsServiceService;
+        private readonly IBeautyServiesItemService _beautyServiesItemService;
 
-        public BeautyServiesItemApiController(IBeautymultiItemsService faqService)
+        public BeautyServiesItemApiController(IBeautyServiesItemService beautyServiesItemService)
         {
-            _BeautymultiItemsServiceService = faqService;
+            _beautyServiesItemService = beautyServiesItemService;
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<BeautyServiesItem>> Get(int id)
         {
-            var faq = await _BeautymultiItemsServiceService.GetByIdAsync(id);
+            var faq = await _beautyServiesItemService.GetByIdAsync(id);
             if (faq == null) return NotFound();
             return faq;
         }
@@ -27,7 +27,7 @@ namespace HaircutApi.Controllers
         [HttpGet("all")]
         public async Task<ActionResult> GetAll()
         {
-            var faqs = await _BeautymultiItemsServiceService.GetAllAsync();
+            var faqs = await _beautyServiesItemService.GetAllAsync();
             return Ok(faqs);
         }
 
@@ -37,14 +37,14 @@ namespace HaircutApi.Controllers
             if (string.IsNullOrWhiteSpace(beautyservicesitem.Title) || string.IsNullOrWhiteSpace(beautyservicesitem.NumberText) || string.IsNullOrWhiteSpace(beautyservicesitem.ImagePath))
                 return BadRequest("Title and NumberText cannot be empty.");
 
-            await _BeautymultiItemsServiceService.AddAsync(beautyservicesitem);
+            await _beautyServiesItemService.AddAsync(beautyservicesitem);
             return CreatedAtAction(nameof(Get), new { id = beautyservicesitem.Id }, beautyservicesitem);
         }
 
         [HttpPut("{id}")]
         public async Task<ActionResult> Update(int id, BeautyServiesItem updatedbeautyservicesitem)
         {
-            var existing = await _BeautymultiItemsServiceService.GetByIdAsync(id);
+            var existing = await _beautyServiesItemService.GetByIdAsync(id);
             if (existing == null) return NotFound();
 
             existing.Title = updatedbeautyservicesitem.Title;
@@ -52,14 +52,14 @@ namespace HaircutApi.Controllers
             existing.ImagePath = updatedbeautyservicesitem.ImagePath;
             
 
-            await _BeautymultiItemsServiceService.UpdateAsync(existing);
+            await _beautyServiesItemService.UpdateAsync(existing);
             return NoContent();
         }
 
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
         {
-            await _BeautymultiItemsServiceService.SoftDeleteAsync(id);
+            await _beautyServiesItemService.SoftDeleteAsync(id);
             return NoContent();
         }
     }

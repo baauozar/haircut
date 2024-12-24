@@ -13,7 +13,7 @@ namespace DataLayer.Abstract
 
 
         // Returns a collection of BeautyItems for a specific category
-        Task<BeautyCategory?> GetCategoryWithItemsAsync(int id);
+    
 
         // Adds a new BeautyItem to a category
 

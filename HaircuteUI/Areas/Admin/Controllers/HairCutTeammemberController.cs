@@ -2,6 +2,7 @@
 using EntityLayer;
 using HaircuteUI.ViewModel;
 using Microsoft.AspNetCore.Mvc;
+using System.Reflection.Metadata.Ecma335;
 
 namespace HaircuteUI.Areas.Admin.Controllers
 {
@@ -51,19 +52,10 @@ namespace HaircuteUI.Areas.Admin.Controllers
                 Bio = vm.Bio,
                 ImagePath = vm.ImagePath
             };
-
             await _service.AddAsync(team);
-            var list = await _service.GetAllAsync();
-            var updateModel = list.Select(f => new HairCutTeammemberViewModal
-            {
-                Id = f.Id,
-                Name = f.Name,
-                Position = f.Position,
-                Bio = f.Bio,
-                ImagePath = f.ImagePath
-
-            }).ToList();
-            return PartialView("TeamMemberList", updateModel);
+            TempData["NotificationMessage"] = "New Worker Add successfully!";
+       
+            return Json(new {success=true});
 
         }
 
@@ -95,31 +87,15 @@ namespace HaircuteUI.Areas.Admin.Controllers
             team.Bio = vm.Bio;
             team.ImagePath = vm.ImagePath;
             await _service.UpdateAsync(team);
-            var list = await _service.GetAllAsync();
-            var updateModel = list.Select(f => new HairCutTeammemberViewModal
-            {
-                Id = f.Id,
-                Name = f.Name,
-                Position = f.Position,
-                Bio = f.Bio,
-                ImagePath = f.ImagePath
-            }).ToList();
-            return PartialView("TeamMemberList", updateModel);
+            TempData["NotificationMessage"] = "Worker Details Edit successfully!";
+            return Json(new {success=true});
         }
 
         public async Task<IActionResult> Delete(int id)
         {
             await _service.SoftDeleteAsync(id);
-            var list = await _service.GetAllAsync();
-            var updateModel = list.Select(f => new HairCutTeammemberViewModal
-            {
-                Id = f.Id,
-                Name = f.Name,
-                Position = f.Position,
-                Bio = f.Bio,
-                ImagePath = f.ImagePath
-            }).ToList();
-            return PartialView("TeamMemberList", updateModel);
+            TempData["NotificationMessage"] = "Worker Deleted successfully!";
+            return Json(new {success=true});
         }
     }
 }
