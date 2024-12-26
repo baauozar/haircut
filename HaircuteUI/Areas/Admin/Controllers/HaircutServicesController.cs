@@ -69,7 +69,7 @@ namespace HaircuteUI.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        public async Task<IActionResult> Edit(int id)
+     /*   public async Task<IActionResult> Edit(int id)
         {
             var service = await _service.GetServiceWithSubServicesAsync(id);
             if (service == null) return NotFound();
@@ -91,7 +91,7 @@ namespace HaircuteUI.Areas.Admin.Controllers
                               }).ToList() ?? new()
             };
             return View(vm);
-        }
+        }*/
 
         [HttpPost]
         public async Task<IActionResult> Edit(HaircutServicesViewModel vm)

@@ -19,8 +19,7 @@ namespace BusinessLayer.Services
 
             _haircutServices = haircutServices;
         }
-        public async Task<HaircutService?> GetServiceWithSubServicesAsync(int id)
-            => await _haircutServices.GetServiceWithSubServicesAsync(id);
+   
         public async Task<IEnumerable<HaircutService>> GetServicesByCategoryAsync(int categoryId)
             => await _haircutServices.GetServicesByCategoryAsync(categoryId);
 

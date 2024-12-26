@@ -19,12 +19,7 @@ namespace DataLayer.Concrete
         }
 
       
-        public async Task<IEnumerable<HaircutService>> GetHaircutServicesByCategoryIdAsync(int categoryId)
-        {
-            return await _context.HaircutServices
-                                 .Where(hs => hs.ServiceCategoryId == categoryId && !hs.IsDeleted)
-                                 .ToListAsync();
-        }
+   
    
     }
 }

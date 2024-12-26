@@ -18,12 +18,7 @@ namespace DataLayer.Concrete
             _context = context;
         }
 
-        public async Task<HaircutService?> GetServiceWithSubServicesAsync(int id)
-        {
-            return await _context.HaircutServices
-                .Include(h => h.HairCutSupServices)
-                .FirstOrDefaultAsync(h => h.Id == id);
-        }
+  
 
         public async Task<IEnumerable<HaircutService>> GetServicesByCategoryAsync(int categoryId)
         {
