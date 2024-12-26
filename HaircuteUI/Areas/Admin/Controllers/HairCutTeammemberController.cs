@@ -19,7 +19,7 @@ namespace HaircuteUI.Areas.Admin.Controllers
         public async Task<IActionResult> Index()
         {
             var team = await _service.GetAllAsync();
-            var model = team.Select(f => new HairCutTeammemberViewModal
+            var model = team.Select(f => new HairCutTeammemberViewModel
             {
                 Id = f.Id,
                 Name = f.Name,
@@ -36,12 +36,12 @@ namespace HaircuteUI.Areas.Admin.Controllers
         public IActionResult Create()
         {
 
-            return PartialView("_Create", new HairCutTeammemberViewModal());
+            return PartialView("_Create", new HairCutTeammemberViewModel());
 
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(HairCutTeammemberViewModal vm)
+        public async Task<IActionResult> Create(HairCutTeammemberViewModel vm)
         {
             if (!ModelState.IsValid) PartialView("_Create", vm);
 
@@ -63,7 +63,7 @@ namespace HaircuteUI.Areas.Admin.Controllers
         {
             var team = await _service.GetByIdAsync(id);
             if (team == null) return NotFound();
-            var vm = new HairCutTeammemberViewModal
+            var vm = new HairCutTeammemberViewModel
             {
                 Id = id,
                 Name = team.Name,
@@ -77,7 +77,7 @@ namespace HaircuteUI.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(HairCutTeammemberViewModal vm)
+        public async Task<IActionResult> Edit(HairCutTeammemberViewModel vm)
         {
             if (!ModelState.IsValid) return PartialView("_Edit", vm);
             var team = await _service.GetByIdAsync(vm.Id);

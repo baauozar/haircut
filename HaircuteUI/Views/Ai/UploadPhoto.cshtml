@@ -1,0 +1,58 @@
+﻿<form id="uploadPhotoForm" enctype="multipart/form-data">
+    <label for="photoUpload">Upload Your Photo:</label>
+    <input type="file" id="photoUpload" name="photo" accept="image/*" required>
+    <button type="submit" class="btn btn-primary">Get Suggestions</button>
+</form>
+
+<div id="results" style="margin-top: 20px; display: none;">
+    <h4>AI Suggestions</h4>
+    <img id="uploadedPhoto" src="" alt="Uploaded Photo" style="max-width: 300px; display: block; margin-bottom: 15px;" />
+    <p><strong>Suggested Style:</strong> <span id="suggestedStyle"></span></p>
+    <p><strong>Suggested Color:</strong> <span id="suggestedColor"></span></p>
+    <p><strong>Faces Detected:</strong> <span id="facesDetected"></span></p>
+</div>
+
+
+<!-- Add necessary scripts -->
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script>
+    $('#uploadPhotoForm').on('submit', function (e) {
+        e.preventDefault();
+
+        var formData = new FormData(this);
+
+        // Make AJAX call to the backend
+        $.ajax({
+            url: '/Ai/UploadPhoto',
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                if (response.success) {
+                    // Display results section
+                    $('#results').show();
+
+                    // Display the uploaded photo
+                    $('#uploadedPhoto').attr('src', '/uploads/' + response.photoName);
+
+                    // Update suggestions
+                    $('#suggestedStyle').text(response.style);
+                    $('#suggestedColor').text(response.color);
+                    $('#facesDetected').text(response.facesDetected);
+                } else {
+                    alert(response.message || 'Failed to process photo.');
+                }
+            },
+            error: function () {
+                alert('An error occurred.');
+            }
+        });
+    });
+
+
+</script>
+

@@ -21,7 +21,7 @@ namespace HaircuteUI.Areas.Admin.Controllers
         {
             // Fetch non-deleted companies
             var company = await _service.GetAllAsync();
-            var model = company.Select(f => new CompanyViewModal
+            var model = company.Select(f => new CompanyViewModel
             {
                 Id = f.Id,
                 smallTitle = f.smallTitle,
@@ -40,13 +40,13 @@ namespace HaircuteUI.Areas.Admin.Controllers
         public IActionResult Create()
         {
             // Return partial view for the 'Create' form
-            return PartialView("_Create", new CompanyViewModal());
+            return PartialView("_Create", new CompanyViewModel());
         }
 
         // POST: Company/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(CompanyViewModal vm)
+        public async Task<IActionResult> Create(CompanyViewModel vm)
         {
             if (!ModelState.IsValid)
                 return PartialView("_Create", vm); // Return partial with validation errors
@@ -70,7 +70,7 @@ namespace HaircuteUI.Areas.Admin.Controllers
         {
             var company = await _service.GetByIdAsync(id);
             if (company == null) return NotFound();
-            var vm = new CompanyViewModal
+            var vm = new CompanyViewModel
             {
                 Id = company.Id,
                 smallTitle = company.smallTitle,
@@ -87,7 +87,7 @@ namespace HaircuteUI.Areas.Admin.Controllers
         // POST: Company/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(CompanyViewModal vm)
+        public async Task<IActionResult> Edit(CompanyViewModel vm)
         {
             if (!ModelState.IsValid)
                 return PartialView("_Edit", vm);

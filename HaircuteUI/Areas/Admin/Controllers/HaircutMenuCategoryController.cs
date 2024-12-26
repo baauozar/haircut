@@ -15,43 +15,94 @@ namespace HaircuteUI.Areas.Admin.Controllers
             _menuCategoryService = menuCategoryService;
         }
 
+        // GET: BeautyCategory
+        // Show main view that can load partials via AJAX
         public async Task<IActionResult> Index()
         {
-            var categories = await _menuCategoryService.GetAllAsync();
-            return View(categories);
+            var categories = await _menuCategoryService.GetAllAsync(); // excludes IsDeleted
+            var model = categories.Select(f => new HaircutMenuCategoryViewModel
+            {
+                Id = f.Id,
+                Name = f.Name,
+            }).ToList();
+
+
+
+            return View(model);
         }
 
-        public async Task<IActionResult> Details(int id)
+        // GET: BeautyCategory/Create
+        // Returns partial view for creating a new category
+        public IActionResult Create()
         {
-            var category = await _menuCategoryService.GetByIdAsync(id);
-            if (category == null) return NotFound();
-
-            return View(category);
+            return PartialView("_Create", new BeautyCategoryViewModel());
         }
 
- /*       [HttpPost]
-        public async Task<IActionResult> Create(HaircutMenuCategoryViewModel viewModel)
+        // POST: BeautyCategory/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(BeautyCategoryViewModel vm)
         {
             if (!ModelState.IsValid)
-                return View(viewModel);
+                return PartialView("_Create", vm);
 
             var entity = new HaircutMenuCategory
             {
-                Name = viewModel.Name,
-                HaircutMenuItems = viewModel.ite?.Select(item => new HaircutMenuItem
-                {
-                    Id = item.Id,
-                    Name = item.Name,
-                    Price = item.Price
-                }).ToList() ?? new List<HaircutMenuItem>()
+                Name = vm.Name
+          
             };
 
-            // Pass the entity to the service
             await _menuCategoryService.AddAsync(entity);
+            TempData["NotificationMessage"] = "New Haircut Category has been added successfully!";
 
-            return RedirectToAction(nameof(Index));
+
+            return Json(new { success = true });
         }
-*/
+
+        // GET: BeautyCategory/Edit/5
+        public async Task<IActionResult> Edit(int id)
+        {
+            var cat = await _menuCategoryService.GetByIdAsync(id);
+            if (cat == null) return NotFound();
+
+            var vm = new HaircutMenuCategoryViewModel
+            {
+                Id = cat.Id,
+                Name = cat.Name ?? "",
+            };
+
+            return PartialView("_Edit", vm);
+        }
+
+        // POST: BeautyCategory/Edit
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(HaircutMenuCategoryViewModel vm)
+        {
+            if (!ModelState.IsValid)
+                return PartialView("_Edit", vm);
+
+            var existing = await _menuCategoryService.GetByIdAsync(vm.Id);
+            if (existing == null) return NotFound();
+
+            existing.Name = vm.Name;
+            await _menuCategoryService.UpdateAsync(existing);
+            TempData["NotificationMessage"] = "Haircut Category Has been updated successfully!";
+            return Json(new { success = true });
+        }
+
+        // POST: BeautyCategory/Delete/5 (Soft Delete)
+        [HttpPost]
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            await _menuCategoryService.SoftDeleteAsync(id);
+            TempData["NotificationMessage"] = "Haircut Category Has been deleted successfully!";
+
+
+            return Json(new { success = true });
+        }
+
 
     }
 }

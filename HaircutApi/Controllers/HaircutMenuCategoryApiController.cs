@@ -26,7 +26,7 @@ namespace HaircutApi.Controllers
             return Ok(dto);
         }*/
 
-        [HttpPost]
+   /*     [HttpPost]
         public async Task<IActionResult> Create(HaircutMenuCategoryDto dto)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
@@ -47,7 +47,7 @@ namespace HaircutApi.Controllers
             await _menuCategoryService.AddAsync(haircut);
 
             return Ok();
-        }
+        }*/
 
 
         [HttpDelete("{id}")]

@@ -20,7 +20,7 @@ namespace HaircuteUI.Areas.Admin.Controllers
         public async Task<IActionResult> Index()
         {
             var contact = await _service.GetAllAsync();
-            var model = contact.Select(f => new ContactViewModal
+            var model = contact.Select(f => new ContactViewModel
             {
                 Id = f.Id,
                 Name = f.Name ?? "",
@@ -36,13 +36,13 @@ namespace HaircuteUI.Areas.Admin.Controllers
         // GET: Contact/Create
         public IActionResult Create()
         {
-            return PartialView("_Create", new ContactViewModal());
+            return PartialView("_Create", new ContactViewModel());
         }
 
         // POST: Contact/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(ContactViewModal vm)
+        public async Task<IActionResult> Create(ContactViewModel vm)
         {
             if (!ModelState.IsValid)
                 return PartialView("_Create", vm);

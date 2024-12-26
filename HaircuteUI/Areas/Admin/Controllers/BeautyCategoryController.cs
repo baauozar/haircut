@@ -9,12 +9,12 @@ namespace HaircuteUI.Areas.Admin.Controllers
     public class BeautyCategoryController : Controller
     {
         private readonly IBeautyCategoryService _categoryService;
-        private readonly IBeautyServiesItemService _itemsService;
+   
 
-        public BeautyCategoryController(IBeautyCategoryService categoryService, IBeautyServiesItemService itemsService)
+        public BeautyCategoryController(IBeautyCategoryService categoryService)
         {
             _categoryService = categoryService;
-            _itemsService = itemsService;
+           
         }
 
         // GET: BeautyCategory
@@ -86,7 +86,7 @@ namespace HaircuteUI.Areas.Admin.Controllers
         public async Task<IActionResult> Edit(BeautyCategoryViewModel vm)
         {
             if (!ModelState.IsValid)
-                return PartialView("_EditCategory", vm);
+                return PartialView("_Edit", vm);
 
             var existing = await _categoryService.GetByIdAsync(vm.Id);
             if (existing == null) return NotFound();

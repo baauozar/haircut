@@ -4,16 +4,12 @@
     <table class="table table-responsive-md">
         <thead>
             <tr>
-                <th style="width:50px;">
-                    <div class="form-check custom-checkbox checkbox-success check-lg me-3">
-                        <input type="checkbox" class="form-check-input" id="checkAll" required="">
-                        <label class="form-check-label" for="checkAll"></label>
-                    </div>
-                </th>
+             
                 <th><strong>ROLL NO.</strong></th>
-                <th><strong>Namen</strong></th>
+                <th><strong>Name</strong></th>
                 <th><strong>Price</strong></th>
-                <th><strong>HaircutMenu Category</strong></th>
+                <th><strong>Service Duration</strong></th>
+                <th><strong>Haircut Menu Category</strong></th>
            
 
                 <th><strong>Status</strong></th>
@@ -30,12 +26,7 @@
         {
             <tbody>
                 <tr>
-                    <td>
-                        <div class="form-check custom-checkbox checkbox-success check-lg me-3">
-                            <input type="checkbox" class="form-check-input" id="customCheckBox2" required="">
-                            <label class="form-check-label" for="customCheckBox2"></label>
-                        </div>
-                    </td>
+                   
                     <td>
                         <strong>
                             @{
@@ -48,6 +39,7 @@
 
                     <td>@x.Name</td>
                     <td>@((int)x.Price)</td>
+                    <td>@x.Time</td>
                     <td>@x.CategoryName</td>
                   
 
@@ -61,10 +53,10 @@
                     </td>
                     <td>
                         <div class="d-flex">
-                            <button data-id="@x.Id" class="btn btn-primary shadow btn-xs sharp me-1 btnEdit" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg-edit">
+                             <button data-id="@x.Id" data-name="@x.Name" data-time="@x.Time" data-price="@x.Price" data-categoryid="@x.HaircutMenuCategoryId" data-categoryname="@x.CategoryName" class="btn btn-primary shadow btn-xs sharp me-1 btnEdit" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg-edit">
                                 <i class="fa fa-pencil"></i>
                             </button>
-                            <button data-id="@x.Id" class="btn btn-danger shadow btn-xs sharp DeleteFaq"><i class="fa fa-trash"></i></button>
+                            <button data-id="@x.Id" class="btn btn-danger shadow btn-xs sharp DeleteHaricutItem"><i class="fa fa-trash"></i></button>
                         </div>
                     </td>
                 </tr>
@@ -74,7 +66,9 @@
             </tbody>
         }
     </table>
-
+    @await Html.PartialAsync("_Create")
+    @await Html.PartialAsync("_Edit")
+    <button class="badge badge-s light badge-primary" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg"><i class="fa-solid fa-plus fa-xs" style="color: #173972;margin-top:10px;margin-right:10px;"></i> Add New Haircut Items </button>
 
 </div>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
@@ -95,4 +89,4 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.28/dist/sweetalert2.min.css
     </script>
 }
 
-<script src="~/js/ajaxtest.js"></script>
+<script src="~/js/ajaxhaircutmenuitem.js"></script>

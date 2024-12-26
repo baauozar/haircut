@@ -21,16 +21,27 @@ namespace HaircuteUI.Controllers
         }
 
         // GET: HairCutMenuItem
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int?categoryid)
         {
-            var items = await _menuItemService.GetAllWithCategoryAsync();
-            var viewModel = items.Select(item => new HaircutMenuItemViewModel
+            var categories=await _categoryService.GetAllAsync();
+            IEnumerable<HaircutMenuItem> haircutMenuItems;
+            if (categoryid.HasValue)
+            {
+                haircutMenuItems=await _menuItemService.GetAllWithCategoryAsync();
+            }
+            else
+            {
+                haircutMenuItems = await _menuItemService.GetAllAsync();
+            }
+            var haircutMenuItem=await _menuItemService.GetAllAsync();
+            var viewModel = haircutMenuItems.Select(item => new HaircutMenuItemViewModel
             {
                 Id = item.Id,
                 Name = item.Name,
                 Price = item.Price,
+                Time = item.Time,
                 HaircutMenuCategoryId = item.HaircutMenuCategoryId,
-                CategoryName = item.HaircutMenuCategory?.Name,
+                CategoryName = categories.FirstOrDefault(c=>c.Id==item.HaircutMenuCategoryId)?.Name,
                 IsDeleted = item.IsDeleted
             }).ToList();
 
@@ -38,19 +49,30 @@ namespace HaircuteUI.Controllers
         }
 
         // GET: HairCutMenuItem/Create
-        public async Task<IActionResult> Create()
+        [HttpGet]
+        public async Task<JsonResult> GetCategories()
         {
-            var categories = await _categoryService.GetAllAsync();
-            var viewModel = new HaircutMenuItemViewModel
+            try
             {
-                Categories = categories.Select(c => new HaircutMenuCategoryViewModel
-                {
-                    Id = c.Id,
-                    Name = c.Name
-                })
-            };
+                // Fetch categories using the service
+                var categories = await _categoryService.GetAllAsync();
 
-            return PartialView("_Create", viewModel);
+                // Return the data in the required format
+                return Json(categories.Select(c => new
+                {
+                    id = c.Id,       // ID of the category
+                    name = c.Name    // Name of the category
+                }));
+            }
+            catch (Exception ex)
+            {
+                // Log the error
+                return Json(new { error = ex.Message });
+            }
+        }
+        public IActionResult Create()
+        {
+            return PartialView("_Create", new HaircutMenuItemViewModel());
         }
 
         // POST: HairCutMenuItem/Create
@@ -67,6 +89,7 @@ namespace HaircuteUI.Controllers
             {
                 Name = model.Name,
                 Price = model.Price,
+                Time = model.Time,
                 HaircutMenuCategoryId = model.HaircutMenuCategoryId
             };
 
@@ -80,22 +103,18 @@ namespace HaircuteUI.Controllers
         {
             var item = await _menuItemService.GetByIdAsync(id);
             if (item == null) return NotFound();
-
-            var categories = await _categoryService.GetAllAsync();
-            var viewModel = new HaircutMenuItemViewModel
+            var vm = new HaircutMenuItemViewModel
             {
                 Id = item.Id,
                 Name = item.Name,
                 Price = item.Price,
-                HaircutMenuCategoryId = item.HaircutMenuCategoryId,
-                Categories = categories.Select(c => new HaircutMenuCategoryViewModel
-                {
-                    Id = c.Id,
-                    Name = c.Name
-                })
+                Time = item.Time,
+                HaircutMenuCategoryId = item.HaircutMenuCategoryId
+               
+              
             };
 
-            return PartialView("_Edit", viewModel);
+            return PartialView("_Edit", vm);
         }
 
         // POST: HairCutMenuItem/Edit/5
@@ -113,6 +132,7 @@ namespace HaircuteUI.Controllers
 
             existing.Name = model.Name;
             existing.Price = model.Price;
+            existing.Time = model.Time;
             existing.HaircutMenuCategoryId = model.HaircutMenuCategoryId;
 
             await _menuItemService.UpdateAsync(existing);
@@ -122,7 +142,7 @@ namespace HaircuteUI.Controllers
 
         // POST: HairCutMenuItem/Delete/5
         [HttpPost]
-        [ValidateAntiForgeryToken]
+       
         public async Task<IActionResult> Delete(int id)
         {
             await _menuItemService.SoftDeleteAsync(id);

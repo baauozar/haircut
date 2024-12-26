@@ -22,13 +22,14 @@ namespace DataLayer
         public DbSet<BeautyCategory>? BeautyCategories { get; set; }
         public DbSet<BeautyItem>? BeautyItems { get; set; }
         public DbSet<BeautyCardInfo>? BeautyCardInfos { get; set; }
-        public DbSet<BeautyServiesItem>? BeautyServiesItems { get; set; }
-        public DbSet<BeautysServices>? BeautysServices { get; set; }
+        public DbSet<BeautyServicesItem>? BeautyServiesItems { get; set; }
+        public DbSet<BeautyService>? BeautysServices { get; set; }
         public DbSet<Company>? Companies { get; set; }
         public DbSet<Contact>? Contacts { get; set; }
         public DbSet<Faq>? Faqs { get; set; }
         public DbSet<HaircutMenuCategory>? HaircutMenuCategories { get; set; }
         public DbSet<HaircutMenuItem>? HaircutMenuItems { get; set; }
+        public DbSet<HairStyleSuggestion>? HairStyleSuggestions { get; set; }
 
         public DbSet<HaircutServicesCategory>? HaircutServicesCategories { get; set; }
         public DbSet<HaircutService>? HaircutServices { get; set; }
@@ -79,13 +80,13 @@ namespace DataLayer
                 .HasForeignKey(hss => hss.ServiceId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // If you have any other one-to-one, many-to-many, or other relationships, configure them here as well.
-            // For example, if there's a relationship between BeautysServices and another entity, 
-            // you would add a similar configuration.
-
-            base.OnModelCreating(modelBuilder);
-
+            // 5.Beauty services to Beauty items(one-to-one)
+            modelBuilder.Entity<BeautyService>()
+         .HasOne(b => b.BeautyServicesItem) // Each BeautyService belongs to one BeautyServicesItem
+         .WithOne(i => i.BeautyService)    // Each BeautyServicesItem has one BeautyService
+         .HasForeignKey<BeautyService>(b => b.BeautyServicesItemId) // Foreign key in BeautyService
+         .OnDelete(DeleteBehavior.Cascade); // Optional: Cascade delete
 
         }
-}
+    }
 }

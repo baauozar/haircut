@@ -1,0 +1,44 @@
+﻿<div class="bootstrap-modal">
+    <div class="modal fade bd-example-modal-lg-edit" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Haircut Category Edit Information</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-validation">
+                        <form class="needs-validation" id="HaircutCategoryEdit">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="Id" value="" id="editBeautyCategoryId" />
+                            <div class="row">
+                                <div class="col-xl-12">
+
+
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-5 col-form-label">
+                                            Haircut Category Name
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" name="Name" id="editName" placeholder="Enter a Category Name" required>
+                                            <div class="invalid-feedback">
+                                                Haircut Category Name Can't be empty
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
+                                <button id="btnEditHaircutCategory" type="button" class="btn me-2 btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

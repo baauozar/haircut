@@ -1,1 +1,100 @@
-﻿<h1>my name is haithm edit</h1>
+﻿<div class="bootstrap-modal">
+    <div class="modal fade bd-example-modal-lg-edit" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit haircut item Information</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-validation">
+                        <form class="needs-validation" id="HaircutItemEdit">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="Id" value="" id="editHaircutItemId" />
+                            <div class="row">
+                                <!-- Question Field -->
+                                <div class="col-md-6">
+                                    <div class="mb-3 row">
+                                        <label for="question" class="col-lg-4 col-form-label">
+                                             Haircut Service Name
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-8">
+                                            <input type="text" id="editName" class="form-control" name="Name" placeholder="Enter a service name" required>
+                                            <div class="invalid-feedback">
+                                                Service Name Can't be empty
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="mb-3 row">
+                                        <label for="answer1" class="col-lg-4 col-form-label">
+                                            Duration
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-8">
+                                            <input type="text" class="form-control" name="Time" id="editTime" placeholder="Enter a duration time" required>
+                                            <div class="invalid-feedback">
+                                                Duration Can't be empty
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <div class="mb-3 row">
+                                        <label for="answer2" class="col-lg-4 col-form-label">
+                                            Service Price
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-8">
+                                            <input type="text" class="form-control" name="Price" id="editPrice" placeholder="Enter the service price" required>
+                                            <div class="invalid-feedback">
+                                                Service Price Can't be empty
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                  
+
+
+                                <div class="col-md-6">
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label">
+                                            Haircut Category
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <select class="default-select wide form-control" name="HaircutMenuCategoryId" id="editHaircutCategorydata" required>
+                                                <option value="">Please select</option> <!-- Default placeholder -->
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                Please select a valid Haircut category.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <br />
+
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
+                                <button id="btnEditHaircutItem" type="button" class="btn me-2 btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -18,6 +18,7 @@ namespace EntityLayer
         public string? Name { get; set; }
 
         public bool IsDeleted { get; set; } = false;
-        public ICollection<HaircutMenuItem>? HaircutMenuItems { get; set; }
+        public ICollection<HaircutMenuItem>? HaircutMenuItems { get; set; } = new List<HaircutMenuItem>();
+
     }
 }

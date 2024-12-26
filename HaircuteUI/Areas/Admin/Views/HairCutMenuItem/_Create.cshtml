@@ -1,1 +1,99 @@
-﻿<h1>my name is haithm create</h1>
+﻿<div class="bootstrap-modal">
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add Haircut menu Items Content</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-validation">
+                        <form class="needs-validation" id="HairCutMenuItemAdd">
+                            @Html.AntiForgeryToken()
+                            <div class="row">
+                                <!-- Service Name Field -->
+                                <div class="col-md-6">
+                                    <div class="mb-3 row">
+                                        <label for="serviceName" class="col-lg-4 col-form-label">
+                                            Service Name
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-8">
+                                            <input type="text" class="form-control" name="Name" placeholder="Enter a service name" required>
+                                            <div class="invalid-feedback">
+                                                Service Name Can't be empty
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Duration Field -->
+                                <div class="col-md-6">
+                                    <div class="mb-3 row">
+                                        <label for="duration" class="col-lg-4 col-form-label">
+                                            Duration
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-8">
+                                            <input type="text" class="form-control" name="Time" placeholder="Enter a duration time" required>
+                                            <div class="invalid-feedback">
+                                                Duration Can't be empty
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Service Price Field -->
+                                <div class="col-md-6">
+                                    <div class="mb-3 row">
+                                        <label for="servicePrice" class="col-lg-4 col-form-label">
+                                            Service Price
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-8">
+                                            <input type="text" class="form-control" name="Price" placeholder="Enter the service price" required>
+                                            <div class="invalid-feedback">
+                                                Service Price Can't be empty
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Beauty Category Dropdown -->
+                                <div class="col-md-6">
+                                    <div class="mb-3 row">
+                                        <label for="beautyCategory" class="col-lg-4 col-form-label">
+                                            Haicut  Category
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <select class="default-select wide form-control" name="HaircutMenuCategoryId" id="HaircutCategorydata" required>
+                                                <option value="">Please select</option> <!-- Default placeholder -->
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                Please select a valid  Haicut Category.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
+                                <button id="btnSubmitHaircutitems" type="button" class="btn me-2 btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+

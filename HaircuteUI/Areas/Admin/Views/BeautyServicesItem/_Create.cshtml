@@ -1,0 +1,66 @@
+﻿<div class="bootstrap-modal">
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add Beauty Serive item Information </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-validation">
+                        <form class="needs-validation" id="BeautyserviceitemAdd">
+                            @Html.AntiForgeryToken()
+                            <div class="row">
+                                <!-- Question Field -->
+                                <div class="col-md-6">
+                                    <div class="mb-3 row">
+                                        <label for="question" class="col-lg-4 col-form-label">
+                                            Title
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-8">
+                                            <input type="text" id="question" class="form-control" name="Title" placeholder="Enter a title" required>
+                                            <div class="invalid-feedback">
+                                                title Can't be empty
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="mb-3 row">
+                                        <label for="answer2" class="col-lg-4 col-form-label">
+                                            Image Path
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-8">
+                                            <input type="text" id="answer2" class="form-control" name="ImagePath" placeholder="Enter an ImagePath" required>
+                                            <div class="invalid-feedback">
+                                                ImagePath Can't be empty
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
+                                <button id="btnSubmitbeautyserviceitem" type="button" class="btn me-2 btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <style>
+
+    </style>
+</div>

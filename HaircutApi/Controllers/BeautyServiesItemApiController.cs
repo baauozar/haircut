@@ -9,15 +9,15 @@ namespace HaircutApi.Controllers
     [ApiController]
     public class BeautyServiesItemApiController : ControllerBase
     {
-        private readonly IBeautyServiesItemService _beautyServiesItemService;
+        private readonly IBeautyServicesItemService _beautyServiesItemService;
 
-        public BeautyServiesItemApiController(IBeautyServiesItemService beautyServiesItemService)
+        public BeautyServiesItemApiController(IBeautyServicesItemService beautyServiesItemService)
         {
             _beautyServiesItemService = beautyServiesItemService;
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<BeautyServiesItem>> Get(int id)
+        public async Task<ActionResult<BeautyServicesItem>> Get(int id)
         {
             var faq = await _beautyServiesItemService.GetByIdAsync(id);
             if (faq == null) return NotFound();
@@ -32,9 +32,9 @@ namespace HaircutApi.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Create(BeautyServiesItem beautyservicesitem)
+        public async Task<ActionResult> Create(BeautyServicesItem beautyservicesitem)
         {
-            if (string.IsNullOrWhiteSpace(beautyservicesitem.Title) || string.IsNullOrWhiteSpace(beautyservicesitem.NumberText) || string.IsNullOrWhiteSpace(beautyservicesitem.ImagePath))
+            if (string.IsNullOrWhiteSpace(beautyservicesitem.Title) || string.IsNullOrWhiteSpace(beautyservicesitem.ImagePath))
                 return BadRequest("Title and NumberText cannot be empty.");
 
             await _beautyServiesItemService.AddAsync(beautyservicesitem);
@@ -42,13 +42,13 @@ namespace HaircutApi.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult> Update(int id, BeautyServiesItem updatedbeautyservicesitem)
+        public async Task<ActionResult> Update(int id, BeautyServicesItem updatedbeautyservicesitem)
         {
             var existing = await _beautyServiesItemService.GetByIdAsync(id);
             if (existing == null) return NotFound();
 
             existing.Title = updatedbeautyservicesitem.Title;
-            existing.NumberText = updatedbeautyservicesitem.NumberText;
+         
             existing.ImagePath = updatedbeautyservicesitem.ImagePath;
             
 

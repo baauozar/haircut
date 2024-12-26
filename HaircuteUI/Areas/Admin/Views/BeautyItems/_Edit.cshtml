@@ -1,0 +1,113 @@
+﻿<div class="bootstrap-modal">
+    <div class="modal fade bd-example-modal-lg-edit" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit beauty item Information</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-validation">
+                        <form class="needs-validation" id="BeautyItemEdit">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="Id" value="" id="editBeautyItemId" />
+                            <div class="row">
+                                <!-- Question Field -->
+                                <div class="col-md-6">
+                                    <div class="mb-3 row">
+                                        <label for="question" class="col-lg-4 col-form-label">
+                                            Service Name
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-8">
+                                            <input type="text" id="editServiceName" class="form-control" name="ServiceName" placeholder="Enter a service name" required>
+                                            <div class="invalid-feedback">
+                                                Service Name Can't be empty
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="mb-3 row">
+                                        <label for="answer1" class="col-lg-4 col-form-label">
+                                            Duration
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-8">
+                                            <input type="text" class="form-control" name="Duration" id="editDuration" placeholder="Enter a duration time" required>
+                                            <div class="invalid-feedback">
+                                                Duration Can't be empty
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <div class="mb-3 row">
+                                        <label for="answer2" class="col-lg-4 col-form-label">
+                                            Service Price
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-8">
+                                            <input type="text" class="form-control" name="Price" id="editPrice" placeholder="Enter the service price" required>
+                                            <div class="invalid-feedback">
+                                                Service Price Can't be empty
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <div class="mb-3 row">
+                                        <label for="answer3" class="col-lg-4 col-form-label">
+                                            Description
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-8">
+                                            <input type="text" class="form-control" name="Description" id="editDescription" placeholder="Enter a service description " required>
+                                            <div class="invalid-feedback">
+                                                Description Can't be empty
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <div class="mb-3 row">
+                                        <label class="col-lg-4 col-form-label">
+                                            Beauty Category
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <select class="default-select wide form-control" name="BeautyCategoryId" id="editBeautyCategorydata" required>
+                                                <option value="">Please select</option> <!-- Default placeholder -->
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                Please select a valid Beauty category.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <br />
+
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
+                                <button id="btnEditBeautyItem" type="button" class="btn me-2 btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+

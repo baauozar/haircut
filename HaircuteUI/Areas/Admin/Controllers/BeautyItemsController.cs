@@ -46,5 +46,105 @@ namespace HaircuteUI.Areas.Admin.Controllers
 
             return View(model);
         }
+        [HttpGet]
+        public async Task<JsonResult> GetCategories()
+        {
+            try
+            {
+                // Fetch categories using the service
+                var categories = await _categoryService.GetAllAsync();
+
+                // Return the data in the required format
+                return Json(categories.Select(c => new
+                {
+                    id = c.Id,       // ID of the category
+                    name = c.Name    // Name of the category
+                }));
+            }
+            catch (Exception ex)
+            {
+                // Log the error
+                return Json(new { error = ex.Message });
+            }
+        }
+        public IActionResult Create()
+        {
+            return PartialView("_Create",new BeautyItemsViewModel());
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(BeautyItemsViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var beautyItem = new BeautyItem
+                {
+                    ServiceName = model.ServiceName,
+                    Duration = model.Duration,
+                    Price = model.Price,
+                    Description = model.Description,
+                    BeautyCategoryId = model.BeautyCategoryId
+                };
+
+                await _BeautyitemsService.AddAsync(beautyItem);
+                TempData["NotificationMessage"] = "Beauty items Has Been Create successfully!";
+                return Json(new { success = true});
+            }
+
+            return Json(new { success = false, message = "Invalid data." });
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            var item = await _BeautyitemsService.GetByIdAsync(id);
+            if (item == null)
+            {
+                return NotFound();
+            }
+
+            var vm = new BeautyItemsViewModel
+            {
+                Id = item.Id,
+                ServiceName = item.ServiceName,
+                Duration = item.Duration,
+                Price = item.Price,
+                Description = item.Description,
+                BeautyCategoryId = item.BeautyCategoryId
+            };
+            return PartialView("_Edit", vm);
+
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(BeautyItemsViewModel vm)
+        {
+            if (!ModelState.IsValid)
+                return PartialView("_Edit", vm);
+
+            var entity = await _BeautyitemsService.GetByIdAsync(vm.Id);
+            if (entity == null)
+            {
+                return NotFound();
+            }
+            entity.ServiceName = vm.ServiceName;
+            entity.Duration = vm.Duration;
+            entity.Price = vm.Price;
+            entity.Description = vm.Description;
+            entity.BeautyCategoryId= vm.BeautyCategoryId;
+            await _BeautyitemsService.UpdateAsync(entity);
+            TempData["NotificationMessage"] = "Beauty items details Has Been Edit successfully!";
+            return Json(new { success = true });
+
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(int id)
+        {
+          
+            await _BeautyitemsService.SoftDeleteAsync(id);
+            TempData["NotificationMessage"] = "Beauty item Has been deleted successfully!";
+            return Json(new { success = true});
+        }
     }
 }
