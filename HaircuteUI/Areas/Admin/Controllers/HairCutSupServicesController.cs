@@ -1,11 +1,14 @@
 ﻿using BusinessLayer.Interfaces;
+using BusinessLayer.Services;
 using EntityLayer;
 using HaircuteUI.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HaircuteUI.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Policy = "AdminOnly")]
     public class HairCutSupServicesController : Controller
     {
         private readonly IHairCutSupServicesService _service;
@@ -17,34 +20,64 @@ namespace HaircuteUI.Areas.Admin.Controllers
             _haircutService = haircutService;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? categoryid)
         {
-            var services = await _service.GetAllAsync();
-            var model = services.Select(s => new HairCutSupServicesViewModel
+            var categories=await _haircutService.GetAllAsync();
+            IEnumerable<HaircutSupService> haircut;
+            if (categoryid.HasValue)
+            {
+                haircut=await _service.GetByServiceIdAsync(categoryid.Value);
+            }
+            else
+            {
+                haircut=await _service.GetAllAsync();
+            }
+  
+            var model = haircut.Select(s => new HairCutSupServicesViewModel
             {
                 Id = s.Id,
                 Name = s.Name,
                 Description = s.Description,
                 ServiceId = s.ServiceId,
-                ServiceName = s.HaircutService?.Title ?? "N/A"
+                ServiceName = categories.FirstOrDefault(c=>c.Id==s.ServiceId)?.Title ?? "N/A"
             }).ToList();
 
             return View(model);
         }
-
-        public async Task<IActionResult> Create()
+        [HttpGet]
+        public async Task<JsonResult> GetCategories()
         {
-            ViewBag.Services = await _haircutService.GetAllAsync(); // Dropdown list
-            return View();
+            try
+            {
+                // Fetch categories using the service
+                var categories = await _haircutService.GetAllAsync();
+
+                // Return the data in the required format
+                return Json(categories.Select(c => new
+                {
+                    id = c.Id,       // ID of the category
+                    name = c.Title    // Name of the category
+                }));
+            }
+            catch (Exception ex)
+            {
+                // Log the error
+                return Json(new { error = ex.Message });
+            }
+        }
+        public IActionResult Create()
+        {
+         
+            return PartialView("_Create", new HairCutSupServicesViewModel());
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(HairCutSupServicesViewModel vm)
         {
             if (!ModelState.IsValid)
             {
-                ViewBag.Services = await _haircutService.GetAllAsync();
-                return View(vm);
+                return Json(new { success = false, message ="Invalid Data"});
             }
 
             var service = new HaircutSupService
@@ -54,7 +87,8 @@ namespace HaircuteUI.Areas.Admin.Controllers
                 ServiceId = vm.ServiceId
             };
             await _service.AddAsync(service);
-            return RedirectToAction(nameof(Index));
+            TempData["NotificationMessage"] = "Sub-Service Has Been Create successfully!";
+            return Json(new { success = true });
         }
 
         public async Task<IActionResult> Edit(int id)
@@ -70,17 +104,16 @@ namespace HaircuteUI.Areas.Admin.Controllers
                 ServiceId = service.ServiceId
             };
 
-            ViewBag.Services = await _haircutService.GetAllAsync();
-            return View(vm);
+            return PartialView("_Edit",vm);
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(HairCutSupServicesViewModel vm)
         {
             if (!ModelState.IsValid)
             {
-                ViewBag.Services = await _haircutService.GetAllAsync();
-                return View(vm);
+                return PartialView("_Edit", vm);
             }
 
             var existing = await _service.GetByIdAsync(vm.Id);
@@ -91,27 +124,17 @@ namespace HaircuteUI.Areas.Admin.Controllers
             existing.ServiceId = vm.ServiceId;
 
             await _service.UpdateAsync(existing);
-            return RedirectToAction(nameof(Index));
+            TempData["NotificationMessage"] = "Sub-Service details Has Been Edit successfully!";
+            return Json(new { success = true });
         }
 
         public async Task<IActionResult> Delete(int id)
         {
-            var service = await _service.GetByIdAsync(id);
-            if (service == null) return NotFound();
-
-            return View(new HairCutSupServicesViewModel
-            {
-                Id = service.Id,
-                Name = service.Name,
-                Description = service.Description
-            });
-        }
-
-        [HttpPost, ActionName("Delete")]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
             await _service.SoftDeleteAsync(id);
-            return RedirectToAction(nameof(Index));
+            TempData["NotificationMessage"] = "Sub-Service Has been deleted successfully!";
+            return Json(new { success = true });
         }
+
+      
     }
 }

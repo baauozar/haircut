@@ -49,11 +49,13 @@
         var id = $(this).data('id');
         var name = $(this).data('name');
         var iconpath = $(this).data('iconpath');
+        var imagepath = $(this).data('imagepath');
 
 
         $('#editBeautyCategoryId').val(id).data('original', id);
         $('#editName').val(name).data('original', name);
         $('#editIconPath').val(iconpath).data('original', iconpath);
+        $('#editImagePath').val(imagepath).data('original', imagepath);
 
 
     });

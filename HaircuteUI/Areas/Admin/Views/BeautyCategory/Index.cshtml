@@ -6,8 +6,9 @@
             <tr>
                
                 <th><strong>ROLL NO.</strong></th>
-                <th><strong>Namen</strong></th>
+                <th><strong>Name</strong></th>
                 <th><strong>Icon Path</strong></th>
+                <th><strong>Image Path</strong></th>
            
 
                 <th><strong>Status</strong></th>
@@ -36,7 +37,9 @@
 
 
                     <td>@x.Name</td>
-                    <td>@x.IconPath</td>
+                    <td><img src="@x.IconPath" alt="Image" style="max-width:50px; height: auto;" /></td>
+                    
+                    <td><img src="@x.ImagePath" alt="Image" style="max-width:50px; height: auto;" /></td>
                  
 
                     <td>
@@ -49,7 +52,7 @@
                     </td>
                     <td>
                         <div class="d-flex">
-                            <button data-id="@x.Id" data-name="@x.Name"data-iconpath="@x.IconPath" class="btn btn-primary shadow btn-xs sharp me-1 btnEdit" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg-edit">
+                            <button data-id="@x.Id" data-name="@x.Name" data-iconpath="@x.IconPath" data-imagepath="@x.ImagePath" class="btn btn-primary shadow btn-xs sharp me-1 btnEdit" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg-edit">
                                 <i class="fa fa-pencil"></i>
                             </button>
                             <button data-id="@x.Id" class="btn btn-danger shadow btn-xs sharp DeleteBeautyCategory"><i class="fa fa-trash"></i></button>

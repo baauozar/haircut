@@ -79,7 +79,7 @@
         }
         // Check if at least one field value has changed
         var isChanged = false;
-        $('#btnEditCompany input[required]').each(function () {
+        $('#CompanyEdit input[required]').each(function () {
             var originalValue = $(this).data('original');
             var currentValue = $(this).val();
 

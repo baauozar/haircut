@@ -1,11 +1,13 @@
 ﻿using BusinessLayer.Interfaces;
 using EntityLayer;
 using HaircuteUI.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HaircuteUI.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Policy = "AdminOnly")]
     public class BeautyCategoryController : Controller
     {
         private readonly IBeautyCategoryService _categoryService;
@@ -27,6 +29,7 @@ namespace HaircuteUI.Areas.Admin.Controllers
                 Id = f.Id,
                 Name = f.Name,
                 IconPath = f.IconPath,
+                ImagePath = f.ImagePath,
                 IsDeleted = f.IsDeleted
             }).ToList();
                 
@@ -53,7 +56,8 @@ namespace HaircuteUI.Areas.Admin.Controllers
             var entity = new BeautyCategory
             {
                 Name = vm.Name,
-                IconPath = vm.IconPath
+                IconPath = vm.IconPath,
+                ImagePath = vm.ImagePath
             };
 
             await _categoryService.AddAsync(entity);
@@ -74,6 +78,7 @@ namespace HaircuteUI.Areas.Admin.Controllers
                 Id = cat.Id,
                 Name = cat.Name ?? "",
                 IconPath = cat.IconPath,
+                ImagePath = cat.ImagePath,
                 IsDeleted = cat.IsDeleted
             };
 
@@ -93,6 +98,7 @@ namespace HaircuteUI.Areas.Admin.Controllers
 
             existing.Name = vm.Name;
             existing.IconPath = vm.IconPath;
+            existing.ImagePath = vm.ImagePath;
 
             await _categoryService.UpdateAsync(existing);
             TempData["NotificationMessage"] = "Beauty Category Has been updated successfully!";

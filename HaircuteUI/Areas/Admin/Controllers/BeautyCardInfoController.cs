@@ -1,11 +1,13 @@
 ﻿using BusinessLayer.Interfaces;
 using EntityLayer;
 using HaircuteUI.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HaircuteUI.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class BeautyCardInfoController : Controller
     {
         private readonly IBeautyCardInfoService _service;

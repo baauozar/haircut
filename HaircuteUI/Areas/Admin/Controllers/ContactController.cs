@@ -2,11 +2,13 @@
 using BusinessLayer.Services;
 using EntityLayer;
 using HaircuteUI.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HaircuteUI.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Policy = "AdminOnly")]
     public class ContactController : Controller
     {
         private readonly IContactService _service;

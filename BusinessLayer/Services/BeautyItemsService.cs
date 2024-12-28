@@ -20,6 +20,12 @@ namespace BusinessLayer.Services
             _beautyitemRepository = beautyitemRepository;
             _categoryService = categoryService;
         }
+
+        public async Task<IEnumerable<BeautyItem>> GetAllWithCategoryAsync()
+        {
+            return await _beautyitemRepository.GetAllWithCategoryAsync();
+        }
+
         public async Task<IEnumerable<BeautyItem>> GetByCategoryIdAsync(int categoryId)
         {
             return await _beautyitemRepository.GetByCategoryIdAsync(categoryId);

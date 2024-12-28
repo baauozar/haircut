@@ -20,7 +20,12 @@ namespace DataLayer.Concrete
                 .Where(item => item.BeautyCategoryId == categoryId && !item.IsDeleted)
                 .ToListAsync();
         }
-
+        public async Task<IEnumerable<BeautyItem>> GetAllWithCategoryAsync()
+        {
+            return await _context.BeautyItems
+                            .Where(h => h.BeautyCategory != null) // Exclude items without a category
+                            .ToListAsync();
+        }
 
     }
 }

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Services
 {
-    public class HairCutTeammemberService : GenericService<HairCutTeammember>, IHairCutTeammemberService
+  /*  public class HairCutTeammemberService : GenericService<HairCutTeammember>, IHairCutTeammemberService
     {
         private readonly IHairCutTeammemberDal _hairCutTeammember;
 
@@ -20,6 +20,6 @@ namespace BusinessLayer.Services
         }
 
 
-    }
+    }*/
 }
 

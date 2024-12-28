@@ -1,0 +1,24 @@
+﻿@model HaircuteUI.UIViewModel.StoryUIViewModel
+
+<div class="our-story-section mb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 wow animate fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
+                <div class="section-title mb-15">
+                    <span>@Model.smallTitle</span>
+                    <h2>@Model.bigTitle <span>@Model.BaackgroundTitle</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+            <div class="col-lg-12">
+                <div class="story-content">
+                    <p>@Model.Section</p>
+                    <div class="signature-area">
+                        <img src="@Model.Signature" alt="Signature">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="HtmlSanitizer" Version="8.1.870" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.36" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.36">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -24,6 +26,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\Haircut\html-files\.DS_Store" />
+    <None Include="wwwroot\Haircut\html-files\buret-html\.DS_Store" />
+    <None Include="wwwroot\Haircut\html-files\buret-html\assets\.DS_Store" />
+    <None Include="wwwroot\Haircut\html-files\buret-html\assets\image\.DS_Store" />
     <None Include="wwwroot\Models\haarcascade_frontalface_default.xml" />
   </ItemGroup>
 

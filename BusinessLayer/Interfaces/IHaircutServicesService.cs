@@ -12,6 +12,7 @@ namespace BusinessLayer.Interfaces
        
 
         Task<IEnumerable<HaircutService>> GetServicesByCategoryAsync(int categoryId);
+        Task<IEnumerable<HaircutService>> GetAllCategories();
        
 
     }

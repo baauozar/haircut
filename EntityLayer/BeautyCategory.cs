@@ -14,8 +14,9 @@ namespace EntityLayer
         [Required, StringLength(100)]
         public string? Name { get; set; } // e.g., "Facial", "Nail"
 
-        [StringLength(200)]
+      
         public string? IconPath { get; set; } // If you want icons dynamic, otherwise hardcode them
+        public string? ImagePath { get; set; } // If you want icons dynamic, otherwise hardcode them
 
         
         public bool IsDeleted { get; set; } = false;

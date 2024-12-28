@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Interfaces
 {
-    public interface IHairCutTeammemberService : IGenericService<HairCutTeammember>
+   /* public interface IHairCutTeammemberService : IGenericService<HairCutTeammember>
     {
       
 
-    }
+    }*/
 }

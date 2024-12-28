@@ -8,22 +8,22 @@ namespace HaircuteUI.ViewModel
         public int Id { get; set; }
 
         [Required, StringLength(100)]
-        public string Title { get; set; } = string.Empty;
+        public string? Title { get; set; }
 
         [StringLength(500)]
         public string? Description { get; set; }
 
         [Required]
-        public string ImagePath { get; set; } = string.Empty;
+        public string? ImagePath { get; set; } 
 
         [Required]
         public int ServiceCategoryId { get; set; }
 
         // For the dropdown to select category
-        public IEnumerable<HaircutServicesCategory>? Categories { get; set; }
+        public string? ServiceCategory { get; set; }
+        public bool IsDeleted  { get; set; }
 
-        // For managing sub-services in the UI (e.g., list them and allow adding)
-        public List<HairCutSupServicesViewModel> SubServices { get; set; } = new();
+       
 
     }
 }

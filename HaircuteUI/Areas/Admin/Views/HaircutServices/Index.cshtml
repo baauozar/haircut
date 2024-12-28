@@ -1,5 +1,92 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@model IEnumerable<HaircuteUI.ViewModel.HaircutServicesViewModel>
+
+<div class="table-responsive">
+    <table class="table table-responsive-md">
+        <thead>
+            <tr>
+
+                <th><strong>ROLL NO.</strong></th>
+                <th><strong>Service Title</strong></th>
+                <th><strong>Service Dscription</strong></th>
+                <th><strong>Service Image</strong></th>
+                <th><strong>Service Category</strong></th>
+
+
+                <th><strong>Status</strong></th>
+                <th><strong>Action</strong></th>
+
+                <th><strong></strong></th>
+            </tr>
+        </thead>
+        @{
+            int number = 0;
+        }
+        @foreach (var x in Model)
+
+        {
+            <tbody>
+                <tr>
+
+                    <td>
+                        <strong>
+                            @{
+                                number++;
+                            }@number
+                        </strong>
+                    </td>
+
+
+
+                    <td>@x.Title</td>
+                   
+                    <td>@x.Description</td>
+                    <td><img src="@x.ImagePath" alt="Image" style="max-width:100px; height: auto;" /></td>
+                    <td>@x.ServiceCategory</td>
+
+
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <i class="fa fa-circle text-success me-1"></i> @if (!x.IsDeleted)
+                            {
+                                <span>Not Deleted</span>
+                            }
+                        </div>
+                    </td>
+                    <td>
+                        <div class="d-flex">
+                            <button data-id="@x.Id" data-title="@x.Title" data-description="@x.Description" data-image="@x.ImagePath" data-categoryid="@x.ServiceCategoryId" data-categoryname="@x.ServiceCategory" class="btn btn-primary shadow btn-xs sharp me-1 btnEdit" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg-edit">
+                                <i class="fa fa-pencil"></i>
+                            </button>
+                            <button data-id="@x.Id" class="btn btn-danger shadow btn-xs sharp DeleteHaricutService"><i class="fa fa-trash"></i></button>
+                        </div>
+                    </td>
+                </tr>
+
+
+
+            </tbody>
+        }
+    </table>
+    @await Html.PartialAsync("_Create")
+    @await Html.PartialAsync("_Edit")
+    <button class="badge badge-s light badge-primary" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg"><i class="fa-solid fa-plus fa-xs" style="color: #173972;margin-top:10px;margin-right:10px;"></i> Add New Haircut Items </button>
+
+</div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.7.28/dist/sweetalert2.all.min.js
+"></script>
+<link href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.7.28/dist/sweetalert2.min.css
+" rel="stylesheet">
+
+@if (TempData["NotificationMessage"] != null)
+{
+    <script>
+        toastr.success('@TempData["NotificationMessage"]');
+    </script>
 }
+<script src="~/js/ajaxhaircutservices.js"></script>

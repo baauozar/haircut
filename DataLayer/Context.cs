@@ -5,16 +5,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EntityLayer;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 
 namespace DataLayer
 {
-    public class Context:DbContext
+    public class Context :IdentityDbContext<IdentityUser, IdentityRole, string>
     {
 
         public Context(DbContextOptions<Context> options)
            : base(options)
         {
+
         }
 
 
@@ -34,13 +37,44 @@ namespace DataLayer
         public DbSet<HaircutServicesCategory>? HaircutServicesCategories { get; set; }
         public DbSet<HaircutService>? HaircutServices { get; set; }
         public DbSet<HaircutSupService>? HairCutSupServices { get; set; }
-        public DbSet<HairCutTeammember>? HairCutTeammembers { get; set; }
-
     
 
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
+            // Custom table names for Identity
+            modelBuilder.Entity<IdentityUser>(entity => {
+                entity.ToTable("AspNetUsers");
+            });
+
+            modelBuilder.Entity<IdentityRole>(entity => {
+                entity.ToTable("AspNetRoles");
+            });
+
+            modelBuilder.Entity<IdentityUserClaim<string>>(entity => {
+                entity.ToTable("AspNetUserClaims");
+            });
+
+            modelBuilder.Entity<IdentityUserLogin<string>>(entity => {
+                entity.ToTable("AspNetUserLogins");
+            });
+
+            modelBuilder.Entity<IdentityUserRole<string>>(entity => {
+                entity.ToTable("AspNetUserRoles");
+            });
+
+            modelBuilder.Entity<IdentityRoleClaim<string>>(entity => {
+                entity.ToTable("AspNetRoleClaims");
+            });
+
+            modelBuilder.Entity<IdentityUserToken<string>>(entity => {
+                entity.ToTable("AspNetUserTokens");
+            });
+
+
+
             modelBuilder.Entity<BeautyCategory>().HasQueryFilter(bc => !bc.IsDeleted);
             modelBuilder.Entity<BeautyItem>().HasQueryFilter(bi => !bi.IsDeleted);
 

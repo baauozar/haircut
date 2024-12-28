@@ -1,12 +1,14 @@
 ﻿using BusinessLayer.Interfaces;
 using EntityLayer;
 using HaircuteUI.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Cryptography.Xml;
 
 namespace HaircuteUI.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Policy = "AdminOnly")]
     public class CompanyController : Controller
     {
         private readonly ICompanyService _service;

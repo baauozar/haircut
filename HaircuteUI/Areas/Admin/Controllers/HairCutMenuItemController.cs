@@ -1,6 +1,7 @@
 ﻿using BusinessLayer.Interfaces;
 using EntityLayer;
 using HaircuteUI.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 namespace HaircuteUI.Controllers
 {
     [Area("Admin")]
+    [Authorize(Policy = "AdminOnly")]
     public class HairCutMenuItemController : Controller
     {
         private readonly IHaircutMenuItemService _menuItemService;

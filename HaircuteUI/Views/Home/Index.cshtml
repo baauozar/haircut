@@ -1,8 +1,471 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+﻿<div class="service-section pb-60 mb-70">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section-title wow animate fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
+                    <span>Services menu</span>
+                    <h2>SERVICE MENU <span>SERVICES</span></h2>
+                </div>
+                <!-- Placeholder for dynamic content -->
+                <div id="service-menu-container" class="survice-menu wow animate fadeInUp"
+                     data-wow-delay="300ms" data-wow-duration="1500ms">
+                    Loading...
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+<div id="story-section-container">
+    Loading story content...
+</div>
+
+<div class="offer-section mb-120" style="background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('@Url.Content("~/test2.png")'); background-position: center center;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 d-flex justify-content-center wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+                <div class="offer-content text-center">
+                    <span class="offer-tag">50% DISCOUNT</span>
+                    <h2>
+                        Every new customer gets a
+                        <span>50% discount</span> on every single service package.
+                    </h2>
+                    <div class="services-btn-wrap">
+                        <a class="primary-btn1 service-btn" href="services-details.html">
+                            VIEW SERVICE MENU
+                            <svg class="arrow" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 9L9 1M9 1C7.22222 1.33333 3.33333 2 1 1M9 1C8.66667 2.66667 8 6.33333 9 9" stroke="#1E1E1E" stroke-width="1.5" stroke-linecap="round" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="services-section mb-120">
+    <div class="container">
+        <div class="row mb-70">
+            <div class="col-lg-12 wow animate fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
+                <div class="section-title">
+                    <span>Available Services</span>
+                    <h2>OUR SERVICES <span>SERVICES</span></h2>
+                </div>
+                <ul class="nav nav-tabs" id="myTab5" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active"
+                                id="him-tab"
+                                data-bs-toggle="tab"
+                                data-bs-target="#him"
+                                type="button"
+                                role="tab"
+                                aria-controls="him"
+                                aria-selected="true">
+                            Him
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link"
+                                id="her-tab"
+                                data-bs-toggle="tab"
+                                data-bs-target="#her"
+                                type="button"
+                                role="tab"
+                                aria-controls="her"
+                                aria-selected="false">
+                            Her
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="tab-content" id="myTabContent5">
+                    <!-- "Him" container -->
+                    <div class="tab-pane fade show active" id="him" role="tabpanel" aria-labelledby="him-tab">
+                        <p>Loading HIM services...</p>
+                    </div>
+                    <!-- "Her" container -->
+                    <div class="tab-pane fade" id="her" role="tabpanel" aria-labelledby="her-tab">
+                        <p>Loading HER services...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="video-area mb-120">
+    <div class="video-wrapper">
+        <video autoplay="" loop="" muted="" playsinline="" src="~/haircut/html-files/buret-html/assets/video/hair-salon.mp4"></video>
+        <div class="video-content-wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 d-flex justify-content-end">
+                        <div class="video-content">
+                            <h5>Hygiene & Safety</h5>
+                            <p>Strict adherence to hygiene standards, including sanitized tools and equipment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="faq-section mb-120">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- The heading, as in your snippet -->
+                <div class="section-title faq-title wow animate fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
+                    <span>Our Faq’s</span>
+                    <h2 class="customer">get to know <span>our faq’s</span></h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center g-lg-4 gy-5">
+            <div class="col-lg-8 pt-50">
+
+                <!-- Placeholder for the dynamic FAQ partial -->
+                <div id="faq-container">
+                    Loading FAQs...
+                </div>
+
+                <!-- The button-area, same as snippet -->
+                <div class="button-area text-center wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+                    <a class="primay-btn2 enqiry-btn" href="/contact/index">
+                        <svg class="arrow" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 9L9 1M9 1C7.22222 1.33333 3.33333 2 1 1
+                                    M9 1C8.66667 2.66667 8 6.33333 9 9"
+                                  stroke="#1E1E1E" stroke-width="1.5" stroke-linecap="round" />
+                        </svg>
+                        <span>HAVE ANY <br> ENQIRY</span>
+                    </a>
+                </div>
+
+            </div><!-- col-lg-8 -->
+        </div><!-- row -->
+    </div><!-- container -->
+</div><!-- faq-section -->
+<div class="gallery-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sub-title mb-30">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="swiper gallery-slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="single-gallery-img">
+                    <a href="https://www.instagram.com/" class="view-btn">
+                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <rect width="26" height="26" rx="5" fill="#E5E342" />
+                            <g>
+                                <path d="M15.625 6H10.375C7.95913 6 6 7.95913 6 10.375V15.625C6 18.0409 7.95913 20 10.375 20H15.625C18.0409 20 20 18.0409 20 15.625V10.375C20 7.95913 18.0409 6 15.625 6ZM18.6875 15.625C18.6875 17.3138 17.3138 18.6875 15.625 18.6875H10.375C8.68625 18.6875 7.3125 17.3138 7.3125 15.625V10.375C7.3125 8.68625 8.68625 7.3125 10.375 7.3125H15.625C17.3138 7.3125 18.6875 8.68625 18.6875 10.375V15.625Z"
+                                      fill="#1E1E1E" />
+                                <path d="M13 9.5C11.0671 9.5 9.5 11.0671 9.5 13C9.5 14.9329 11.0671 16.5 13 16.5C14.9329 16.5 16.5 14.9329 16.5 13C16.5 11.0671 14.9329 9.5 13 9.5ZM13 15.1875C11.7943 15.1875 10.8125 14.2057 10.8125 13C10.8125 11.7934 11.7943 10.8125 13 10.8125C14.2057 10.8125 15.1875 11.7934 15.1875 13C15.1875 14.2057 14.2057 15.1875 13 15.1875Z"
+                                      fill="#1E1E1E" />
+                                <path d="M16.7625 9.70375C17.0201 9.70375 17.2289 9.49494 17.2289 9.23737C17.2289 8.9798 17.0201 8.771 16.7625 8.771C16.5049 8.771 16.2961 8.9798 16.2961 9.23737C16.2961 9.49494 16.5049 9.70375 16.7625 9.70375Z"
+                                      fill="#1E1E1E" />
+                            </g>
+                        </svg>
+                        <h6>
+                            <span>COLORING</span>
+                            Instagram
+                        </h6>
+                    </a>
+                    <img src="~/haircut/html-files/buret-html/assets/image/hair-salon/gallery-image.png" alt="">
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="single-gallery-img">
+                    <a href="https://www.instagram.com/" class="view-btn">
+                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <rect width="26" height="26" rx="5" fill="#E5E342" />
+                            <g>
+                                <path d="M15.625 6H10.375C7.95913 6 6 7.95913 6 10.375V15.625C6 18.0409 7.95913 20 10.375 20H15.625C18.0409 20 20 18.0409 20 15.625V10.375C20 7.95913 18.0409 6 15.625 6ZM18.6875 15.625C18.6875 17.3138 17.3138 18.6875 15.625 18.6875H10.375C8.68625 18.6875 7.3125 17.3138 7.3125 15.625V10.375C7.3125 8.68625 8.68625 7.3125 10.375 7.3125H15.625C17.3138 7.3125 18.6875 8.68625 18.6875 10.375V15.625Z"
+                                      fill="#1E1E1E" />
+                                <path d="M13 9.5C11.0671 9.5 9.5 11.0671 9.5 13C9.5 14.9329 11.0671 16.5 13 16.5C14.9329 16.5 16.5 14.9329 16.5 13C16.5 11.0671 14.9329 9.5 13 9.5ZM13 15.1875C11.7943 15.1875 10.8125 14.2057 10.8125 13C10.8125 11.7934 11.7943 10.8125 13 10.8125C14.2057 10.8125 15.1875 11.7934 15.1875 13C15.1875 14.2057 14.2057 15.1875 13 15.1875Z"
+                                      fill="#1E1E1E" />
+                                <path d="M16.7625 9.70375C17.0201 9.70375 17.2289 9.49494 17.2289 9.23737C17.2289 8.9798 17.0201 8.771 16.7625 8.771C16.5049 8.771 16.2961 8.9798 16.2961 9.23737C16.2961 9.49494 16.5049 9.70375 16.7625 9.70375Z"
+                                      fill="#1E1E1E" />
+                            </g>
+                        </svg>
+                        <h6>
+                            <span>COLORING</span>
+                            Instagram
+                        </h6>
+                    </a>
+                    <img src="~/haircut/html-files/buret-html/assets/image/hair-salon/gallery-image-5.png" alt="">
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="single-gallery-img">
+                    <a href="https://www.instagram.com/" class="view-btn">
+                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <rect width="26" height="26" rx="5" fill="#E5E342" />
+                            <g>
+                                <path d="M15.625 6H10.375C7.95913 6 6 7.95913 6 10.375V15.625C6 18.0409 7.95913 20 10.375 20H15.625C18.0409 20 20 18.0409 20 15.625V10.375C20 7.95913 18.0409 6 15.625 6ZM18.6875 15.625C18.6875 17.3138 17.3138 18.6875 15.625 18.6875H10.375C8.68625 18.6875 7.3125 17.3138 7.3125 15.625V10.375C7.3125 8.68625 8.68625 7.3125 10.375 7.3125H15.625C17.3138 7.3125 18.6875 8.68625 18.6875 10.375V15.625Z"
+                                      fill="#1E1E1E" />
+                                <path d="M13 9.5C11.0671 9.5 9.5 11.0671 9.5 13C9.5 14.9329 11.0671 16.5 13 16.5C14.9329 16.5 16.5 14.9329 16.5 13C16.5 11.0671 14.9329 9.5 13 9.5ZM13 15.1875C11.7943 15.1875 10.8125 14.2057 10.8125 13C10.8125 11.7934 11.7943 10.8125 13 10.8125C14.2057 10.8125 15.1875 11.7934 15.1875 13C15.1875 14.2057 14.2057 15.1875 13 15.1875Z"
+                                      fill="#1E1E1E" />
+                                <path d="M16.7625 9.70375C17.0201 9.70375 17.2289 9.49494 17.2289 9.23737C17.2289 8.9798 17.0201 8.771 16.7625 8.771C16.5049 8.771 16.2961 8.9798 16.2961 9.23737C16.2961 9.49494 16.5049 9.70375 16.7625 9.70375Z"
+                                      fill="#1E1E1E" />
+                            </g>
+                        </svg>
+                        <h6>
+                            <span>COLORING</span>
+                            Instagram
+                        </h6>
+                    </a>
+                    <img src="~/haircut/html-files/buret-html/assets/image/hair-salon/gallery-image-3.png" alt="">
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="single-gallery-img">
+                    <a href="https://www.instagram.com/" class="view-btn">
+                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <rect width="26" height="26" rx="5" fill="#E5E342" />
+                            <g>
+                                <path d="M15.625 6H10.375C7.95913 6 6 7.95913 6 10.375V15.625C6 18.0409 7.95913 20 10.375 20H15.625C18.0409 20 20 18.0409 20 15.625V10.375C20 7.95913 18.0409 6 15.625 6ZM18.6875 15.625C18.6875 17.3138 17.3138 18.6875 15.625 18.6875H10.375C8.68625 18.6875 7.3125 17.3138 7.3125 15.625V10.375C7.3125 8.68625 8.68625 7.3125 10.375 7.3125H15.625C17.3138 7.3125 18.6875 8.68625 18.6875 10.375V15.625Z"
+                                      fill="#1E1E1E" />
+                                <path d="M13 9.5C11.0671 9.5 9.5 11.0671 9.5 13C9.5 14.9329 11.0671 16.5 13 16.5C14.9329 16.5 16.5 14.9329 16.5 13C16.5 11.0671 14.9329 9.5 13 9.5ZM13 15.1875C11.7943 15.1875 10.8125 14.2057 10.8125 13C10.8125 11.7934 11.7943 10.8125 13 10.8125C14.2057 10.8125 15.1875 11.7934 15.1875 13C15.1875 14.2057 14.2057 15.1875 13 15.1875Z"
+                                      fill="#1E1E1E" />
+                                <path d="M16.7625 9.70375C17.0201 9.70375 17.2289 9.49494 17.2289 9.23737C17.2289 8.9798 17.0201 8.771 16.7625 8.771C16.5049 8.771 16.2961 8.9798 16.2961 9.23737C16.2961 9.49494 16.5049 9.70375 16.7625 9.70375Z"
+                                      fill="#1E1E1E" />
+                            </g>
+                        </svg>
+                        <h6>
+                            <span>COLORING</span>
+                            Instagram
+                        </h6>
+                    </a>
+                    <img src="~/haircut/html-files/buret-html/assets/image/hair-salon/gallery-image-4.png" alt="">
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="single-gallery-img">
+                    <a href="https://www.instagram.com/" class="view-btn">
+                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <rect width="26" height="26" rx="5" fill="#E5E342" />
+                            <g>
+                                <path d="M15.625 6H10.375C7.95913 6 6 7.95913 6 10.375V15.625C6 18.0409 7.95913 20 10.375 20H15.625C18.0409 20 20 18.0409 20 15.625V10.375C20 7.95913 18.0409 6 15.625 6ZM18.6875 15.625C18.6875 17.3138 17.3138 18.6875 15.625 18.6875H10.375C8.68625 18.6875 7.3125 17.3138 7.3125 15.625V10.375C7.3125 8.68625 8.68625 7.3125 10.375 7.3125H15.625C17.3138 7.3125 18.6875 8.68625 18.6875 10.375V15.625Z"
+                                      fill="#1E1E1E" />
+                                <path d="M13 9.5C11.0671 9.5 9.5 11.0671 9.5 13C9.5 14.9329 11.0671 16.5 13 16.5C14.9329 16.5 16.5 14.9329 16.5 13C16.5 11.0671 14.9329 9.5 13 9.5ZM13 15.1875C11.7943 15.1875 10.8125 14.2057 10.8125 13C10.8125 11.7934 11.7943 10.8125 13 10.8125C14.2057 10.8125 15.1875 11.7934 15.1875 13C15.1875 14.2057 14.2057 15.1875 13 15.1875Z"
+                                      fill="#1E1E1E" />
+                                <path d="M16.7625 9.70375C17.0201 9.70375 17.2289 9.49494 17.2289 9.23737C17.2289 8.9798 17.0201 8.771 16.7625 8.771C16.5049 8.771 16.2961 8.9798 16.2961 9.23737C16.2961 9.49494 16.5049 9.70375 16.7625 9.70375Z"
+                                      fill="#1E1E1E" />
+                            </g>
+                        </svg>
+                        <h6>
+                            <span>COLORING</span>
+                            Instagram
+                        </h6>
+                    </a>
+                    <img src="~/haircut/html-files/buret-html/assets/image/hair-salon/gallery-image-5.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<link href="~/css/indexfixs.css" rel="stylesheet" />
+<script src="~/haircut/html-files/buret-html/assets/js/jquery-3.7.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Fetch the partial view dynamically
+        $.get('/Home/GetServiceMenuPartial')
+            .done(function (data) {
+                // Populate the container with the partial view
+                $('#service-menu-container').html(data);
+            })
+            .fail(function () {
+                // Display an error message if the request fails
+                $('#service-menu-container').html('<p>Error loading data</p>');
+            });
+        $.get('/Home/GetStoryPartial')
+            .done(function (data) {
+                $('#story-section-container').html(data);
+            })
+            .fail(function () {
+                $('#story-section-container').html('<p>Error loading story content</p>');
+            });
+    });
+
+</script>
+
+
+<script>
+    $(document).ready(function () {
+        // Load the service menu
+        $.get('/Home/GetServiceMenuPartial')
+            .done(function (data) {
+                $('#service-menu-container').html(data);
+            })
+            .fail(function (xhr, status, error) {
+                console.error("Service menu error:", error);
+                $('#service-menu-container').html('<p>Error loading services menu. Please try again later.</p>');
+            });
+
+        // Load the story section
+        $.get('/Home/GetStoryPartial')
+            .done(function (data) {
+                $('#story-section-container').html(data);
+            })
+            .fail(function (xhr, status, error) {
+                console.error("Story section error:", error);
+                $('#story-section-container').html('<p>Error loading story content. Please try again later.</p>');
+            });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+
+        // 1) Load categories
+        $.get('/Home/GetCategoriesPartial')
+            .done(function (data) {
+                $('#categories-container').html(data);
+
+                // After categories have loaded, attach click handlers to each button
+                $('#dynamicCategoryTabs .nav-link').on('click', function () {
+                    // Remove .active from all category buttons
+                    $('#dynamicCategoryTabs .nav-link').removeClass('active');
+                    // Add .active to the clicked button
+                    $(this).addClass('active');
+
+                    var categoryId = $(this).data('category-id');
+
+                    // 2) Load services for the clicked category
+                    loadServices(categoryId);
+                });
+
+                // Optionally: auto-click the first category
+                // so the user immediately sees some services
+                var firstButton = $('#dynamicCategoryTabs .nav-link').first();
+                if (firstButton.length > 0) {
+                    firstButton.addClass('active');
+                    loadServices(firstButton.data('category-id'));
+                }
+            })
+            .fail(function () {
+                $('#categories-container').html('<p>Error loading categories.</p>');
+            });
+
+        // Function to load services for a given category
+        function loadServices(categoryId) {
+            // Optionally: show a loading spinner / text
+            $('#services-container').html('<p>Loading services...</p>');
+
+            $.get('/Home/ServicesPartial', { categoryId: categoryId })
+                .done(function (data) {
+                    $('#services-container').html(data);
+                })
+                .fail(function () {
+                    $('#services-container').html('<p>Error loading services.</p>');
+                });
+        }
+
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        // 1) Load categories partial
+        $.get('/Home/GetCategoriesPartial')
+            .done(function (data) {
+                $('#categories-container').html(data);
+
+                // After categories load, attach click handler to each button
+                $('#categories-container button.nav-link').on('click', function () {
+                    // Remove active class from all
+                    $('#categories-container button.nav-link').removeClass('active');
+                    // Add active to the clicked one
+                    $(this).addClass('active');
+
+                    var catId = $(this).data('category-id');
+                    // 2) Load services partial for this category
+                    loadServices(catId);
+                });
+
+                // Optional: auto-load the first category
+                var firstBtn = $('#categories-container button.nav-link').first();
+                if (firstBtn.length > 0) {
+                    firstBtn.trigger('click');
+                }
+            })
+            .fail(function () {
+                $('#categories-container').html('<p>Error loading categories.</p>');
+            });
+
+        function loadServices(categoryId) {
+            // Show a loading message or spinner
+            $('#services-container').html('<p>Loading services...</p>');
+
+            $.get('/Home/ServicesPartial', { categoryId: categoryId })
+                .done(function (data) {
+                    $('#services-container').html(data);
+                })
+                .fail(function () {
+                    $('#services-container').html('<p>Error loading services.</p>');
+                });
+        }
+    });
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+        // When the user switches to a tab
+        $('button[data-bs-toggle="tab"]').on('shown.bs.tab', function (e) {
+            var clickedTab = $(e.target); // e.g. #him-tab or #her-tab
+            var targetPane = clickedTab.data('bs-target'); // "#him" or "#her"
+
+            // Decide which category ID to load
+            var catId = (clickedTab.attr('id') === 'him-tab') ? 1 : 2;
+
+            // AJAX call to /Home/ServicesPartial?categoryId=...
+            $.get('/Home/ServicesPartial', { categoryId: catId })
+                .done(function (partialHtml) {
+                    // Insert the partial into the correct pane
+                    $(targetPane).html(partialHtml);
+                })
+                .fail(function () {
+                    $(targetPane).html('<p>Error loading services.</p>');
+                });
+        });
+
+        // Optionally auto-trigger the "Him" tab so user sees it on page load
+        $('#him-tab').trigger('shown.bs.tab');
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        // 1) Ajax GET to /Home/GetFaqPartial
+        $.get('/Home/GetFaqPartial')
+            .done(function (partialHtml) {
+                // Insert that partial HTML in #faq-container
+                $('#faq-container').html(partialHtml);
+
+                // 2) Re-initialize WOW.js if needed (because content loaded dynamically)
+                if (typeof WOW !== 'undefined') {
+                    new WOW().init();
+                }
+            })
+            .fail(function () {
+                $('#faq-container').html('<p>Error loading FAQs.</p>');
+            });
+    });
+</script>

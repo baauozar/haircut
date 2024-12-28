@@ -1,0 +1,28 @@
+﻿@model IEnumerable<HaircuteUI.UIViewModel.BeautyCardInfoUIViewModel>
+
+<div class="row g-lg-4 g-4">
+    @if (!Model.Any())
+    {
+        <div class="col-12">
+            <p>No info cards found.</p>
+        </div>
+    }
+    else
+    {
+        @foreach (var info in Model)
+        {
+            <div class="col-lg-3 col-md-6 col-sm-6 sigle-info-card d-flex justify-content-start">
+                <div class="info-card">
+                    <div class="info-image">
+                        <!-- Use your DB-based image path or fallback -->
+                        <img src="@info.ImagePath" alt="@info.ImagePath" />
+                    </div>
+                    <div class="info-content">
+                        <h5>@info.Title</h5>
+                        <p>@info.Description</p>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>

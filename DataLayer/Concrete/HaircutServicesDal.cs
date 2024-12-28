@@ -18,7 +18,13 @@ namespace DataLayer.Concrete
             _context = context;
         }
 
-  
+        public async Task<IEnumerable<HaircutService>> GetAllCategories()
+        {
+            return await _context.HaircutServices
+                                .Where(h => h.HaircutServicesCategory != null) // Exclude items without a category
+                                .Include(h => h.HaircutServicesCategory)
+                                .ToListAsync();
+        }
 
         public async Task<IEnumerable<HaircutService>> GetServicesByCategoryAsync(int categoryId)
         {
@@ -26,5 +32,6 @@ namespace DataLayer.Concrete
                 .Where(h => h.ServiceCategoryId == categoryId)
                 .ToListAsync();
         }
+
     }
 }

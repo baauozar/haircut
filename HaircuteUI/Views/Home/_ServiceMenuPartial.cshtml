@@ -1,0 +1,34 @@
+﻿@model IEnumerable<HaircuteUI.UIViewModel.HaircutMenuUIViewModel>
+
+<div class="survice-menu">
+    @foreach (var category in Model)
+    {
+        <h5>@category.CategoryName.ToUpper()</h5>
+        <ul>
+            @if (category.MenuItems != null && category.MenuItems.Any())
+            {
+                <!-- Table Headers -->
+                <li class="header-row">
+                    <span class="header-name">Service</span>
+                    <span class="header-time">Time</span>
+                    <span class="header-price">Price</span>
+                </li>
+
+                <!-- Menu Items -->
+                @foreach (var item in category.MenuItems)
+                {
+                    <li class="menu-item">
+                        <span class="menu-name">@item.Name</span>
+                        <span class="menu-time">@item.Time</span>
+                        <span class="menu-price">$@item.Price</span>
+                    </li>
+                }
+            }
+            else
+            {
+                <li>No services available</li>
+            }
+        </ul>
+    }
+   
+</div>

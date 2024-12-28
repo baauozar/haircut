@@ -1,0 +1,89 @@
+﻿@model List<HaircuteUI.UIViewModel.BeautyCategoryUIViewModel>
+
+<div class="treatment-menu-tab-section pt-120 mb-120">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-10">
+                <!-- Category Tabs -->
+                <div class="treatment-menu-nav-area">
+                    <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                        @foreach (var category in Model)
+                        {
+                            <li class="nav-item" role="presentation">
+                                <div class="nav-link @(category == Model.First() ? "active" : "")"
+                                     id="pills-@category.Id-tab"
+                                     data-bs-toggle="pill"
+                                     data-bs-target="#pills-@category.Id"
+                                     role="tab"
+                                     aria-controls="pills-@category.Id"
+                                     aria-selected="@(category == Model.First() ? "true" : "false")"
+                                     data-category-id="@category.Id">
+                                    <div class="icon">
+                                        <img src="@category.IconPath" alt="@category.Name" width="40" height="40">
+                                    </div>
+                                    <div class="content">
+                                        <h6>@category.Name</h6>
+                                    </div>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                    <p>** Select above any option & view service menu **</p>
+                </div>
+
+                <!-- Tab Content -->
+                <div class="treatment-menu-tab-area">
+                    <div class="tab-content" id="pills-tabContent">
+                        @foreach (var category in Model)
+                        {
+                            <div class="tab-pane fade @(category == Model.First() ? "show active" : "")"
+                                 id="pills-@category.Id"
+                                 role="tabpanel"
+                                 aria-labelledby="pills-@category.Id-tab">
+                                <div class="treatment-menu-wrap">
+                                    <div class="treatment-menu-title-area">
+                                        <h4>@category.Name TREATMENT</h4>
+                                    </div>
+                                    <div class="treatment-menu-table-area">
+                                        <table class="eg-table2">
+                                            <thead>
+                                                <tr>
+                                                    <th>EXPAND</th>
+                                                    <th class="service">SERVICE NAME</th>
+                                                    <th>DURATION</th>
+                                                    <th>PRICE</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var item in category.BeautyMenuItems)
+                                                {
+                                                    <tr>
+                                                        <td>
+                                                            <div class="expand-btn">
+                                                                <i class="bi bi-plus-lg"></i>
+                                                            </div>
+                                                        </td>
+                                                        <td class="table-product">
+                                                            <div class="service-area">
+                                                                <h6>@item.ServiceName</h6>
+                                                                <div class="service-content">
+                                                                    <p>@item.Description</p>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>@item.Duration</td>
+                                                        <td class="price">$@item.Price</td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

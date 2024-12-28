@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace DataLayer.Abstract
 {
-    public interface IHairCutTeammemberDal : IGenericRepository<HairCutTeammember>
+  /*  public interface IHairCutTeammemberDal : IGenericRepository<HairCutTeammember>
     {
     
-    }
+    }*/
 }

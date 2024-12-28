@@ -1,0 +1,23 @@
+﻿@model IEnumerable<HaircuteUI.UIViewModel.HaircutServicesCategoryUIViewModel>
+
+<ul class="nav nav-tabs" id="dynamicCategoryTabs" role="tablist">
+    @foreach (var (cat, idx) in Model.Select((c, i) => (c, i)))
+    {
+        var activeClass = (idx == 0) ? "active" : "";
+        var selectedAttr = (idx == 0) ? "true" : "false";
+
+        <li class="nav-item" role="presentation">
+            <button class="nav-link @activeClass"
+                    id="tab-@cat.Id"
+                    data-bs-toggle="tab"
+                    data-bs-target="#cat-@cat.Id"
+                    type="button"
+                    role="tab"
+                    aria-controls="cat-@cat.Id"
+                    aria-selected="@selectedAttr"
+                    data-category-id="@cat.Id">
+                @cat.Name
+            </button>
+        </li>
+    }
+</ul>

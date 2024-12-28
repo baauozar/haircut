@@ -1,12 +1,14 @@
 ﻿using BusinessLayer.Interfaces;
 using EntityLayer;
 using HaircuteUI.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Reflection.Metadata.Ecma335;
 
 namespace HaircuteUI.Areas.Admin.Controllers
 {
-    [Area("Admin")]
+  /*  [Area("Admin")]
+    [Authorize(Policy = "AdminOnly")]
     public class HairCutTeammemberController : Controller
     {
         private readonly IHairCutTeammemberService _service;
@@ -97,5 +99,5 @@ namespace HaircuteUI.Areas.Admin.Controllers
             TempData["NotificationMessage"] = "Worker Deleted successfully!";
             return Json(new {success=true});
         }
-    }
+    }*/
 }

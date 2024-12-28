@@ -10,6 +10,7 @@ namespace DataLayer.Abstract
     public interface IHaircutServicesDal : IGenericRepository<HaircutService>
     {
         Task<IEnumerable<HaircutService>> GetServicesByCategoryAsync(int categoryId);
+        Task<IEnumerable<HaircutService>> GetAllCategories();
 
     }
 }

@@ -1,46 +1,92 @@
 ﻿using BusinessLayer.Interfaces;
 using EntityLayer;
 using HaircuteUI.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HaircuteUI.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Policy = "AdminOnly")]
     public class HaircutServicesController : Controller
     {
         private readonly IHaircutServicesService _service;
         private readonly IHaircutServicesCategoryService _categoryService;
-        private readonly IHairCutSupServicesService _subService;
+       
 
-        public HaircutServicesController(IHaircutServicesService service, IHaircutServicesCategoryService categoryService, IHairCutSupServicesService subService)
+        public HaircutServicesController(IHaircutServicesService service, IHaircutServicesCategoryService categoryService)
         {
             _service = service;
             _categoryService = categoryService;
-            _subService = subService;
+          
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int?categoryid)
         {
-            var list = await _service.GetAllAsync();
-            return View(list);
-        }
-
-        public async Task<IActionResult> Create()
-        {
-            var vm = new HaircutServicesViewModel
+            var categories = await _categoryService.GetAllAsync();
+            IEnumerable<HaircutService> haircutMenuItems;
+            if (categoryid.HasValue)
             {
-                Categories = await _categoryService.GetAllAsync()
-            };
-            return View(vm);
+                haircutMenuItems = await _service.GetServicesByCategoryAsync(categoryid.Value);
+            }
+            else
+            {
+                haircutMenuItems = await _service.GetAllAsync();
+            }
+            var haircutMenuItem = await _service.GetAllAsync();
+            var viewModel = haircutMenuItems.Select(item => new HaircutServicesViewModel
+            {
+                Id = item.Id,
+                Title = item.Title,
+                Description = item.Description,
+                ImagePath = item.ImagePath,
+                ServiceCategoryId = item.ServiceCategoryId,
+                ServiceCategory = categories.FirstOrDefault(c => c.Id == item.ServiceCategoryId)?.Name??"deleted category"
+            }).ToList();
+            return View(viewModel);
+        }
+        [HttpGet]
+        public async Task<JsonResult> GetCategories()
+        {
+            try
+            {
+                // Fetch categories using the service
+                var categories = await _categoryService.GetAllAsync();
+
+                // Return the data in the required format
+                return Json(categories.Select(c => new
+                {
+                    id = c.Id,       // ID of the category
+                    name = c.Name    // Name of the category
+                }));
+            }
+            catch (Exception ex)
+            {
+                // Log the error
+                return Json(new { error = ex.Message });
+            }
+        }
+
+
+
+
+
+
+
+        public IActionResult Create()
+        {
+         
+            return PartialView("_Create",new HaircutServicesViewModel());
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(HaircutServicesViewModel vm)
         {
             if (!ModelState.IsValid)
             {
-                vm.Categories = await _categoryService.GetAllAsync();
-                return View(vm);
+              
+                return PartialView("_Create",vm);
             }
 
             var entity = new HaircutService
@@ -53,25 +99,14 @@ namespace HaircuteUI.Areas.Admin.Controllers
 
             await _service.AddAsync(entity);
 
-            // entity.Id is now available if needed after Add + SaveChanges (done inside AddAsync)
-            // If you need sub-services creation at creation time:
-            foreach (var s in vm.SubServices)
-            {
-                var subEntity = new HaircutSupService
-                {
-                    Name = s.Name,
-                    Description = s.Description,
-                    ServiceId = entity.Id
-                };
-                await _subService.AddAsync(subEntity);
-            }
+            TempData["NotificationMessage"] = "Haircut services Has Been Create successfully!";
 
-            return RedirectToAction(nameof(Index));
+            return Json(new {success=true});
         }
 
-     /*   public async Task<IActionResult> Edit(int id)
+        public async Task<IActionResult> Edit(int id)
         {
-            var service = await _service.GetServiceWithSubServicesAsync(id);
+            var service = await _service.GetByIdAsync(id);
             if (service == null) return NotFound();
 
             var vm = new HaircutServicesViewModel
@@ -80,26 +115,21 @@ namespace HaircuteUI.Areas.Admin.Controllers
                 Title = service.Title ?? "",
                 Description = service.Description,
                 ImagePath = service.ImagePath ?? "",
-                ServiceCategoryId = service.ServiceCategoryId,
-                Categories = await _categoryService.GetAllAsync(),
-                SubServices = service.HairCutSupServices?
-                              .Select(x => new HairCutSupServicesViewModel
-                              {
-                                  Id = x.Id,
-                                  Name = x.Name ?? "",
-                                  Description = x.Description
-                              }).ToList() ?? new()
+                ServiceCategoryId = service.ServiceCategoryId
+             
+              
             };
-            return View(vm);
-        }*/
+            return PartialView("_Edit",vm);
+        }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(HaircutServicesViewModel vm)
         {
             if (!ModelState.IsValid)
             {
-                vm.Categories = await _categoryService.GetAllAsync();
-                return View(vm);
+               
+                return PartialView("_Edit",vm);
             }
 
             var entity = await _service.GetByIdAsync(vm.Id);
@@ -111,51 +141,16 @@ namespace HaircuteUI.Areas.Admin.Controllers
             entity.ImagePath = vm.ImagePath;
             entity.ServiceCategoryId = vm.ServiceCategoryId;
             await _service.UpdateAsync(entity);
+            TempData["NotificationMessage"] = "HairCut Services details Has Been Edit successfully!";
 
-            // Handle sub-services
-            var existingSubs = await _subService.GetByServiceIdAsync(entity.Id);
-            var vmSubs = vm.SubServices ?? new();
-
-            // Delete sub-services not in VM
-            var toDelete = existingSubs.Where(es => !vmSubs.Any(vs => vs.Id == es.Id)).ToList();
-            foreach (var del in toDelete)
-                await _subService.SoftDeleteAsync(del.Id);
-
-            // Add or update subs from VM
-            foreach (var vs in vmSubs)
-            {
-                if (vs.Id == 0)
-                {
-                    // New sub-service
-                    var newSub = new HaircutSupService
-                    {
-                        Name = vs.Name,
-                        Description = vs.Description,
-                        ServiceId = entity.Id
-                    };
-                    await _subService.AddAsync(newSub);
-                }
-                else
-                {
-                    // Update existing
-                    var es = existingSubs.First(x => x.Id == vs.Id);
-                    es.Name = vs.Name;
-                    es.Description = vs.Description;
-                    await _subService.UpdateAsync(es);
-                }
-            }
-
-            return RedirectToAction(nameof(Index));
+            return Json(new { success = true });
         }
 
         public async Task<IActionResult> Delete(int id)
         {
             await _service.SoftDeleteAsync(id);
-            // If cascade delete isn't set, also delete sub-services manually:
-            var subs = await _subService.GetByServiceIdAsync(id);
-            foreach (var s in subs) await _subService.SoftDeleteAsync(s.Id);
-
-            return RedirectToAction(nameof(Index));
+            TempData["NotificationMessage"] = "HairCut Services Has Been Delete successfully!";
+            return Json(new { success = true });
         }
     }
 }

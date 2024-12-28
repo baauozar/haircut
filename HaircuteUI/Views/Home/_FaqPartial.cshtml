@@ -1,0 +1,85 @@
+﻿@model IEnumerable<HaircuteUI.UIViewModel.FaqUIViewModel>
+
+<div class="faq-area">
+    <div class="faq-wrap">
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            @if (!Model.Any())
+            {
+                <p>No FAQs found.</p>
+            }
+            else
+            {
+                @foreach (var (faq, i) in Model.Select((f, idx) => (f, idx)))
+                {
+                    // Unique IDs for each item
+                    var headingId = $"flush-heading{i}";
+                    var collapseId = $"flush-collapse{i}";
+
+                    // Show the first FAQ expanded
+                    var showClass = (i == 0) ? "show" : "";
+                    var collapsedClass = (i == 0) ? "" : "collapsed";
+
+                    // WOW animations (staggered)
+                    var wowDelay = 200 + (i * 100); // e.g. 200ms, 300ms, 400ms
+
+                    <div class="accordion-item wow animate fadeInUp"
+                         data-wow-delay="@($"{wowDelay}ms")"
+                         data-wow-duration="1500ms">
+                        <h5 class="accordion-header" id="@headingId">
+                            <button class="accordion-button @collapsedClass"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#@collapseId"
+                                    aria-expanded="@((i == 0).ToString().ToLower())"
+                                    aria-controls="@collapseId">
+                                @faq.quastion
+                            </button>
+                        </h5>
+                        <div id="@collapseId"
+                             class="accordion-collapse collapse @showClass"
+                             aria-labelledby="@headingId"
+                             data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <!-- The main Answer text from DB -->
+                                @faq.Answer
+
+                                <!-- Here is the static "Opening Hours" block, appended to every answer -->
+                                <div class="opening-time" style="margin-top:1rem;">
+                                    <h6>Opening Hours :</h6>
+                                    <ul>
+                                        <li>
+                                            <span>Sat - Tue</span>
+                                            <svg width="24" height="1" viewBox="0 0 24 1"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <rect width="24" height="1" fill-opacity="0.3"></rect>
+                                            </svg>
+                                            <span>10AM - 7PM</span>
+                                        </li>
+                                        <li>
+                                            <span>Wed - Thu</span>
+                                            <svg width="24" height="1" viewBox="0 0 24 1"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <rect width="24" height="1" fill-opacity="0.3"></rect>
+                                            </svg>
+                                            <span>8AM - 6PM</span>
+                                        </li>
+                                        <li>
+                                            <span>Sunday</span>
+                                            <svg width="24" height="1" viewBox="0 0 24 1"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <rect width="24" height="1" fill-opacity="0.3"></rect>
+                                            </svg>
+                                            <span>CLOSED</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div><!-- accordion-body -->
+                        </div><!-- accordion-collapse -->
+                    </div>
+
+                    <!-- accordion-item -->
+                }
+            }
+        </div><!-- accordion-flush -->
+    </div><!-- faq-wrap -->
+</div><!-- faq-area -->

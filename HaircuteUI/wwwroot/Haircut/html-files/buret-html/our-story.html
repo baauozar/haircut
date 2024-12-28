@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Swiper link -->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <!-- fancybox link -->
+    <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
+    <!-- Animation css link -->
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <!-- Bootstrap css link -->
+    <link rel="stylesheet" href="assets/css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- boxicon link -->
+    <link rel="stylesheet" href="assets/css/boxicons.min.css">
+    <!-- My css link -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Buret - Beauty Salon and SPA HTML Template</title>
+    <link rel="icon" href="assets/image/hair-salon/fav-icon.svg" type="image/gif" sizes="20x20">
+</head>
+
+
+<body>
+
+    <header class="header-area buret">
+        <div class="header-wrapper">
+            <div class="header-logo">
+                <a href="index.html"><img alt="image" class="img-fluid" src="assets/image/icon/buret-logo.svg"></a>
+            </div>
+            <div class="main-menu">
+                <div class="mobile-menu-logo">
+                    <a href="index.html"><img alt="image" class="img-fluid" src="assets/image/icon/buret-logo.svg"></a>
+                </div>
+                <ul class="menu-list">
+                    <li class="menu-item-has-children">
+                        <a href="#" class="drop-down">HOME</a><i class="bi bi-plus dropdown-icon"></i>
+                        <ul class="sub-menu">
+                            <li><a href="index.html">Hair Salon</a></li>
+                            <li><a href="beauty-spa/beauty-spa.html">Beauty & Spa</a></li>
+                            <li><a href="skin-care/index.html">Skin Care</a></li>
+                            <li><a href="nail-salon/nail-salon.html">Nail Salon</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children"><a class="drop-down" href="#">HAIR SERVICES</a><i class="bi bi-plus dropdown-icon"></i>
+                        <ul class="sub-menu">
+                            <li><a href="services-01.html">Services-01</a></li>
+                            <li><a href="services-02.html">Services-02</a></li>
+                            <li><a href="services-details.html">Service Details</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="our-story.html">OUR STORY</a></li>
+                    <li><a href="gift-card.html">GIFT CARD</a></li>
+                    <li class="menu-item-has-children">
+                        <a href="#" class="drop-down"> PAGES</a><i class="bi bi-plus dropdown-icon"></i>
+                        <ul class="sub-menu">
+                            <li><a href="our-team.html">Our Team</a></li>
+                            <li>
+                                <a href="product.html">Product</a>
+                                <i class="d-xl-flex d-none bi bi-chevron-right dropdown-icon"></i>
+                                <i class="d-xl-none d-flex bi bi-plus dropdown-icon"></i>
+                                <ul class="sub-menu">
+                                    <li><a href="product.html">Product</a></li>
+                                    <li><a href="product-listing.html">Product Listing</a></li>
+                                    <li><a href="product-details.html">Product Details</a></li>
+                                    <li><a href="cart.html">Cart</a></li>
+                                    <li><a href="checkout.html">CheckOut</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="blog-grid.html">Blog</a>
+                                <i class="d-xl-flex d-none bi bi-chevron-right dropdown-icon"></i>
+                                <i class="d-xl-none d-flex bi bi-plus dropdown-icon"></i>
+                                <ul class="sub-menu">
+                                    <li><a href="blog-grid.html">Blog Grid</a></li>
+                                    <li><a href="blog-details.html">Blog Details</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="review.html">Review</a></li>
+                            <li><a href="faq.html">FAQ's</a></li>
+                            <li><a href="error.html">Error</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html ">CONTACT</a></li>
+                </ul>
+                <div class="d-xl-none d-block">
+                    <div class="mobile-search-area mb-30">
+                        <form>
+                            <div class="form-inner">
+                                <input type="text" placeholder="Enter your keywords">
+                                <button type="submit" class="primary-btn1">Search Now</button>
+                            </div>
+                        </form>
+                    </div>
+                    <a class="primary-btn1" href="booking.html">
+                        BOOK APPOINTMENT
+                        <svg class="arrow" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 9L9 1M9 1C7.22222 1.33333 3.33333 2 1 1M9 1C8.66667 2.66667 8 6.33333 9 9"
+                                stroke="#1E1E1E" stroke-width="1.5" stroke-linecap="round" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="nav-right">
+            <ul>
+                <li>
+                    <div class="search-bar d-xl-flex d-none">
+                        <div class="search-btn">
+                            <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M8.20349 1.44849C6.41514 1.45148 4.70089 2.16323 3.43633 3.42779C2.17178 4.69235 1.46003 6.40659 1.45703 8.19494C1.45853 9.9848 2.16943 11.7011 3.43399 12.9678C4.69855 14.2345 6.41364 14.9482 8.20349 14.9527C9.79089 14.9527 11.2536 14.3943 12.4101 13.4702L16.0578 17.1182C16.2002 17.2505 16.3882 17.3225 16.5825 17.3191C16.7768 17.3157 16.9622 17.2372 17.0998 17.0999C17.2374 16.9627 17.3165 16.7775 17.3204 16.5832C17.3243 16.3889 17.2528 16.2007 17.1208 16.058L13.4731 12.4072C14.4325 11.214 14.9556 9.72887 14.9556 8.19778C14.9556 4.47872 11.9225 1.44849 8.20349 1.44849ZM8.20349 2.95085C11.1118 2.95085 13.4533 5.28943 13.4533 8.19494C13.4533 11.1005 11.1118 13.4532 8.20349 13.4532C5.29514 13.4532 2.95656 11.109 2.95656 8.20061C2.95656 5.29227 5.29514 2.95085 8.20349 2.95085Z" />
+                            </svg>
+                        </div>
+                        <div class="search-input">
+                            <div class="serch-close"></div>
+                            <form>
+                                <div class="search-group">
+                                    <div class="form-inner2">
+                                        <input type="text" placeholder="Enter your keywords">
+                                        <button type="submit"><i class="bi bi-search"></i></button>
+                                    </div>
+                                </div>
+                                <div class="quick-search">
+                                    <ul>
+                                        <li>Quick Search :</li>
+                                        <li><a href="services-01.html">Classic Haircut,</a></li>
+                                        <li><a href="services-01.html">Coloring Services,</a></li>
+                                        <li><a href="services-01.html">Hair Extensions,</a></li>
+                                        <li><a href="services-01.html">Specialty Services,</a></li>
+                                        <li><a href="services-01.html">Haircuts and Styling,</a></li>
+                                        <li><a href="services-01.html">Men's Grooming,</a></li>
+                                        <li><a href="services-01.html">Makeover Package,</a></li>
+                                    </ul>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="user">
+                        <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M11.7135 8.34627C12.8653 7.50628 13.6153 6.14686 13.6153 4.61538C13.6153 2.07046 11.5448 0 8.99989 0C6.45497 0 4.38451 2.07046 4.38451 4.61538C4.38451 6.14686 5.1345 7.50628 6.28629 8.34627C3.42316 9.44191 1.38452 12.2179 1.38452 15.4615C1.38452 16.8613 2.52327 18 3.92298 18H14.0768C15.4765 18 16.6153 16.8613 16.6153 15.4615C16.6153 12.2179 14.5766 9.44191 11.7135 8.34627ZM5.76914 4.61538C5.76914 2.83395 7.21845 1.38463 8.99989 1.38463C10.7813 1.38463 12.2306 2.83395 12.2306 4.61538C12.2306 6.39682 10.7813 7.84617 8.99989 7.84617C7.21845 7.84617 5.76914 6.39682 5.76914 4.61538ZM14.0768 16.6154H3.92298C3.28676 16.6154 2.76915 16.0978 2.76915 15.4615C2.76915 12.0258 5.56421 9.23073 8.99993 9.23073C12.4356 9.23073 15.2307 12.0258 15.2307 15.4615C15.2307 16.0978 14.7131 16.6154 14.0768 16.6154Z" />
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div class="cart-area">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M3.375 4.78125H14.625M6.1875 4.78125V3.51562C6.1875 1.96232 7.44669 0.703125 9 0.703125C10.5533 0.703125 11.8125 1.96232 11.8125 3.51562V4.78125M11.8125 7.59375C11.8125 9.14706 10.5533 10.4062 9 10.4062C7.44669 10.4062 6.1875 9.14706 6.1875 7.59375"
+                                stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M14.625 4.78125L16.0201 15.7131C16.0275 15.772 16.0313 15.8313 16.0312 15.8906C16.0312 16.6673 15.4016 17.2969 14.625 17.2969H3.375C2.59836 17.2969 1.96875 16.6673 1.96875 15.8906C1.96875 15.8305 1.97251 15.7712 1.97986 15.7131L3.375 4.78125"
+                                stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <span>0</span>
+                    </div>
+                </li>
+            </ul>
+            <div class="btn-area d-md-flex d-none">
+                <a class="primary-btn1" href="booking.html">
+                    BOOK APPOINTMENT
+                    <svg class="arrow" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 9L9 1M9 1C7.22222 1.33333 3.33333 2 1 1M9 1C8.66667 2.66667 8 6.33333 9 9"
+                            stroke="#1E1E1E" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                </a>
+            </div>
+            <div class="sidebar-button mobile-menu-btn ">
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- breadcrumb section strats here -->
+    <div class="breadcrumb-section mb-120" style="background-image: linear-gradient(270deg, rgba(0, 0, 0, .55), rgba(0, 0, 0, 0.55) 101.02%), url(assets/image/hair-salon/our-story/breadcrumb-image.jpg);"> 
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 d-flex justify-content-center">
+                    <div class="banner-content text-center">
+                        <h1>COMPANY</h1>
+                        <ul class="breadcrumb-list">
+                            <li><a href="index.html">Home</a></li>
+                            <li>COMPANY</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb section ends here -->
+
+    <!-- our story section strats here -->
+    <div class="our-story-section mb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 wow animate fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
+                    <div class="section-title mb-15">
+                        <span>Our Journey</span>
+                        <h2>OUR STORY <span>HISTORY</span></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+                <div class="col-lg-12">
+                    <div class="story-content">
+                        <p>Hair care and styling have been important in various cultures for
+                            thousands of years. Ancient Egyptians, Greeks, and Romans all had their own hair care
+                            practices and
+                            professionals dedicated to hairdressing.</p>
+                        <p>From ancient barbers to modern salons, the hair care industry has evolved significantly.
+                            Today’s salons
+                            offer a comprehensive range of services and have become important community spaces where
+                            trends are set
+                            and
+                            individual styles are crafted.</p>
+                        <div class="signature-area">
+                            <img src="assets/image/hair-salon/signature-1.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- our story section ends here -->
+
+    <!-- about section strats here -->
+    <div class="our-branch-section mb-120">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="branch-section wow animate fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
+                        <h5>Our Branches</h5>
+                        <div class="btn-area">
+                            <a class="primary-btn1 contact-btn" href="contact.html">
+                                CONTACT
+                                <svg class="arrow" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1 9L9 1M9 1C7.22222 1.33333 3.33333 2 1 1M9 1C8.66667 2.66667 8 6.33333 9 9"
+                                        stroke="#1E1E1E" stroke-width="1.5" stroke-linecap="round" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row gy-5 justify-content-center">
+                <div class="col-lg-3 col-md-6 col-sm-6 d-flex justify-content-center wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+                    <div class="single-branch">
+                        <div class="branch-img">
+                            <img src="assets/image/hair-salon/branch-img.png" alt="">
+                        </div>
+                        <div class="branch-content">
+                            <h6>
+                                <a href="#">
+                                    <span>SHEAR ELEGANCE</span>
+                                    <span class="view-map">VIEW MAP
+                                        <svg class="arrow" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M1 9L9 1M9 1C7.22222 1.33333 3.33333 2 1 1M9 1C8.66667 2.66667 8 6.33333 9 9"
+                                                stroke-width="1.5" stroke-linecap="round" />
+                                        </svg>
+                                    </span>
+                                </a>
+                            </h6>
+                            <p>123 Main Street, Suite 200
+                                Downtown District, Cityville, ST 12345.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-8 col-sm-8 d-flex justify-content-center wow animate fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
+                    <div class="single-branch">
+                        <div class="branch-img">
+                            <img src="assets/image/hair-salon/branch-img2.png" alt="">
+                        </div>
+                        <div class="branch-content">
+                            <h6>
+                                <a href="#">
+                                    <span>VELVETED SNIPS</span>
+                                    <span class="view-map">VIEW MAP
+                                        <svg class="arrow" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M1 9L9 1M9 1C7.22222 1.33333 3.33333 2 1 1M9 1C8.66667 2.66667 8 6.33333 9 9"
+                                                stroke-width="1.5" stroke-linecap="round" />
+                                        </svg>
+                                    </span>
+                                </a>
+                            </h6>
+                            <p>303 University Drive Cityville University Campus, Cityville, ST 12345</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 d-flex justify-content-center wow animate fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
+                    <div class="single-branch">
+                        <div class="branch-img">
+                            <img src="assets/image/hair-salon/branch-img3.png" alt="">
+                        </div>
+                        <div class="branch-content">
+                            <h6>
+                                <a href="#">
+                                    <span>THE HAIR LOFT</span>
+                                    <span class="view-map">VIEW MAP
+                                        <svg class="arrow" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M1 9L9 1M9 1C7.22222 1.33333 3.33333 2 1 1M9 1C8.66667 2.66667 8 6.33333 9 9"
+                                                stroke-width="1.5" stroke-linecap="round" />
+                                        </svg>
+                                    </span>
+                                </a>
+                            </h6>
+                            <p>123 Main Street, Suite 200
+                                Downtown District, Cityville, ST 12345.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- about section ends here -->
+
+    <!-- partner section strats here -->
+    <div class="logo-section mb-120 wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="logo-wrap">
+                        <div class="logo-title">
+                            <h5>We have 5 Brands & 20+ Trusted Partner</h5>
+                        </div>
+                        <div class="logo-area">
+                            <div class="marquee_text">
+                                <a href="#"><img src="assets/image/hair-salon/icon-9.png" alt=""></a>
+                                <a href="#"><img src="assets/image/hair-salon/iogo-10.png" alt=""></a>
+                                <a href="#"><img src="assets/image/hair-salon/iogo-11.png" alt=""></a>
+                                <a href="#"><img src="assets/image/hair-salon/icon-12.png" alt=""></a>
+                                <a href="#"><img src="assets/image/hair-salon/icon-13.png" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- partner section ends here -->
+
+    <!-- feed back section strats here -->
+    <div class="feedback-section mb-120">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title feedback-title wow animate fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
+                        <span>Testimonials</span>
+                        <h2 class="customer">Customer feedback <span>FEEDBACK</span></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row wow animate fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms" >
+                <div class="col-lg-12 pt-50">
+                    <div class="swiper feedback-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="feedback-content">
+                                    <div class="author-area">
+                                        <div class="author-img">
+                                            <img src="assets/image/hair-salon/review/author-image.png" alt="">
+                                            <div class="review-icon">
+                                                <img src="assets/image/hair-salon/google-icon.svg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="author-content">
+                                            <h6>Diana Penelope</h6>
+                                            <span>1 Month Ago</span>
+                                        </div>
+                                    </div>
+                                    <div class="author-text">
+                                        <div class="rating">
+                                            <ul class="star">
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                            </ul>
+                                            <span>(Coloring!)</span>
+                                        </div>
+                                        <p>Amazing Salon! They are very helpful & mindblowing to get services. Providing
+                                            comprehensive care and creativity for nail salon clients.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="feedback-content">
+                                    <div class="author-area">
+                                        <div class="author-img">
+                                            <img src="assets/image/hair-salon/review/author-image2.png" alt="">
+                                            <div class="review-icon">
+                                                <img src="assets/image/hair-salon/google-icon.svg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="author-content">
+                                            <h6>JEcobs Align</h6>
+                                            <span>1 Month Ago</span>
+                                        </div>
+                                    </div>
+                                    <div class="author-text">
+                                        <div class="rating">
+                                            <ul class="star">
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                            </ul>
+                                            <span>(HaiRCUT!)</span>
+                                        </div>
+                                        <p>Amazing Salon! They are very helpful & mindblowing to get services. Providing
+                                            comprehensive care and creativity for nail salon clients.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="feedback-content">
+                                    <div class="author-area">
+                                        <div class="author-img">
+                                            <img src="assets/image/hair-salon/review/author-image3.png" alt="">
+                                            <div class="review-icon">
+                                                <img src="assets/image/hair-salon/google-icon.svg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="author-content">
+                                            <h6>Amelia Kate</h6>
+                                            <span>1 Month Ago</span>
+                                        </div>
+                                    </div>
+                                    <div class="author-text">
+                                        <div class="rating">
+                                            <ul class="star">
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                            </ul>
+                                            <span>(HAIR Extension!)</span>
+                                        </div>
+                                        <p>Amazing Salon! They are very helpful & mindblowing to get services. Providing
+                                            comprehensive care and creativity for nail salon clients.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="feedback-content">
+                                    <div class="author-area">
+                                        <div class="author-img">
+                                            <img src="assets/image/hair-salon/review/author-image.png" alt="">
+                                            <div class="review-icon">
+                                                <img src="assets/image/hair-salon/google-icon.svg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="author-content">
+                                            <h6>Diana Penelope</h6>
+                                            <span>1 Month Ago</span>
+                                        </div>
+                                    </div>
+                                    <div class="author-text">
+                                        <div class="rating">
+                                            <ul class="star">
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                            </ul>
+                                            <span>(Coloring!)</span>
+                                        </div>
+                                        <p>Amazing Salon! They are very helpful & mindblowing to get services. Providing
+                                            comprehensive care and creativity for nail salon clients.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="feedback-content">
+                                    <div class="author-area">
+                                        <div class="author-img">
+                                            <img src="assets/image/hair-salon/review/author-image2.png" alt="">
+                                            <div class="review-icon">
+                                                <img src="assets/image/hair-salon/google-icon.svg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="author-content">
+                                            <h6>JEcobs Align</h6>
+                                            <span>1 Month Ago</span>
+                                        </div>
+                                    </div>
+                                    <div class="author-text">
+                                        <div class="rating">
+                                            <ul class="star">
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                            </ul>
+                                            <span>(HaiRCUT!)</span>
+                                        </div>
+                                        <p>Amazing Salon! They are very helpful & mindblowing to get services. Providing
+                                            comprehensive care and creativity for nail salon clients.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="feedback-content">
+                                    <div class="author-area">
+                                        <div class="author-img">
+                                            <img src="assets/image/hair-salon/review/author-image3.png" alt="">
+                                            <div class="review-icon">
+                                                <img src="assets/image/hair-salon/google-icon.svg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="author-content">
+                                            <h6>Amelia Kate</h6>
+                                            <span>1 Month Ago</span>
+                                        </div>
+                                    </div>
+                                    <div class="author-text">
+                                        <div class="rating">
+                                            <ul class="star">
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                            </ul>
+                                            <span>(HAIR Extension!)</span>
+                                        </div>
+                                        <p>Amazing Salon! They are very helpful & mindblowing to get services. Providing
+                                            comprehensive care and creativity for nail salon clients.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="feedback-content">
+                                    <div class="author-area">
+                                        <div class="author-img">
+                                            <img src="assets/image/hair-salon/review/author-image.png" alt="">
+                                            <div class="review-icon">
+                                                <img src="assets/image/hair-salon/google-icon.svg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="author-content">
+                                            <h6>Diana Penelope</h6>
+                                            <span>1 Month Ago</span>
+                                        </div>
+                                    </div>
+                                    <div class="author-text">
+                                        <div class="rating">
+                                            <ul class="star">
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                            </ul>
+                                            <span>(Coloring!)</span>
+                                        </div>
+                                        <p>Amazing Salon! They are very helpful & mindblowing to get services. Providing
+                                            comprehensive care and creativity for nail salon clients.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="feedback-content">
+                                    <div class="author-area">
+                                        <div class="author-img">
+                                            <img src="assets/image/hair-salon/review/author-image2.png" alt="">
+                                            <div class="review-icon">
+                                                <img src="assets/image/hair-salon/google-icon.svg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="author-content">
+                                            <h6>JEcobs Align</h6>
+                                            <span>1 Month Ago</span>
+                                        </div>
+                                    </div>
+                                    <div class="author-text">
+                                        <div class="rating">
+                                            <ul class="star">
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                                <li><i class="bi bi-star-fill"></i></li>
+                                            </ul>
+                                            <span>(HaiRCUT!)</span>
+                                        </div>
+                                        <p>Amazing Salon! They are very helpful & mindblowing to get services. Providing
+                                            comprehensive care and creativity for nail salon clients.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+                <div class="col-lg-12 d-flex justify-content-center pt-50">
+                    <div class="slider-btn-wrap">
+                        <div class="slider-btn feedback-slider-prev">
+                            <svg width="13" height="14" viewBox="0 0 13 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 13C11 10.5 6 8 3 7C6 6 10.5 4.5 12 1" stroke-width="1.5"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <div class="fractional-pagination fraction-pagi"></div>
+                        <div class="slider-btn feedback-slider-next">
+                            <svg width="13" height="14" viewBox="0 0 13 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1C2 3.5 7 6 10 7C7 8 2.5 9.5 1 13" stroke-width="1.5"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- feed back section ends here -->
+
+    <!-- Video section Start here -->
+    <div class="video-area mb-120">
+        <div class="video-wrapper">
+            <video autoplay="" loop="" muted="" playsinline="" src="assets/video/hair-salon.mp4"></video>
+            <div class="video-content-wrap">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 d-flex justify-content-end">
+                            <div class="video-content">
+                                <h5>Hygiene & Safety</h5>
+                                <p>Strict adherence to hygiene standards, including sanitized tools and equipment.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Video section ends here -->
+
+    <!-- faq section strats here -->
+    <div class="faq-section mb-120">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title faq-title wow animate fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
+                        <span>Our Faq’s</span>
+                        <h2 class="customer">get to know <span>our faq’s</span></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center g-lg-4 gy-5">
+                <div class="col-lg-8 pt-50">
+                    <div class="faq-area">
+                        <div class="faq-wrap">
+                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                                <div class="accordion-item wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+                                    <h5 class="accordion-header" id="flush-headingOne">
+                                        <button class="accordion-button" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                                            aria-expanded="false" aria-controls="flush-collapseOne">What are your salon
+                                            hours?</button>
+                                    </h5>
+                                    <div id="flush-collapseOne" class="accordion-collapse collapse show"
+                                        aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">
+                                            Our salon is open from 8:00 am to 9:00pm, 6 days in a week. We also offer
+                                            extended hours on specific days for your convenience.
+                                            <div class="opening-time">
+                                                <h6>Opening Hours :</h6>
+                                                <ul>
+                                                    <li>
+                                                        <span>Sat - Tue</span>
+                                                        <svg width="24" height="1" viewBox="0 0 24 1"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="24" height="1" fill-opacity="0.3"></rect>
+                                                        </svg>
+                                                        <span>10AM - 7PM</span>
+                                                    </li>
+                                                    <li>
+                                                        <span>Wed - Thu</span>
+                                                        <svg width="24" height="1" viewBox="0 0 24 1"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="24" height="1" fill-opacity="0.3"></rect>
+                                                        </svg>
+                                                        <span>8AM - 6PM</span>
+                                                    </li>
+                                                    <li>
+                                                        <span>Sunday</span>
+                                                        <svg width="24" height="1" viewBox="0 0 24 1"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="24" height="1" fill-opacity="0.3"></rect>
+                                                        </svg>
+                                                        <span>CLOSED</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+                                    <h5 class="accordion-header" id="flush-headingTwo">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
+                                            aria-expanded="false" aria-controls="flush-collapseTwo">How can I book an
+                                            appointment?</button>
+                                    </h5>
+                                    <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                        aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">
+                                            Our salon is open from 8:00 am to 9:00pm, 6 days in a week. We also offer
+                                            extended hours on specific days for your convenience.
+                                            <div class="opening-time">
+                                                <h6>Opening Hours :</h6>
+                                                <ul>
+                                                    <li>
+                                                        <span>Sat - Tue</span>
+                                                        <svg width="24" height="1" viewBox="0 0 24 1"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="24" height="1" fill-opacity="0.3"></rect>
+                                                        </svg>
+                                                        <span>10AM - 7PM</span>
+                                                    </li>
+                                                    <li>
+                                                        <span>Wed - Thu</span>
+                                                        <svg width="24" height="1" viewBox="0 0 24 1"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="24" height="1" fill-opacity="0.3"></rect>
+                                                        </svg>
+                                                        <span>8AM - 6PM</span>
+                                                    </li>
+                                                    <li>
+                                                        <span>Sunday</span>
+                                                        <svg width="24" height="1" viewBox="0 0 24 1"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="24" height="1" fill-opacity="0.3"></rect>
+                                                        </svg>
+                                                        <span>CLOSED</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+                                    <h5 class="accordion-header" id="flush-headingThree">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
+                                            aria-expanded="false" aria-controls="flush-collapseThree">What services do
+                                            you offer?</button>
+                                    </h5>
+                                    <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                        aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">
+                                            Our salon is open from 8:00 am to 9:00pm, 6 days in a week. We also offer
+                                            extended hours on specific days for your convenience.
+                                            <div class="opening-time">
+                                                <h6>Opening Hours :</h6>
+                                                <ul>
+                                                    <li>
+                                                        <span>Sat - Tue</span>
+                                                        <svg width="24" height="1" viewBox="0 0 24 1"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="24" height="1" fill-opacity="0.3"></rect>
+                                                        </svg>
+                                                        <span>10AM - 7PM</span>
+                                                    </li>
+                                                    <li>
+                                                        <span>Wed - Thu</span>
+                                                        <svg width="24" height="1" viewBox="0 0 24 1"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="24" height="1" fill-opacity="0.3"></rect>
+                                                        </svg>
+                                                        <span>8AM - 6PM</span>
+                                                    </li>
+                                                    <li>
+                                                        <span>Sunday</span>
+                                                        <svg width="24" height="1" viewBox="0 0 24 1"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="24" height="1" fill-opacity="0.3"></rect>
+                                                        </svg>
+                                                        <span>CLOSED</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+                                    <h5 class="accordion-header" id="flush-headingFour">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseFour"
+                                            aria-expanded="false" aria-controls="flush-collapseFour">What is your
+                                            cancellation policy?</button>
+                                    </h5>
+                                    <div id="flush-collapseFour" class="accordion-collapse collapse"
+                                        aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">
+                                            Our salon is open from 8:00 am to 9:00pm, 6 days in a week. We also offer
+                                            extended hours on specific days for your convenience.
+                                            <div class="opening-time">
+                                                <h6>Opening Hours :</h6>
+                                                <ul>
+                                                    <li>
+                                                        <span>Sat - Tue</span>
+                                                        <svg width="24" height="1" viewBox="0 0 24 1"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="24" height="1" fill-opacity="0.3"></rect>
+                                                        </svg>
+                                                        <span>10AM - 7PM</span>
+                                                    </li>
+                                                    <li>
+                                                        <span>Wed - Thu</span>
+                                                        <svg width="24" height="1" viewBox="0 0 24 1"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="24" height="1" fill-opacity="0.3"></rect>
+                                                        </svg>
+                                                        <span>8AM - 6PM</span>
+                                                    </li>
+                                                    <li>
+                                                        <span>Sunday</span>
+                                                        <svg width="24" height="1" viewBox="0 0 24 1"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="24" height="1" fill-opacity="0.3"></rect>
+                                                        </svg>
+                                                        <span>CLOSED</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+                                    <h5 class="accordion-header" id="flush-headingFive">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseFive"
+                                            aria-expanded="false" aria-controls="flush-collapseFive">Do you offer
+                                            consultations?</button>
+                                    </h5>
+                                    <div id="flush-collapseFive" class="accordion-collapse collapse"
+                                        aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">
+                                            Our salon is open from 8:00 am to 9:00pm, 6 days in a week. We also offer
+                                            extended hours on specific days for your convenience.
+                                            <div class="opening-time">
+                                                <h6>Opening Hours :</h6>
+                                                <ul>
+                                                    <li>
+                                                        <span>Sat - Tue</span>
+                                                        <svg width="24" height="1" viewBox="0 0 24 1"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="24" height="1" fill-opacity="0.3"></rect>
+                                                        </svg>
+                                                        <span>10AM - 7PM</span>
+                                                    </li>
+                                                    <li>
+                                                        <span>Wed - Thu</span>
+                                                        <svg width="24" height="1" viewBox="0 0 24 1"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="24" height="1" fill-opacity="0.3"></rect>
+                                                        </svg>
+                                                        <span>8AM - 6PM</span>
+                                                    </li>
+                                                    <li>
+                                                        <span>Sunday</span>
+                                                        <svg width="24" height="1" viewBox="0 0 24 1"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="24" height="1" fill-opacity="0.3"></rect>
+                                                        </svg>
+                                                        <span>CLOSED</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+                                    <h5 class="accordion-header" id="flush-headingSix">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseSix"
+                                            aria-expanded="false" aria-controls="flush-collapseSix">How often should I
+                                            get my hair trimmed?</button>
+                                    </h5>
+                                    <div id="flush-collapseSix" class="accordion-collapse collapse"
+                                        aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">
+                                            Our salon is open from 8:00 am to 9:00pm, 6 days in a week. We also offer
+                                            extended hours on specific days for your convenience.
+                                            <div class="opening-time">
+                                                <h6>Opening Hours :</h6>
+                                                <ul>
+                                                    <li>
+                                                        <span>Sat - Tue</span>
+                                                        <svg width="24" height="1" viewBox="0 0 24 1"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="24" height="1" fill-opacity="0.3"></rect>
+                                                        </svg>
+                                                        <span>10AM - 7PM</span>
+                                                    </li>
+                                                    <li>
+                                                        <span>Wed - Thu</span>
+                                                        <svg width="24" height="1" viewBox="0 0 24 1"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="24" height="1" fill-opacity="0.3"></rect>
+                                                        </svg>
+                                                        <span>8AM - 6PM</span>
+                                                    </li>
+                                                    <li>
+                                                        <span>Sunday</span>
+                                                        <svg width="24" height="1" viewBox="0 0 24 1"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="24" height="1" fill-opacity="0.3"></rect>
+                                                        </svg>
+                                                        <span>CLOSED</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button-area text-center wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+                        <a class="primay-btn2 enqiry-btn" href="contact.html">
+                            <svg class="arrow" width="10" height="10" viewBox="0 0 10 10"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 9L9 1M9 1C7.22222 1.33333 3.33333 2 1 1M9 1C8.66667 2.66667 8 6.33333 9 9" stroke-width="1.5" stroke-linecap="round" />
+                            </svg>
+                            <span>HAVE ANY <br>
+                                ENQIRY</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- faq section ends here -->
+
+    <!-- Galleary section strats here -->
+    <div class="gallery-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="sub-title mb-30">
+                        <h6>
+                            <svg width="21" height="13" viewBox="0 0 21 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M9.75024 10.9373C8.83968 11.6054 7.71592 12 6.5 12C3.46243 12 1 9.53757 1 6.5C1 3.46243 3.46243 1 6.5 1C7.71592 1 8.83968 1.39457 9.75024 2.06265C8.66454 3.2243 8 4.78454 8 6.5C8 8.21546 8.66454 9.7757 9.75024 10.9373ZM10.5 11.6238C9.39703 12.4861 8.00853 13 6.5 13C2.91015 13 0 10.0899 0 6.5C0 2.91015 2.91015 0 6.5 0C8.00853 0 9.39703 0.513889 10.5 1.37616C11.603 0.513889 12.9915 0 14.5 0C18.0899 0 21 2.91015 21 6.5C21 10.0899 18.0899 13 14.5 13C12.9915 13 11.603 12.4861 10.5 11.6238ZM11.2498 2.06265C12.1603 1.39457 13.2841 1 14.5 1C17.5376 1 20 3.46243 20 6.5C20 9.53757 17.5376 12 14.5 12C13.2841 12 12.1603 11.6054 11.2498 10.9373C12.3355 9.7757 13 8.21546 13 6.5C13 4.78454 12.3355 3.2243 11.2498 2.06265ZM10.5 2.72506C11.4299 3.71007 12 5.03846 12 6.5C12 7.96154 11.4299 9.28993 10.5 10.2749C9.57008 9.28993 9 7.96154 9 6.5C9 5.03846 9.57008 3.71007 10.5 2.72506Z"
+                                    fill="#1E1E1E" />
+                            </svg>
+                            INSTAGRAM FEED
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper gallery-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="single-gallery-img">
+                        <a href="https://www.instagram.com/" class="view-btn">
+                            <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="26" height="26" rx="5" fill="#E5E342" />
+                                <g>
+                                    <path
+                                        d="M15.625 6H10.375C7.95913 6 6 7.95913 6 10.375V15.625C6 18.0409 7.95913 20 10.375 20H15.625C18.0409 20 20 18.0409 20 15.625V10.375C20 7.95913 18.0409 6 15.625 6ZM18.6875 15.625C18.6875 17.3138 17.3138 18.6875 15.625 18.6875H10.375C8.68625 18.6875 7.3125 17.3138 7.3125 15.625V10.375C7.3125 8.68625 8.68625 7.3125 10.375 7.3125H15.625C17.3138 7.3125 18.6875 8.68625 18.6875 10.375V15.625Z"
+                                        fill="#1E1E1E" />
+                                    <path
+                                        d="M13 9.5C11.0671 9.5 9.5 11.0671 9.5 13C9.5 14.9329 11.0671 16.5 13 16.5C14.9329 16.5 16.5 14.9329 16.5 13C16.5 11.0671 14.9329 9.5 13 9.5ZM13 15.1875C11.7943 15.1875 10.8125 14.2057 10.8125 13C10.8125 11.7934 11.7943 10.8125 13 10.8125C14.2057 10.8125 15.1875 11.7934 15.1875 13C15.1875 14.2057 14.2057 15.1875 13 15.1875Z"
+                                        fill="#1E1E1E" />
+                                    <path
+                                        d="M16.7625 9.70375C17.0201 9.70375 17.2289 9.49494 17.2289 9.23737C17.2289 8.9798 17.0201 8.771 16.7625 8.771C16.5049 8.771 16.2961 8.9798 16.2961 9.23737C16.2961 9.49494 16.5049 9.70375 16.7625 9.70375Z"
+                                        fill="#1E1E1E" />
+                                </g>
+                            </svg>
+                            <h6>
+                                <span>COLORING</span>
+                                Instagram
+                            </h6>
+                        </a>
+                        <img src="assets/image/hair-salon/gallery-image.png" alt="">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="single-gallery-img">
+                        <a href="https://www.instagram.com/" class="view-btn">
+                            <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="26" height="26" rx="5" fill="#E5E342" />
+                                <g>
+                                    <path
+                                        d="M15.625 6H10.375C7.95913 6 6 7.95913 6 10.375V15.625C6 18.0409 7.95913 20 10.375 20H15.625C18.0409 20 20 18.0409 20 15.625V10.375C20 7.95913 18.0409 6 15.625 6ZM18.6875 15.625C18.6875 17.3138 17.3138 18.6875 15.625 18.6875H10.375C8.68625 18.6875 7.3125 17.3138 7.3125 15.625V10.375C7.3125 8.68625 8.68625 7.3125 10.375 7.3125H15.625C17.3138 7.3125 18.6875 8.68625 18.6875 10.375V15.625Z"
+                                        fill="#1E1E1E" />
+                                    <path
+                                        d="M13 9.5C11.0671 9.5 9.5 11.0671 9.5 13C9.5 14.9329 11.0671 16.5 13 16.5C14.9329 16.5 16.5 14.9329 16.5 13C16.5 11.0671 14.9329 9.5 13 9.5ZM13 15.1875C11.7943 15.1875 10.8125 14.2057 10.8125 13C10.8125 11.7934 11.7943 10.8125 13 10.8125C14.2057 10.8125 15.1875 11.7934 15.1875 13C15.1875 14.2057 14.2057 15.1875 13 15.1875Z"
+                                        fill="#1E1E1E" />
+                                    <path
+                                        d="M16.7625 9.70375C17.0201 9.70375 17.2289 9.49494 17.2289 9.23737C17.2289 8.9798 17.0201 8.771 16.7625 8.771C16.5049 8.771 16.2961 8.9798 16.2961 9.23737C16.2961 9.49494 16.5049 9.70375 16.7625 9.70375Z"
+                                        fill="#1E1E1E" />
+                                </g>
+                            </svg>
+                            <h6>
+                                <span>COLORING</span>
+                                Instagram
+                            </h6>
+                        </a>
+                        <img src="assets/image/hair-salon/gallery-image-5.png" alt="">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="single-gallery-img">
+                        <a href="https://www.instagram.com/" class="view-btn">
+                            <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="26" height="26" rx="5" fill="#E5E342" />
+                                <g>
+                                    <path
+                                        d="M15.625 6H10.375C7.95913 6 6 7.95913 6 10.375V15.625C6 18.0409 7.95913 20 10.375 20H15.625C18.0409 20 20 18.0409 20 15.625V10.375C20 7.95913 18.0409 6 15.625 6ZM18.6875 15.625C18.6875 17.3138 17.3138 18.6875 15.625 18.6875H10.375C8.68625 18.6875 7.3125 17.3138 7.3125 15.625V10.375C7.3125 8.68625 8.68625 7.3125 10.375 7.3125H15.625C17.3138 7.3125 18.6875 8.68625 18.6875 10.375V15.625Z"
+                                        fill="#1E1E1E" />
+                                    <path
+                                        d="M13 9.5C11.0671 9.5 9.5 11.0671 9.5 13C9.5 14.9329 11.0671 16.5 13 16.5C14.9329 16.5 16.5 14.9329 16.5 13C16.5 11.0671 14.9329 9.5 13 9.5ZM13 15.1875C11.7943 15.1875 10.8125 14.2057 10.8125 13C10.8125 11.7934 11.7943 10.8125 13 10.8125C14.2057 10.8125 15.1875 11.7934 15.1875 13C15.1875 14.2057 14.2057 15.1875 13 15.1875Z"
+                                        fill="#1E1E1E" />
+                                    <path
+                                        d="M16.7625 9.70375C17.0201 9.70375 17.2289 9.49494 17.2289 9.23737C17.2289 8.9798 17.0201 8.771 16.7625 8.771C16.5049 8.771 16.2961 8.9798 16.2961 9.23737C16.2961 9.49494 16.5049 9.70375 16.7625 9.70375Z"
+                                        fill="#1E1E1E" />
+                                </g>
+                            </svg>
+                            <h6>
+                                <span>COLORING</span>
+                                Instagram
+                            </h6>
+                        </a>
+                        <img src="assets/image/hair-salon/gallery-image-3.png" alt="">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="single-gallery-img">
+                        <a href="https://www.instagram.com/" class="view-btn">
+                            <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="26" height="26" rx="5" fill="#E5E342" />
+                                <g>
+                                    <path
+                                        d="M15.625 6H10.375C7.95913 6 6 7.95913 6 10.375V15.625C6 18.0409 7.95913 20 10.375 20H15.625C18.0409 20 20 18.0409 20 15.625V10.375C20 7.95913 18.0409 6 15.625 6ZM18.6875 15.625C18.6875 17.3138 17.3138 18.6875 15.625 18.6875H10.375C8.68625 18.6875 7.3125 17.3138 7.3125 15.625V10.375C7.3125 8.68625 8.68625 7.3125 10.375 7.3125H15.625C17.3138 7.3125 18.6875 8.68625 18.6875 10.375V15.625Z"
+                                        fill="#1E1E1E" />
+                                    <path
+                                        d="M13 9.5C11.0671 9.5 9.5 11.0671 9.5 13C9.5 14.9329 11.0671 16.5 13 16.5C14.9329 16.5 16.5 14.9329 16.5 13C16.5 11.0671 14.9329 9.5 13 9.5ZM13 15.1875C11.7943 15.1875 10.8125 14.2057 10.8125 13C10.8125 11.7934 11.7943 10.8125 13 10.8125C14.2057 10.8125 15.1875 11.7934 15.1875 13C15.1875 14.2057 14.2057 15.1875 13 15.1875Z"
+                                        fill="#1E1E1E" />
+                                    <path
+                                        d="M16.7625 9.70375C17.0201 9.70375 17.2289 9.49494 17.2289 9.23737C17.2289 8.9798 17.0201 8.771 16.7625 8.771C16.5049 8.771 16.2961 8.9798 16.2961 9.23737C16.2961 9.49494 16.5049 9.70375 16.7625 9.70375Z"
+                                        fill="#1E1E1E" />
+                                </g>
+                            </svg>
+                            <h6>
+                                <span>COLORING</span>
+                                Instagram
+                            </h6>
+                        </a>
+                        <img src="assets/image/hair-salon/gallery-image-4.png" alt="">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="single-gallery-img">
+                        <a href="https://www.instagram.com/" class="view-btn">
+                            <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="26" height="26" rx="5" fill="#E5E342" />
+                                <g>
+                                    <path
+                                        d="M15.625 6H10.375C7.95913 6 6 7.95913 6 10.375V15.625C6 18.0409 7.95913 20 10.375 20H15.625C18.0409 20 20 18.0409 20 15.625V10.375C20 7.95913 18.0409 6 15.625 6ZM18.6875 15.625C18.6875 17.3138 17.3138 18.6875 15.625 18.6875H10.375C8.68625 18.6875 7.3125 17.3138 7.3125 15.625V10.375C7.3125 8.68625 8.68625 7.3125 10.375 7.3125H15.625C17.3138 7.3125 18.6875 8.68625 18.6875 10.375V15.625Z"
+                                        fill="#1E1E1E" />
+                                    <path
+                                        d="M13 9.5C11.0671 9.5 9.5 11.0671 9.5 13C9.5 14.9329 11.0671 16.5 13 16.5C14.9329 16.5 16.5 14.9329 16.5 13C16.5 11.0671 14.9329 9.5 13 9.5ZM13 15.1875C11.7943 15.1875 10.8125 14.2057 10.8125 13C10.8125 11.7934 11.7943 10.8125 13 10.8125C14.2057 10.8125 15.1875 11.7934 15.1875 13C15.1875 14.2057 14.2057 15.1875 13 15.1875Z"
+                                        fill="#1E1E1E" />
+                                    <path
+                                        d="M16.7625 9.70375C17.0201 9.70375 17.2289 9.49494 17.2289 9.23737C17.2289 8.9798 17.0201 8.771 16.7625 8.771C16.5049 8.771 16.2961 8.9798 16.2961 9.23737C16.2961 9.49494 16.5049 9.70375 16.7625 9.70375Z"
+                                        fill="#1E1E1E" />
+                                </g>
+                            </svg>
+                            <h6>
+                                <span>COLORING</span>
+                                Instagram
+                            </h6>
+                        </a>
+                        <img src="assets/image/hair-salon/gallery-image-5.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Galleary section ends here -->
+     
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-button-area">
+                <div class="row g-4 mb-100">
+                    <div class="col-lg-4 col-md-6">
+                        <a class="primary-btn1 footer-btn" href="contact.html">
+                            BOOK AN APPOINTMNET
+                            <svg class="arrow" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 9L9 1M9 1C7.22222 1.33333 3.33333 2 1 1M9 1C8.66667 2.66667 8 6.33333 9 9"
+                                    stroke="#1E1E1E" stroke-width="1.5" stroke-linecap="round"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <a class="primary-btn1 footer-btn" href="contact.html">
+                            ASK ANY QUESTIONS
+                            <svg class="arrow" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 9L9 1M9 1C7.22222 1.33333 3.33333 2 1 1M9 1C8.66667 2.66667 8 6.33333 9 9"
+                                    stroke="#1E1E1E" stroke-width="1.5" stroke-linecap="round"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <a class="primary-btn1 footer-btn" href="mailto:infoexample@gmail.com">
+                            EMAIL - infoexample@gmail.com
+                            <svg class="arrow" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 9L9 1M9 1C7.22222 1.33333 3.33333 2 1 1M9 1C8.66667 2.66667 8 6.33333 9 9"
+                                    stroke="#1E1E1E" stroke-width="1.5" stroke-linecap="round"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-lg-4 gy-5 mb-70">
+                <div class="col-lg-4">
+                    <div class="footer-logo-section">
+                        <div class="footer-top-section">
+                            <a href="index.html">
+                                <img src="../assets/image/icon/light-logo.svg" alt="">
+                            </a>
+                            <p>Barkinghum, 42 Elm Street Windsor Berkshire, SL4 1NF</p>
+                            <ul>
+                                <li>
+                                    <a href="https://www.facebook.com/">
+                                        <svg width="6" height="12" viewBox="0 0 6 12"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M3.81526 11.2483V6.46735H5.42818L5.66793 4.59543H3.81526V3.4031C3.81526 2.86293 3.96576 2.4931 4.74101 2.4931H5.72334V0.824182C5.24538 0.77296 4.76495 0.748228 4.28426 0.750099C2.85859 0.750099 1.87976 1.62043 1.87976 3.21818V4.59193H0.277344V6.46385H1.88326V11.2483H3.81526Z" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://youtube.com/">
+                                        <svg width="14" height="14" viewBox="0 0 14 14"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.04462 1.74902H7.1225C7.84175 1.75165 11.4861 1.7779 12.4688 2.04215C12.7658 2.1228 13.0365 2.27999 13.2538 2.49803C13.471 2.71607 13.6273 2.98731 13.7069 3.28465C13.7952 3.61715 13.8574 4.05727 13.8994 4.5114L13.9081 4.6024L13.9274 4.8299L13.9344 4.9209C13.9913 5.72065 13.9983 6.46965 13.9991 6.63327V6.6989C13.9983 6.86865 13.9904 7.6684 13.9274 8.5014L13.9204 8.59327L13.9125 8.68427C13.8687 9.18477 13.804 9.68177 13.7069 10.0475C13.6273 10.3449 13.471 10.6161 13.2538 10.8341C13.0365 11.0522 12.7658 11.2094 12.4688 11.29C11.4537 11.563 7.59587 11.5823 7.06125 11.5831H6.937C6.66663 11.5831 5.54838 11.5779 4.37587 11.5376L4.22712 11.5324L4.151 11.5289L4.00138 11.5228L3.85175 11.5166C2.8805 11.4738 1.95563 11.4046 1.5295 11.2891C1.23255 11.2086 0.961931 11.0515 0.74467 10.8336C0.527409 10.6158 0.371108 10.3447 0.291375 10.0475C0.19425 9.68265 0.1295 9.18477 0.08575 8.68427L0.07875 8.5924L0.07175 8.5014C0.028318 7.90851 0.0043884 7.31436 0 6.7199L0 6.61227C0.00175 6.42415 0.00875 5.77402 0.056 5.05652L0.062125 4.9664L0.06475 4.9209L0.07175 4.8299L0.091 4.6024L0.09975 4.5114C0.14175 4.05727 0.203875 3.61627 0.29225 3.28465C0.371849 2.98731 0.528091 2.71607 0.74536 2.49803C0.96263 2.27999 1.23332 2.1228 1.53038 2.04215C1.9565 1.9284 2.88137 1.8584 3.85262 1.81465L4.00138 1.80852L4.15188 1.80327L4.22712 1.80065L4.37675 1.79452C5.2095 1.76775 6.04258 1.75287 6.87575 1.7499L7.04462 1.74902ZM5.6 4.55777V8.77352L9.23738 6.66652L5.6 4.55777Z" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://x.com/">
+                                        <svg width="14" height="14" viewBox="0 0 14 14"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g>
+                                                <path
+                                                    d="M11.025 0.65625H13.1722L8.48225 6.0305L14 13.3438H9.68012L6.2965 8.9075L2.42462 13.3438H0.2765L5.29287 7.595L0 0.65625H4.43013L7.48825 4.71012L11.025 0.65625ZM10.2725 12.0557H11.4625L3.78262 1.87687H2.50688L10.2725 12.0557Z" />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/">
+                                        <svg width="14" height="14" viewBox="0 0 14 14"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M2.90719 4.1972C3.61209 4.1972 4.18353 3.62576 4.18353 2.92086C4.18353 2.21597 3.61209 1.64453 2.90719 1.64453C2.20229 1.64453 1.63086 2.21597 1.63086 2.92086C1.63086 3.62576 2.20229 4.1972 2.90719 4.1972Z" />
+                                            <path
+                                                d="M5.38752 5.16523V12.2463H7.5861V8.74457C7.5861 7.82057 7.75994 6.92573 8.9056 6.92573C10.0355 6.92573 10.0495 7.98215 10.0495 8.8029V12.2469H12.2493V8.36365C12.2493 6.45615 11.8386 4.99023 9.60911 4.99023C8.53869 4.99023 7.82119 5.57765 7.52777 6.13357H7.49802V5.16523H5.38752ZM1.80469 5.16523H4.00677V12.2463H1.80469V5.16523Z" />
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer-contact-section">
+                            <div class="call-now-section">
+                                <span>Call Now</span>
+                                <h4><a href="tel:+990-737621432">+990-737621432</a></h4>
+                            </div>
+                            <p>N:B - Sunday Closed,<span> otherswsie you
+                                    can call anytime within opening hours.</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="footer-list">
+                        <div class="row gy-4 g-6">
+                            <div class="col-sm-6 d-flex justify-content-lg-end">
+                                <div class="footer-widget">
+                                    <div class="widget-title">
+                                        <h4>OUR SERVICES</h4>
+                                    </div>
+                                    <ul class="widget-list">
+                                        <li>
+                                            <a href="services-01.html">
+                                                Classic Haircut
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="services-01.html">
+                                                Coloring Services
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="services-01.html">
+                                                Hair Extensions
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="services-01.html">
+                                                Specialty Services
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="services-01.html">
+                                                Haircuts and Styling
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="services-01.html">
+                                                Men's Grooming
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="services-01.html">
+                                                Makeover Package
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 d-flex justify-content-sm-end">
+                                <div class="footer-widget">
+                                    <div class="widget-title">
+                                        <h4>OPENING HOURS</h4>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            SAT - TUE <span>(9AM - 7PM)</span>
+                                        </li>
+                                        <li>
+                                            WED - THU <span>(8AM - 6PM)</span>
+                                        </li>
+                                        <li>
+                                            SUNDAY- <span>CLOSED</span>
+                                        </li>
+                                    </ul>
+                                    <p class="star-text"><span class="star-icon">*</span>Visit our Buret & take your favourite beauty & spa.</p>
+                                    <div class="email-area style-2">
+                                        <h4>Newsletter</h4>
+                                        <p class="email-text">With subscribe by your email to get notify every single
+                                            moment.</p>
+                                        <div class="input-area">
+                                            <input type="email" placeholder="Enter Email">
+                                            <button type="submit">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M15.9647 0.685806C16.0011 0.594942 16.01 0.495402 15.9904 0.399526C15.9707 0.303649 15.9233 0.215653 15.8541 0.146447C15.7849 0.0772403 15.6969 0.0298668 15.601 0.0101994C15.5052 -0.0094681 15.4056 -0.000564594 15.3147 0.0358061L0.76775 5.85481H0.76675L0.31475 6.03481C0.22914 6.06895 0.154635 6.1261 0.0994654 6.19994C0.0442956 6.27377 0.0106078 6.36142 0.00212322 6.4532C-0.00636132 6.54497 0.0106876 6.63731 0.0513867 6.72001C0.0920859 6.8027 0.154851 6.87254 0.23275 6.92181L0.64275 7.18181L0.64375 7.18381L5.63875 10.3618L8.81675 15.3568L8.81875 15.3588L9.07875 15.7688C9.12817 15.8464 9.19805 15.9089 9.28068 15.9493C9.36332 15.9897 9.45551 16.0066 9.54711 15.998C9.63871 15.9894 9.72617 15.9558 9.79985 15.9007C9.87354 15.8456 9.9306 15.7712 9.96475 15.6858L15.9647 0.685806ZM14.1317 2.57581L6.63775 10.0698L6.42275 9.73181C6.38336 9.66978 6.33078 9.6172 6.26875 9.57781L5.93075 9.36281L13.4247 1.86881L14.6027 1.39781L14.1327 2.57581H14.1317Z">
+                                                    </path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-btm">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="footer-btm-content">
+                            <div class="copyright-area">
+                                <p> © Copyright 2024 <a href="https://www.egenslab.com/"> Egens Lab </a> | All Right
+                                    Reserved </p>
+                            </div>
+                            <div class="right-area">
+                                <svg width="12" height="12" viewBox="0 0 12 12"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g>
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M0 5.99981C0 5.83405 0.0632157 5.67508 0.17574 5.55787C0.288264 5.44066 0.44088 5.37481 0.600014 5.37481H8.7518L6.17534 2.69231C6.06267 2.57496 5.99938 2.41578 5.99938 2.24981C5.99938 2.08384 6.06267 1.92467 6.17534 1.80731C6.28801 1.68995 6.44081 1.62402 6.60015 1.62402C6.75948 1.62402 6.91229 1.68995 7.02496 1.80731L10.625 5.55731C10.6809 5.61537 10.7252 5.68434 10.7555 5.76027C10.7857 5.8362 10.8013 5.9176 10.8013 5.99981C10.8013 6.08202 10.7857 6.16342 10.7555 6.23935C10.7252 6.31529 10.6809 6.38426 10.625 6.44231L7.02496 10.1923C6.91229 10.3097 6.75948 10.3756 6.60015 10.3756C6.44081 10.3756 6.28801 10.3097 6.17534 10.1923C6.06267 10.075 5.99938 9.91578 5.99938 9.74981C5.99938 9.58384 6.06267 9.42467 6.17534 9.30731L8.7518 6.62481H0.600014C0.44088 6.62481 0.288264 6.55897 0.17574 6.44176C0.0632157 6.32455 0 6.16557 0 5.99981Z"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M11.3998 1C11.559 1 11.7116 1.06585 11.8241 1.18306C11.9366 1.30027 11.9998 1.45924 11.9998 1.625V10.375C11.9998 10.5408 11.9366 10.6997 11.8241 10.8169C11.7116 10.9342 11.559 11 11.3998 11C11.2407 11 11.0881 10.9342 10.9755 10.8169C10.863 10.6997 10.7998 10.5408 10.7998 10.375V1.625C10.7998 1.45924 10.863 1.30027 10.9755 1.18306C11.0881 1.06585 11.2407 1 11.3998 1Z"/>
+                                    </g>
+                                </svg>
+                                <p>Our Business <a href="#"> Policy, Terms & Condition</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jquery js link -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/jquery-ui.js"></script>
+    <!-- Counterup js link -->
+    <script src="assets/js/waypoints.js"></script>
+    <script src="assets/js/jquery.counterup.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <!-- marquee js link -->
+    <script src="assets/js/jquery.marquee.min.js"></script>
+    <!-- popper js link -->
+    <script src="assets/js/popper.min.js"></script>
+    <!-- swiper js link -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- Fancybox link -->
+    <script src="assets/js/jquery.fancybox.min.js"></script>
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- wow js link -->
+    <script src="assets/js/wow.min.js"></script>
+    <!-- Bootstrap js link -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Main js -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        $(".marquee_text").marquee({
+            direction: "left",
+            duration: 25000,
+            gap: 50,
+            delayBeforeStart: 0,
+            duplicated: true,
+            startVisible: true,
+        });
+    </script>
+
+</body>
+
+</html>

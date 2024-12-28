@@ -11,6 +11,7 @@ namespace HaircuteUI.ViewModel
 
         [StringLength(200)]
         public string? IconPath { get; set; }
+        public string? ImagePath { get; set; }
 
         public bool IsDeleted { get; set; }
 

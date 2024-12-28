@@ -1,0 +1,71 @@
+﻿<div id="story-section-container">
+    Loading story content...
+</div>
+<div class="faq-section mb-120">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- The heading, as in your snippet -->
+                <div class="section-title faq-title wow animate fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
+                    <span>Our Faq’s</span>
+                    <h2 class="customer">get to know <span>our faq’s</span></h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center g-lg-4 gy-5">
+            <div class="col-lg-8 pt-50">
+
+                <!-- Placeholder for the dynamic FAQ partial -->
+                <div id="faq-container">
+                    Loading FAQs...
+                </div>
+
+                <!-- The button-area, same as snippet -->
+                <div class="button-area text-center wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+                    <a class="primay-btn2 enqiry-btn" href="/contact/index">
+                        <svg class="arrow" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 9L9 1M9 1C7.22222 1.33333 3.33333 2 1 1
+                                    M9 1C8.66667 2.66667 8 6.33333 9 9"
+                                  stroke="#1E1E1E" stroke-width="1.5" stroke-linecap="round" />
+                        </svg>
+                        <span>HAVE ANY <br> ENQIRY</span>
+                    </a>
+                </div>
+
+            </div><!-- col-lg-8 -->
+        </div><!-- row -->
+    </div><!-- container -->
+</div><!-- faq-section -->
+<script src="~/haircut/html-files/buret-html/assets/js/jquery-3.7.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+
+        // 1) Ajax GET to /Home/GetFaqPartial
+        $.get('/Home/GetFaqPartial')
+            .done(function (partialHtml) {
+                // Insert that partial HTML in #faq-container
+                $('#faq-container').html(partialHtml);
+
+                // 2) Re-initialize WOW.js if needed (because content loaded dynamically)
+                if (typeof WOW !== 'undefined') {
+                    new WOW().init();
+                }
+            })
+            .fail(function () {
+                $('#faq-container').html('<p>Error loading FAQs.</p>');
+            });
+        // Load the story section
+        $.get('/Home/GetStoryPartial')
+            .done(function (data) {
+                $('#story-section-container').html(data);
+            })
+            .fail(function (xhr, status, error) {
+                console.error("Story section error:", error);
+                $('#story-section-container').html('<p>Error loading story content. Please try again later.</p>');
+            });
+    });
+</script>
+

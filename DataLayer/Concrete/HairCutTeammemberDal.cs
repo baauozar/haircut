@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace DataLayer.Concrete
 {
-    public class HairCutTeammemberDal : GenericRepository<HairCutTeammember>, IHairCutTeammemberDal
+   /* public class HairCutTeammemberDal : GenericRepository<HairCutTeammember>, IHairCutTeammemberDal
     {
 
         public HairCutTeammemberDal(Context context) : base(context)
     {
-    }
+    }*/
 
    
 }
-}
+/*}*/

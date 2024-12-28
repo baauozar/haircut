@@ -1,0 +1,1821 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- swiper link -->
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+    <!-- fancybox link -->
+    <link rel="stylesheet" href="../assets/css/jquery.fancybox.min.css">
+    <!-- Animation link -->
+    <link rel="stylesheet" href="../assets/css/animate.css">
+    <link rel="stylesheet" href="../assets/css/nice-select.css">
+    <!-- Bootstrap link -->
+    <link rel="stylesheet" href="../assets/css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <!-- boxicon link -->
+    <link rel="stylesheet" href="../assets/css/boxicons.min.css">
+    <!-- My css link -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="icon" href="../assets/image/hair-salon/fav-icon.svg" type="image/gif" sizes="20x20">
+    <title>Buret - Beauty Salon and SPA HTML Template</title>
+    <link rel="icon" href="../assets/image/hair-salon/fav-icon.svg" type="image/gif" sizes="20x20">
+</head>
+
+<body>
+    <!-- hearder section strats here -->
+    <header class="header-area nail">
+        <div class="header-wrapper">
+            <div class="header-logo">
+                <a href="index.html"><img alt="image" class="img-fluid" src="../assets/image/icon/buret-logo.svg"></a>
+            </div>
+            <div class="main-menu">
+                <div class="mobile-menu-logo">
+                    <a href="index.html"><img alt="image" class="img-fluid" src="../assets/image/icon/buret-logo.svg"></a>
+                </div>
+                <ul class="menu-list">
+                    <li class="menu-item-has-children active">
+                        <a href="#" class="drop-down">HOME</a><i class="bi bi-plus dropdown-icon"></i>
+                        <ul class="sub-menu">
+                            <li><a href="../index.html">Hair Salon</a></li>
+                            <li><a href="../beauty-spa/beauty-spa.html">Beauty & Spa</a></li>
+                            <li><a href="../skin-care/index.html">Skin Care</a></li>
+                            <li class="active"><a href="nail-salon.html">Nail Salon</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children"><a class="drop-down" href="#">NAIL SERVICES</a><i
+                            class="bi bi-plus dropdown-icon"></i>
+                        <ul class="sub-menu">
+                            <li><a href="services01.html">Services-01</a></li>
+                            <li><a href="services-details.html">Service Details</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="our-story.html">OUR STORY</a></li>
+                    <li><a href="gift-card.html">GIFT CARD</a></li>
+                    <li class="menu-item-has-children">
+                        <a href="#" class="drop-down"> PAGES</a><i class="bi bi-plus dropdown-icon"></i>
+                        <ul class="sub-menu">
+                            <li><a href="our-team.html">Our Team</a></li>
+                            <li><a href="our-gallery.html">Our Gallery</a></li>
+                            <li>
+                                <a href="product.html">Product</a>
+                                <i class="d-xl-flex d-none bi bi-chevron-right dropdown-icon"></i>
+                                <i class="d-xl-none d-flex bi bi-plus dropdown-icon"></i>
+                                <ul class="sub-menu">
+                                    <li><a href="product.html">Product</a></li>
+                                    <li><a href="product-listing.html">Product Listing</a></li>
+                                    <li><a href="product-details.html">Product Details</a></li>
+                                    <li><a href="cart.html">Cart</a></li>
+                                    <li><a href="checkout.html">CheckOut</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="blog-grid.html">Blog</a>
+                                <i class="d-xl-flex d-none bi bi-chevron-right dropdown-icon"></i>
+                                <i class="d-xl-none d-flex bi bi-plus dropdown-icon"></i>
+                                <ul class="sub-menu">
+                                    <li><a href="blog-grid.html">Blog Grid</a></li>
+                                    <li><a href="blog-details.html">Blog Details</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="review.html">Review</a></li>
+                            <li><a href="faq.html">FAQ's</a></li>
+                            <li><a href="error.html">Error</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html ">CONTACT</a></li>
+                </ul>
+                <div class="d-xl-none d-block">
+                    <div class="mobile-search-area mb-30">
+                        <form>
+                            <div class="form-inner">
+                                <input type="text" placeholder="Enter your keywords">
+                                <button type="submit" class="primary-btn1">Search Now</button>
+                            </div>
+                        </form>
+                    </div>
+                    <a class="primary-btn1 d-md-none d-flex" href="booking.html">
+                        BOOK APPOINTMENT
+                        <svg class="arrow" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 9L9 1M9 1C7.22222 1.33333 3.33333 2 1 1M9 1C8.66667 2.66667 8 6.33333 9 9"
+                                stroke="#1E1E1E" stroke-width="1.5" stroke-linecap="round" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="nav-right">
+            <ul>
+                <li>
+                    <div class="search-bar d-xl-flex d-none">
+                        <div class="search-btn">
+                            <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M8.20349 1.44849C6.41514 1.45148 4.70089 2.16323 3.43633 3.42779C2.17178 4.69235 1.46003 6.40659 1.45703 8.19494C1.45853 9.9848 2.16943 11.7011 3.43399 12.9678C4.69855 14.2345 6.41364 14.9482 8.20349 14.9527C9.79089 14.9527 11.2536 14.3943 12.4101 13.4702L16.0578 17.1182C16.2002 17.2505 16.3882 17.3225 16.5825 17.3191C16.7768 17.3157 16.9622 17.2372 17.0998 17.0999C17.2374 16.9627 17.3165 16.7775 17.3204 16.5832C17.3243 16.3889 17.2528 16.2007 17.1208 16.058L13.4731 12.4072C14.4325 11.214 14.9556 9.72887 14.9556 8.19778C14.9556 4.47872 11.9225 1.44849 8.20349 1.44849ZM8.20349 2.95085C11.1118 2.95085 13.4533 5.28943 13.4533 8.19494C13.4533 11.1005 11.1118 13.4532 8.20349 13.4532C5.29514 13.4532 2.95656 11.109 2.95656 8.20061C2.95656 5.29227 5.29514 2.95085 8.20349 2.95085Z" />
+                            </svg>
+                        </div>
+                        <div class="search-input">
+                            <div class="serch-close"></div>
+                            <form>
+                                <div class="search-group">
+                                    <div class="form-inner2">
+                                        <input type="text" placeholder="Enter your keywords">
+                                        <button type="submit"><i class="bi bi-search"></i></button>
+                                    </div>
+                                </div>
+                                <div class="quick-search">
+                                    <ul>
+                                        <li>Quick Search :</li>
+                                        <li><a href="services01.html">Classic Haircut,</a></li>
+                                        <li><a href="services01.html">Coloring Services,</a></li>
+                                        <li><a href="services01.html">Hair Extensions,</a></li>
+                                        <li><a href="services01.html">Specialty Services,</a></li>
+                                        <li><a href="services01.html">Haircuts and Styling,</a></li>
+                                        <li><a href="services01.html">Men's Grooming,</a></li>
+                                        <li><a href="services01.html">Makeover Package,</a></li>
+                                    </ul>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="user">
+                        <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M11.7135 8.34627C12.8653 7.50628 13.6153 6.14686 13.6153 4.61538C13.6153 2.07046 11.5448 0 8.99989 0C6.45497 0 4.38451 2.07046 4.38451 4.61538C4.38451 6.14686 5.1345 7.50628 6.28629 8.34627C3.42316 9.44191 1.38452 12.2179 1.38452 15.4615C1.38452 16.8613 2.52327 18 3.92298 18H14.0768C15.4765 18 16.6153 16.8613 16.6153 15.4615C16.6153 12.2179 14.5766 9.44191 11.7135 8.34627ZM5.76914 4.61538C5.76914 2.83395 7.21845 1.38463 8.99989 1.38463C10.7813 1.38463 12.2306 2.83395 12.2306 4.61538C12.2306 6.39682 10.7813 7.84617 8.99989 7.84617C7.21845 7.84617 5.76914 6.39682 5.76914 4.61538ZM14.0768 16.6154H3.92298C3.28676 16.6154 2.76915 16.0978 2.76915 15.4615C2.76915 12.0258 5.56421 9.23073 8.99993 9.23073C12.4356 9.23073 15.2307 12.0258 15.2307 15.4615C15.2307 16.0978 14.7131 16.6154 14.0768 16.6154Z" />
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div class="cart-area">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M3.375 4.78125H14.625M6.1875 4.78125V3.51562C6.1875 1.96232 7.44669 0.703125 9 0.703125C10.5533 0.703125 11.8125 1.96232 11.8125 3.51562V4.78125M11.8125 7.59375C11.8125 9.14706 10.5533 10.4062 9 10.4062C7.44669 10.4062 6.1875 9.14706 6.1875 7.59375"
+                                stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M14.625 4.78125L16.0201 15.7131C16.0275 15.772 16.0313 15.8313 16.0312 15.8906C16.0312 16.6673 15.4016 17.2969 14.625 17.2969H3.375C2.59836 17.2969 1.96875 16.6673 1.96875 15.8906C1.96875 15.8305 1.97251 15.7712 1.97986 15.7131L3.375 4.78125"
+                                stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span>0</span>
+                    </div>
+                </li>
+            </ul>
+            <div class="btn-area d-md-flex d-none">
+                <a class="primary-btn1" href="booking.html">
+                    BOOK APPOINTMENT
+                    <svg class="arrow" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 9L9 1M9 1C7.22222 1.33333 3.33333 2 1 1M9 1C8.66667 2.66667 8 6.33333 9 9"
+                            stroke="#1E1E1E" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                </a>
+            </div>
+            <div class="sidebar-button mobile-menu-btn ">
+                <span></span>
+            </div>
+        </div>
+    </header>
+    <!-- hearder section ends here -->
+
+    <!-- Banner section strats here -->
+    <div class="nail-salon-banner-section">
+        <div class="swiper nail-banner-swiper-slide">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="banner-wrapper"
+                        style="background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(../assets/image/nail-salon/banner-img1.jpg);">
+                        <div class="container">
+                            <div class="banner-content">
+                                <span>Buret-Sience 2006</span>
+                                <h1>beauty of nails.</h1>
+                                <div class="left-itema">
+                                    <p>By focusing on these characteristics, a nail salon can differentiate itself from
+                                        competitors.</p>
+                                    <a class="primary-btn4 breadcram-btn" href="services01.html">
+                                        VIEW All SERVICE
+                                        <svg class="arrow" width="10" height="10" viewBox="0 0 10 10" 
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M1 9L9 1M9 1C7.22222 1.33333 3.33333 2 1 1M9 1C8.66667 2.66667 8 6.33333 9 9" stroke-width="1.5" stroke-linecap="round" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="banner-wrapper"
+                        style="background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(../assets/image/nail-salon/banner-img2.jpg);">
+                        <div class="container">
+                            <div class="banner-content">
+                                <span>Buret-Sience 2006</span>
+                                <h2>Nail Art Magic.</h2>
+                                <div class="left-itema">
+                                    <p>By focusing on these characteristics, a nail salon can differentiate itself from competitors.</p>
+                                    <a class="primary-btn4 breadcram-btn" href="services01.html">
+                                        VIEW All SERVICE
+                                        <svg class="arrow" width="10" height="10" viewBox="0 0 10 10"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M1 9L9 1M9 1C7.22222 1.33333 3.33333 2 1 1M9 1C8.66667 2.66667 8 6.33333 9 9" stroke-width="1.5" stroke-linecap="round" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="banner-wrapper"
+                    style="background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(../assets/image/nail-salon/banner-img3.jpg);">
+                        <div class="container">
+                            <div class="banner-content">
+                                <span>Buret-Sience 2006</span>
+                                <h2>Elegance Nail</h2>
+                                <div class="left-itema">
+                                    <p>By focusing on these characteristics, a nail salon can differentiate itself from competitors.</p>
+                                    <a class="primary-btn4 breadcram-btn" href="services01.html">
+                                        VIEW All SERVICE
+                                        <svg class="arrow" width="10" height="10" viewBox="0 0 10 10" 
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M1 9L9 1M9 1C7.22222 1.33333 3.33333 2 1 1M9 1C8.66667 2.66667 8 6.33333 9 9" stroke-width="1.5" stroke-linecap="round" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination1"></div>
+    </div>
+    <!-- Banner section ends here -->
+     
+    <!-- nail salon kye section strats here -->
+    <div class="kye-caracteristic-section pt-120 mb-120">
+        <div class="container">
+            <div class="row gy-5">
+                <div class="col-xl-3 col-md-6 wow animate fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
+                    <div class="kye-caracterstic-content">
+                        <img src="../assets/image/nail-salon/icon/key-icon.svg" alt="">
+                        <h5>Nail Art</h5>
+                        <p>Nail art is a creative way to
+                            paint, decorate, enhance, and
+                            embellish nails.</p>
+                        <a href="#">Learn More
+                            <svg width="7" height="10" viewBox="0 0 7 10" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L5 5L1 9" stroke="#1E1E1E" stroke-width="1.5" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6 wow animate fadeInDown" data-wow-delay="400ms" data-wow-duration="1500ms">
+                    <div class="kye-caracterstic-content alice-blue">
+                        <img src="../assets/image/nail-salon/icon/key-icon2.svg" alt="">
+                        <h5>Quality Products</h5>
+                        <p>Nail art is a creative way to
+                            paint, decorate, enhance, and
+                            embellish nails.</p>
+                        <a href="#">Learn More
+                            <svg width="7" height="10" viewBox="0 0 7 10" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L5 5L1 9" stroke="#1E1E1E" stroke-width="1.5" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6 wow animate fadeInDown" data-wow-delay="600ms" data-wow-duration="1500ms">
+                    <div class="kye-caracterstic-content">
+                        <img src="../assets/image/nail-salon/icon/key-icon3.svg" alt="">
+                        <h5>Hygiene & Satfy</h5>
+                        <p>Nail art is a creative way to
+                            paint, decorate, enhance, and
+                            embellish nails.</p>
+                        <a href="#">Learn More
+                            <svg width="7" height="10" viewBox="0 0 7 10" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L5 5L1 9" stroke="#1E1E1E" stroke-width="1.5" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6 wow animate fadeInDown" data-wow-delay="800ms" data-wow-duration="1500ms">
+                    <div class="kye-caracterstic-content alabster">
+                        <img src="../assets/image/nail-salon/icon/key-icon4.svg" alt="">
+                        <h5>Skilled Technicians</h5>
+                        <p>Nail art is a creative way to
+                            paint, decorate, enhance, and
+                            embellish nails.</p>
+                        <a href="#">Learn More
+                            <svg width="7" height="10" viewBox="0 0 7 10" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L5 5L1 9" stroke="#1E1E1E" stroke-width="1.5" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row  justify-content-center wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+                <div class="col-lg-8 pt-50">
+                    <div class="hotline-section">
+                        <div class="hotline-content">
+                            <p>To get nail service call
+                                with us anytime.</p>
+                        </div>
+                        <div class="hotline-number">
+                            <div class="icon-area">
+                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M27.5559 21.9C26.7366 21.2128 21.9309 18.1697 21.1322 18.3094C20.7572 18.3759 20.4703 18.6956 19.7025 19.6116C19.3474 20.0624 18.9575 20.4846 18.5362 20.8744C17.7645 20.6879 17.0174 20.411 16.3106 20.0494C13.5387 18.6998 11.2993 16.4598 9.95063 13.6875C9.58897 12.9807 9.31206 12.2336 9.12563 11.4619C9.51537 11.0407 9.93761 10.6507 10.3884 10.2956C11.3034 9.52781 11.6241 9.24281 11.6906 8.86594C11.8303 8.06531 8.78438 3.26156 8.1 2.44219C7.81313 2.10281 7.5525 1.875 7.21875 1.875C6.25125 1.875 1.875 7.28625 1.875 7.9875C1.875 8.04469 1.96875 13.6781 9.08344 20.9166C16.3219 28.0313 21.9553 28.125 22.0125 28.125C22.7137 28.125 28.125 23.7487 28.125 22.7812C28.125 22.4475 27.8972 22.1869 27.5559 21.9ZM21.5625 14.0625H23.4375C23.4353 12.0741 22.6444 10.1677 21.2383 8.76167C19.8323 7.35563 17.9259 6.56473 15.9375 6.5625V8.4375C17.4289 8.43899 18.8588 9.0321 19.9133 10.0867C20.9679 11.1412 21.561 12.5711 21.5625 14.0625Z"
+                                        fill="#595959" />
+                                    <path
+                                        d="M26.25 14.0625H28.125C28.1213 10.8313 26.836 7.73354 24.5513 5.44875C22.2665 3.16395 19.1687 1.87872 15.9375 1.875V3.75C18.6716 3.75323 21.2927 4.84075 23.226 6.77402C25.1592 8.70729 26.2468 11.3284 26.25 14.0625Z"
+                                        fill="#595959" />
+                                </svg>
+                            </div>
+                            <div class="number-area">
+                                <span>Hotline Number</span>
+                                <h6><a href="tel:+990737621432">+990-737621432</a></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- nail salon kye section ends here -->
+
+    <!-- our company section strats-->
+    <div class="nail-salon-company-section"
+        style="background-image: url(../assets/image/nail-salon/company-section-background.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="nail-section-title text-center wow animate fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
+                        <span>Our Journey</span>
+                        <h2>OUR COMPANY</h2>
+                        <p>Hair care and styling have been important in various cultures for
+                            thousands of years. Ancient Egyptians, Greeks, and Romans all had their own hair care
+                            practices and professionals dedicated to hairdressing.</p>
+                        <p>From ancient barbers to modern salons, the hair care industry has evolved significantly.
+                            Today’s salons offer a comprehensive range of services and have become important community
+                            spaces where trends are set and
+                            individual styles are crafted.</p>
+                    </div>
+                    <div class="image-area text-center wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+                        <img src="../assets/image/nail-salon/company-section-image.png" alt="">
+                        <a href="../assets/video/nail-care.mp4" class="play-btn video-player">
+                            <i class="bi bi-play-fill"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- our company section ends-->
+
+    <!-- offer section strats here -->
+    <div class="nail-offer-section mb-120">
+        <div class="container">
+            <div class="row mb-60 wow animate fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
+                <div class="col-lg-12">
+                    <div class="nail-section-title text-center">
+                        <span>Our Services</span>
+                        <h2>what we offer</h2>
+                        <p>Offering a wide range of services ensures that your nail salon can cater to different client needs and preferences,</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+                <div class="col-lg-12">
+                    <div class="swiper nail-offer-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="nail-offer-card">
+                                    <div class="nail-offer-card-img">
+                                        <img src="../assets/image/nail-salon/our-offer-image.png" alt="">
+                                    </div>
+                                    <div class="nail-offer-card-content">
+                                        <div class="category-title">
+                                            <span>Nail Care</span>
+                                            <h5><a href="services-details.html">nail extension</a></h5>
+                                        </div>
+                                        <a class="primary-btn5 explore-btn" href="booking.html">
+                                            BOOK NOW
+                                            <svg class="arrow" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M1 9L9 1M9 1C7.22222 1.33333 3.33333 2 1 1M9 1C8.66667 2.66667 8 6.33333 9 9"
+                                                    stroke="#1E1E1E" stroke-width="1.5" stroke-linecap="round"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="nail-offer-card">
+                                    <div class="nail-offer-card-img">
+                                        <img src="../assets/image/nail-salon/our-offer-image2.png" alt="">
+                                    </div>
+                                    <div class="nail-offer-card-content">
+                                        <div class="category-title">
+                                            <span>Manicures</span>
+                                            <h5><a href="services-details.html">Manicures</a></h5>
+                                        </div>
+                                        <a class="primary-btn5 explore-btn" href="booking.html">
+                                            BOOK NOW
+                                            <svg class="arrow" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M1 9L9 1M9 1C7.22222 1.33333 3.33333 2 1 1M9 1C8.66667 2.66667 8 6.33333 9 9"
+                                                    stroke="#1E1E1E" stroke-width="1.5" stroke-linecap="round"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="nail-offer-card">
+                                    <div class="nail-offer-card-img">
+                                        <img src="../assets/image/nail-salon/our-offer-image3.png" alt="">
+                                    </div>
+                                    <div class="nail-offer-card-content">
+                                        <div class="category-title">
+                                            <span>Pedicures</span>
+                                            <h5><a href="services-details.html">Pedicures</a></h5>
+                                        </div>
+                                        <a class="primary-btn5 explore-btn" href="booking.html">
+                                            BOOK NOW
+                                            <svg class="arrow" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M1 9L9 1M9 1C7.22222 1.33333 3.33333 2 1 1M9 1C8.66667 2.66667 8 6.33333 9 9"
+                                                    stroke="#1E1E1E" stroke-width="1.5" stroke-linecap="round"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="nail-offer-card">
+                                    <div class="nail-offer-card-img">
+                                        <img src="../assets/image/nail-salon/our-offer-image4.png" alt="">
+                                    </div>
+                                    <div class="nail-offer-card-content">
+                                        <div class="category-title">
+                                            <span>Nail Art</span>
+                                            <h5><a href="services-details.html">Nail Art</a></h5>
+                                        </div>
+                                        <a class="primary-btn5 explore-btn" href="booking.html">
+                                            BOOK NOW
+                                            <svg class="arrow" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M1 9L9 1M9 1C7.22222 1.33333 3.33333 2 1 1M9 1C8.66667 2.66667 8 6.33333 9 9"
+                                                    stroke="#1E1E1E" stroke-width="1.5" stroke-linecap="round"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="nail-offer-card">
+                                    <div class="nail-offer-card-img">
+                                        <img src="../assets/image/nail-salon/our-services01/our-offer-image5.png" alt="">
+                                    </div>
+                                    <div class="nail-offer-card-content">
+                                        <div class="category-title">
+                                            <span>Package</span>
+                                            <h5><a href="services-details.html">pakage monthly</a></h5>
+                                        </div>
+                                        <a class="primary-btn5 explore-btn" href="booking.html">
+                                            BOOK NOW
+                                            <svg class="arrow" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M1 9L9 1M9 1C7.22222 1.33333 3.33333 2 1 1M9 1C8.66667 2.66667 8 6.33333 9 9"
+                                                    stroke="#1E1E1E" stroke-width="1.5" stroke-linecap="round"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="nail-offer-card">
+                                    <div class="nail-offer-card-img">
+                                        <img src="../assets/image/nail-salon/our-services01/our-offer-image6.png" alt="">
+                                    </div>
+                                    <div class="nail-offer-card-content">
+                                        <div class="category-title">
+                                            <span>Nail Repair</span>
+                                            <h5><a href="services-details.html">Nail Repair</a></h5>
+                                        </div>
+                                        <a class="primary-btn5 explore-btn" href="booking.html">
+                                            BOOK NOW
+                                            <svg class="arrow" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M1 9L9 1M9 1C7.22222 1.33333 3.33333 2 1 1M9 1C8.66667 2.66667 8 6.33333 9 9"
+                                                    stroke="#1E1E1E" stroke-width="1.5" stroke-linecap="round"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="nail-offer-card">
+                                    <div class="nail-offer-card-img">
+                                        <img src="../assets/image/nail-salon/our-services01/our-offer-image7.png" alt="">
+                                    </div>
+                                    <div class="nail-offer-card-content">
+                                        <div class="category-title">
+                                            <span>Pedicures</span>
+                                            <h5><a href="services-details.html">Bridal Nail</a></h5>
+                                        </div>
+                                        <a class="primary-btn5 explore-btn" href="booking.html">
+                                            BOOK NOW
+                                            <svg class="arrow" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M1 9L9 1M9 1C7.22222 1.33333 3.33333 2 1 1M9 1C8.66667 2.66667 8 6.33333 9 9"
+                                                    stroke="#1E1E1E" stroke-width="1.5" stroke-linecap="round"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+                <div class="col-lg-12 d-flex justify-content-center pt-50">
+                    <div class="slider-btn-wrap4">
+                        <div class="slider-btn offer-slider-prev">
+                            <svg width="13" height="14" viewBox="0 0 13 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 13C11 10.5 6 8 3 7C6 6 10.5 4.5 12 1" stroke-width="1.5"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <div class="fractional-pagination4 fraction-pagi3"></div>
+                        <div class="slider-btn offer-slider-next">
+                            <svg width="13" height="14" viewBox="0 0 13 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1C2 3.5 7 6 10 7C7 8 2.5 9.5 1 13" stroke-width="1.5"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- offer section ends here -->
+
+    <!-- Services section Start here -->
+    <div class="nail-care-services-menu-section mb-120" style="background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), url(/assets/image/nail-salon/services-bg.png);">
+        <div class="container">
+            <div class="row mb-60 wow animate fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
+                <div class="col-lg-12">
+                    <div class="nail-section-title text-center white">
+                        <span>Pricing List</span>
+                        <h2>Service menu list</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+                <div class="col-xl-8 col-lg-10">
+                    <div class="treatment-menu-wrap style-2">
+                        <div class="treatment-menu-table-area">
+                            <table class="eg-table2">
+                                <thead>
+                                    <tr>
+                                        <th>EXPAND</th>
+                                        <th class="service">SERVICE NAME</th>
+                                        <th>DURATION</th>
+                                        <th>PRICE</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td data-label="EXPAND">
+                                            <div class="expand-btn active">
+                                                <i class="bi bi-plus-lg"></i>
+                                            </div>
+                                        </td>
+                                        <td data-label="SERVICE NAME" class="table-product">
+                                            <div class="service-area">
+                                                <h6>Nail extension</h6>
+                                                <div class="service-content active">
+                                                    <p>It’s a luxurious treatment designed to exfoliate, hydrate, and rejuvenate your skin.
+                                                        <a href="#">( Book Now 
+                                                            <svg width="8" height="8" viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M1 7L7 1M7 1C5.66667 1.25 2.75 1.75 1 1M7 1C6.75 2.25 6.25 5 7 7" stroke-width="1.5" stroke-linecap="round"></path>
+                                                            </svg>
+                                                        )</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td data-label="DURATION">
+                                            <span>50 min</span>
+                                        </td>
+                                        <td data-label="PRICE">
+                                            <span class="price">$180</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Expand">
+                                            <div class="expand-btn">
+                                                <i class="bi bi-plus-lg"></i>
+                                            </div>
+                                        </td>
+                                        <td data-label="Service Name" class="table-product">
+                                            <div class="service-area">
+                                                <h6>Dmanicures</h6>
+                                                <div class="service-content">
+                                                    <p>It’s a luxurious treatment designed to exfoliate, hydrate, and rejuvenate your skin.
+                                                        <a href="#">( Book Now 
+                                                            <svg width="8" height="8" viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M1 7L7 1M7 1C5.66667 1.25 2.75 1.75 1 1M7 1C6.75 2.25 6.25 5 7 7" stroke-width="1.5" stroke-linecap="round"></path>
+                                                            </svg>
+                                                        )</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td data-label="Duration">
+                                            <span>01 hours</span>
+                                        </td>
+                                        <td data-label="Price">
+                                            <span class="price">$384</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Expand">
+                                            <div class="expand-btn">
+                                                <i class="bi bi-plus-lg"></i>
+                                            </div>
+                                        </td>
+                                        <td data-label="Service Name" class="table-product">
+                                            <div class="service-area">
+                                                <h6>pedicures</h6>
+                                                <div class="service-content">
+                                                    <p>It’s a luxurious treatment designed to exfoliate, hydrate, and rejuvenate your skin.
+                                                        <a href="#">( Book Now 
+                                                            <svg width="8" height="8" viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M1 7L7 1M7 1C5.66667 1.25 2.75 1.75 1 1M7 1C6.75 2.25 6.25 5 7 7" stroke-width="1.5" stroke-linecap="round"></path>
+                                                            </svg>
+                                                        )</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td data-label="Duration">
+                                            <span>50 min</span>
+                                        </td>
+                                        <td data-label="Price">
+                                            <span class="price">$200</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Expand">
+                                            <div class="expand-btn">
+                                                <i class="bi bi-plus-lg"></i>
+                                            </div>
+                                        </td>
+                                        <td data-label="Service Name" class="table-product">
+                                            <div class="service-area">
+                                                <h6>nail art</h6>
+                                                <div class="service-content">
+                                                    <p>It’s a luxurious treatment designed to exfoliate, hydrate, and rejuvenate your skin.
+                                                        <a href="#">( Book Now 
+                                                            <svg width="8" height="8" viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M1 7L7 1M7 1C5.66667 1.25 2.75 1.75 1 1M7 1C6.75 2.25 6.25 5 7 7" stroke-width="1.5" stroke-linecap="round"></path>
+                                                            </svg>
+                                                        )</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td data-label="Duration">
+                                            <span>30 min</span>
+                                        </td>
+                                        <td data-label="Price">
+                                            <span class="price">$130</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Expand">
+                                            <div class="expand-btn">
+                                                <i class="bi bi-plus-lg"></i>
+                                            </div>
+                                        </td>
+                                        <td data-label="Service Name" class="table-product">
+                                            <div class="service-area">
+                                                <h6>Specialty Services</h6>
+                                                <div class="service-content">
+                                                    <p>It’s a luxurious treatment designed to exfoliate, hydrate, and rejuvenate your skin.
+                                                        <a href="#">( Book Now 
+                                                            <svg width="8" height="8" viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M1 7L7 1M7 1C5.66667 1.25 2.75 1.75 1 1M7 1C6.75 2.25 6.25 5 7 7" stroke-width="1.5" stroke-linecap="round"></path>
+                                                            </svg>
+                                                        )</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td data-label="Duration">
+                                            <span>40 min</span>
+                                        </td>
+                                        <td data-label="Price">
+                                            <span class="price">$160</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Expand">
+                                            <div class="expand-btn">
+                                                <i class="bi bi-plus-lg"></i>
+                                            </div>
+                                        </td>
+                                        <td data-label="Service Name" class="table-product">
+                                            <div class="service-area">
+                                                <h6>Additional Services</h6>
+                                                <div class="service-content">
+                                                    <p>It’s a luxurious treatment designed to exfoliate, hydrate, and rejuvenate your skin.
+                                                        <a href="#">( Book Now 
+                                                            <svg width="8" height="8" viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M1 7L7 1M7 1C5.66667 1.25 2.75 1.75 1 1M7 1C6.75 2.25 6.25 5 7 7" stroke-width="1.5" stroke-linecap="round"></path>
+                                                            </svg>
+                                                        )</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td data-label="Duration">
+                                            <span>45 min</span>
+                                        </td>
+                                        <td data-label="Price">
+                                            <span class="price">$187</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Expand">
+                                            <div class="expand-btn">
+                                                <i class="bi bi-plus-lg"></i>
+                                            </div>
+                                        </td>
+                                        <td data-label="Service Name" class="table-product">
+                                            <div class="service-area">
+                                                <h6>Kid’s Services</h6>
+                                                <div class="service-content">
+                                                    <p>It’s a luxurious treatment designed to exfoliate, hydrate, and rejuvenate your skin.
+                                                        <a href="#">( Book Now 
+                                                            <svg width="8" height="8" viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M1 7L7 1M7 1C5.66667 1.25 2.75 1.75 1 1M7 1C6.75 2.25 6.25 5 7 7" stroke-width="1.5" stroke-linecap="round"></path>
+                                                            </svg>
+                                                        )</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td data-label="Duration">
+                                            <span>50 min</span>
+                                        </td>
+                                        <td data-label="Price">
+                                            <span class="price">$245</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Services section ends here -->
+
+    <!-- new product section strats here -->
+    <div class="modal product-view-modal" id="product-view">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="close-btn" data-bs-dismiss="modal">
+                    </div>
+                    <div class="product-details-page">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="product-img-wrap">
+                                    <div class="slider-btn-groups">
+                                        <div class="slider-btn product-prev">
+                                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M11.0039 13.0034C10.0037 10.503 5.00286 8.00255 2.00234 7.00237C5.00286 6.0022 9.50364 4.50194 11.0039 1.00133" stroke-width="1.5" stroke-linecap="round"/>
+                                            </svg>
+                                        </div>
+                                        <div class="slider-btn product-next">
+                                            <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M0.998047 12.9995C1.99805 10.4995 6.99805 7.99951 9.99805 6.99951C6.99805 5.99951 2.49805 4.49951 0.998047 0.999512"  stroke-width="1.5" stroke-linecap="round"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="swiper product-image-slider">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="product-img product-img--main" data-scale="1.4" data-image="../assets/image/hair-salon/product/product-dt-01.png">
+                                                    <img src="../assets/image/hair-salon/product/product-dt-01.png" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="product-img product-img--main" data-scale="1.4" data-image="../assets/image/hair-salon/product/product-dt-01.png">
+                                                    <img src="../assets/image/hair-salon/product/product-dt-01.png" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="product-img product-img--main" data-scale="1.4" data-image="../assets/image/hair-salon/product/product-dt-01.png">
+                                                    <img src="../assets/image/hair-salon/product/product-dt-01.png" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="product-details-content">
+                                    <div class="rating">
+                                        <div class="star">
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                        </div>
+                                        <a href="#reviews">(2 REVIEWS)</a>
+                                    </div>
+                                    <h2>Toning Shampoo</h2>
+                                    <p>It provides an opportunity for people to connect with friends or family members while receiving treatments together.</p>
+                                    <span class="price">$150.00 <del>$200.00</del></span>
+                                    <div class="quantity-bag">
+                                        <div class="quantity-counter">
+                                            <a href="#" class="quantity__minus"><i class='bi bi-dash'></i></a>
+                                            <input name="quantity" type="text" class="quantity__input" value="01">
+                                            <a href="#" class="quantity__plus"><i class='bi bi-plus' ></i></a>
+                                        </div>
+                                        <a class="primary-btn1" href="cart.html">ADD TO BAG</a>
+                                    </div>
+                                    <ul class="product-info-list">
+                                        <li> <span>SKU:</span> D32-5H23</li>
+                                        <li> <span>Category:</span> <a href="shop-list.html">Sun Care</a></li>
+                                        <li> <span>Tags:</span> <a href="product-listing.html">Skin Care</a>, <a href="product-listing.html">Sun Care</a></li>
+                                    </ul>
+                                    
+                                    <div class="payment-method">
+                                        <h6>Safe Checkout</h6>
+                                        <ul class="payment-card-list">
+                                            <li><img src="../assets/image/hair-salon/product/visa.png" alt=""></li>
+                                            <li><img src="../assets/image/hair-salon/product/discover.png" alt=""></li>
+                                            <li><img src="../assets/image/hair-salon/product/master-card.png" alt=""></li>
+                                            <li><img src="../assets/image/hair-salon/product/stripe.png" alt=""></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+    <div class="nail-product-section mb-120">
+        <div class="container">
+            <div class="row mb-60 wow animate fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
+                <div class="col-lg-12">
+                    <div class="nail-section-title text-center">
+                        <span>New Arrivals</span>
+                        <h2>New Product</h2>
+                        <p>Offering a wide range of services ensures that your nail salon can cater to different client needs and preferences,</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+                <div class="col-lg-12">
+                    <div class="swiper skin-care-product-swiper mb-50">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <a href="product-details.html"><img src="../assets/image/hair-salon/product/product-01.png" alt=""></a>
+                                        <div class="view-and-cart-area">
+                                            <ul>
+                                                <li>
+                                                    <a class="view" data-bs-toggle="modal" data-bs-target="#product-view">
+                                                        
+                                                        <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M18 9C18 9 14.625 2.8125 9 2.8125C3.375 2.8125 0 9 0 9C0 9 3.375 15.1875 9 15.1875C14.625 15.1875 18 9 18 9ZM1.31963 9C1.86275 8.17266 2.48846 7.40259 3.18712 6.70162C4.635 5.2515 6.615 3.9375 9 3.9375C11.385 3.9375 13.3639 5.2515 14.814 6.70162C15.5127 7.40259 16.1384 8.17266 16.6815 9C16.617 9.0975 16.5439 9.2055 16.4621 9.324C16.0853 9.864 15.5284 10.584 14.814 11.2984C13.3639 12.7485 11.3839 14.0625 9 14.0625C6.61613 14.0625 4.63613 12.7485 3.186 11.2984C2.48734 10.5974 1.86275 9.82734 1.31963 9Z"/>
+                                                            <path d="M9 6.1875C8.25408 6.1875 7.53871 6.48382 7.01126 7.01126C6.48382 7.53871 6.1875 8.25408 6.1875 9C6.1875 9.74592 6.48382 10.4613 7.01126 10.9887C7.53871 11.5162 8.25408 11.8125 9 11.8125C9.74592 11.8125 10.4613 11.5162 10.9887 10.9887C11.5162 10.4613 11.8125 9.74592 11.8125 9C11.8125 8.25408 11.5162 7.53871 10.9887 7.01126C10.4613 6.48382 9.74592 6.1875 9 6.1875ZM5.0625 9C5.0625 7.95571 5.47734 6.95419 6.21577 6.21577C6.95419 5.47734 7.95571 5.0625 9 5.0625C10.0443 5.0625 11.0458 5.47734 11.7842 6.21577C12.5227 6.95419 12.9375 7.95571 12.9375 9C12.9375 10.0443 12.5227 11.0458 11.7842 11.7842C11.0458 12.5227 10.0443 12.9375 9 12.9375C7.95571 12.9375 6.95419 12.5227 6.21577 11.7842C5.47734 11.0458 5.0625 10.0443 5.0625 9Z"/>
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="whistlist.html">
+                                                        <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M13.3883 16.875H4.61328C2.75703 16.875 1.23828 15.3562 1.23828 13.5V13.3875L1.57578 4.3875C1.63203 2.53125 3.15078 1.125 4.95078 1.125H13.0508C14.8508 1.125 16.3695 2.53125 16.4258 4.3875L16.7633 13.3875C16.8195 14.2875 16.482 15.1313 15.8633 15.8063C15.2445 16.4812 14.4008 16.875 13.5008 16.875H13.3883ZM4.95078 2.25C3.71328 2.25 2.75703 3.20625 2.70078 4.3875L2.36328 13.5C2.36328 14.7375 3.37578 15.75 4.61328 15.75H13.5008C14.1195 15.75 14.682 15.4688 15.0758 15.0188C15.4695 14.5688 15.6945 14.0062 15.6945 13.3875L15.357 4.3875C15.3008 3.15 14.3445 2.25 13.107 2.25H4.95078Z"/>
+                                                            <path d="M9 7.875C6.80625 7.875 5.0625 6.13125 5.0625 3.9375C5.0625 3.6 5.2875 3.375 5.625 3.375C5.9625 3.375 6.1875 3.6 6.1875 3.9375C6.1875 5.5125 7.425 6.75 9 6.75C10.575 6.75 11.8125 5.5125 11.8125 3.9375C11.8125 3.6 12.0375 3.375 12.375 3.375C12.7125 3.375 12.9375 3.6 12.9375 3.9375C12.9375 6.13125 11.1937 7.875 9 7.875Z"/>
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                            </ul>  
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h6><a href="product-details.html">Shine Serum</a></h6>
+                                        <p>A shine serum is a lightweight oil.</p>
+                                        <div class="price">
+                                            <span>$168.0 <del>$196.36</del></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <a href="product-details.html"><img src="../assets/image/hair-salon/product/product-02.png" alt=""></a>
+                                        <div class="view-and-cart-area">
+                                            <ul>
+                                                <li>
+                                                    <a class="view" data-bs-toggle="modal" data-bs-target="#product-view">
+                                                        
+                                                        <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M18 9C18 9 14.625 2.8125 9 2.8125C3.375 2.8125 0 9 0 9C0 9 3.375 15.1875 9 15.1875C14.625 15.1875 18 9 18 9ZM1.31963 9C1.86275 8.17266 2.48846 7.40259 3.18712 6.70162C4.635 5.2515 6.615 3.9375 9 3.9375C11.385 3.9375 13.3639 5.2515 14.814 6.70162C15.5127 7.40259 16.1384 8.17266 16.6815 9C16.617 9.0975 16.5439 9.2055 16.4621 9.324C16.0853 9.864 15.5284 10.584 14.814 11.2984C13.3639 12.7485 11.3839 14.0625 9 14.0625C6.61613 14.0625 4.63613 12.7485 3.186 11.2984C2.48734 10.5974 1.86275 9.82734 1.31963 9Z"/>
+                                                            <path d="M9 6.1875C8.25408 6.1875 7.53871 6.48382 7.01126 7.01126C6.48382 7.53871 6.1875 8.25408 6.1875 9C6.1875 9.74592 6.48382 10.4613 7.01126 10.9887C7.53871 11.5162 8.25408 11.8125 9 11.8125C9.74592 11.8125 10.4613 11.5162 10.9887 10.9887C11.5162 10.4613 11.8125 9.74592 11.8125 9C11.8125 8.25408 11.5162 7.53871 10.9887 7.01126C10.4613 6.48382 9.74592 6.1875 9 6.1875ZM5.0625 9C5.0625 7.95571 5.47734 6.95419 6.21577 6.21577C6.95419 5.47734 7.95571 5.0625 9 5.0625C10.0443 5.0625 11.0458 5.47734 11.7842 6.21577C12.5227 6.95419 12.9375 7.95571 12.9375 9C12.9375 10.0443 12.5227 11.0458 11.7842 11.7842C11.0458 12.5227 10.0443 12.9375 9 12.9375C7.95571 12.9375 6.95419 12.5227 6.21577 11.7842C5.47734 11.0458 5.0625 10.0443 5.0625 9Z"/>
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="whistlist.html">
+                                                        <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M13.3883 16.875H4.61328C2.75703 16.875 1.23828 15.3562 1.23828 13.5V13.3875L1.57578 4.3875C1.63203 2.53125 3.15078 1.125 4.95078 1.125H13.0508C14.8508 1.125 16.3695 2.53125 16.4258 4.3875L16.7633 13.3875C16.8195 14.2875 16.482 15.1313 15.8633 15.8063C15.2445 16.4812 14.4008 16.875 13.5008 16.875H13.3883ZM4.95078 2.25C3.71328 2.25 2.75703 3.20625 2.70078 4.3875L2.36328 13.5C2.36328 14.7375 3.37578 15.75 4.61328 15.75H13.5008C14.1195 15.75 14.682 15.4688 15.0758 15.0188C15.4695 14.5688 15.6945 14.0062 15.6945 13.3875L15.357 4.3875C15.3008 3.15 14.3445 2.25 13.107 2.25H4.95078Z"/>
+                                                            <path d="M9 7.875C6.80625 7.875 5.0625 6.13125 5.0625 3.9375C5.0625 3.6 5.2875 3.375 5.625 3.375C5.9625 3.375 6.1875 3.6 6.1875 3.9375C6.1875 5.5125 7.425 6.75 9 6.75C10.575 6.75 11.8125 5.5125 11.8125 3.9375C11.8125 3.6 12.0375 3.375 12.375 3.375C12.7125 3.375 12.9375 3.6 12.9375 3.9375C12.9375 6.13125 11.1937 7.875 9 7.875Z"/>
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                            </ul>  
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h6><a href="product-details.html">Curl Enhancing Cream</a></h6>
+                                        <p>Adherence to strict hygiene and safety.</p>
+                                        <div class="price">
+                                            <span>$345.0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <a href="product-details.html"><img src="../assets/image/hair-salon/product/product-03.png" alt=""></a>
+                                        <span class="batch">SALE!</span>
+                                        <div class="view-and-cart-area">
+                                            <ul>
+                                                <li>
+                                                    <a class="view" data-bs-toggle="modal" data-bs-target="#product-view">
+                                                        
+                                                        <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M18 9C18 9 14.625 2.8125 9 2.8125C3.375 2.8125 0 9 0 9C0 9 3.375 15.1875 9 15.1875C14.625 15.1875 18 9 18 9ZM1.31963 9C1.86275 8.17266 2.48846 7.40259 3.18712 6.70162C4.635 5.2515 6.615 3.9375 9 3.9375C11.385 3.9375 13.3639 5.2515 14.814 6.70162C15.5127 7.40259 16.1384 8.17266 16.6815 9C16.617 9.0975 16.5439 9.2055 16.4621 9.324C16.0853 9.864 15.5284 10.584 14.814 11.2984C13.3639 12.7485 11.3839 14.0625 9 14.0625C6.61613 14.0625 4.63613 12.7485 3.186 11.2984C2.48734 10.5974 1.86275 9.82734 1.31963 9Z"/>
+                                                            <path d="M9 6.1875C8.25408 6.1875 7.53871 6.48382 7.01126 7.01126C6.48382 7.53871 6.1875 8.25408 6.1875 9C6.1875 9.74592 6.48382 10.4613 7.01126 10.9887C7.53871 11.5162 8.25408 11.8125 9 11.8125C9.74592 11.8125 10.4613 11.5162 10.9887 10.9887C11.5162 10.4613 11.8125 9.74592 11.8125 9C11.8125 8.25408 11.5162 7.53871 10.9887 7.01126C10.4613 6.48382 9.74592 6.1875 9 6.1875ZM5.0625 9C5.0625 7.95571 5.47734 6.95419 6.21577 6.21577C6.95419 5.47734 7.95571 5.0625 9 5.0625C10.0443 5.0625 11.0458 5.47734 11.7842 6.21577C12.5227 6.95419 12.9375 7.95571 12.9375 9C12.9375 10.0443 12.5227 11.0458 11.7842 11.7842C11.0458 12.5227 10.0443 12.9375 9 12.9375C7.95571 12.9375 6.95419 12.5227 6.21577 11.7842C5.47734 11.0458 5.0625 10.0443 5.0625 9Z"/>
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="whistlist.html">
+                                                        <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M13.3883 16.875H4.61328C2.75703 16.875 1.23828 15.3562 1.23828 13.5V13.3875L1.57578 4.3875C1.63203 2.53125 3.15078 1.125 4.95078 1.125H13.0508C14.8508 1.125 16.3695 2.53125 16.4258 4.3875L16.7633 13.3875C16.8195 14.2875 16.482 15.1313 15.8633 15.8063C15.2445 16.4812 14.4008 16.875 13.5008 16.875H13.3883ZM4.95078 2.25C3.71328 2.25 2.75703 3.20625 2.70078 4.3875L2.36328 13.5C2.36328 14.7375 3.37578 15.75 4.61328 15.75H13.5008C14.1195 15.75 14.682 15.4688 15.0758 15.0188C15.4695 14.5688 15.6945 14.0062 15.6945 13.3875L15.357 4.3875C15.3008 3.15 14.3445 2.25 13.107 2.25H4.95078Z"/>
+                                                            <path d="M9 7.875C6.80625 7.875 5.0625 6.13125 5.0625 3.9375C5.0625 3.6 5.2875 3.375 5.625 3.375C5.9625 3.375 6.1875 3.6 6.1875 3.9375C6.1875 5.5125 7.425 6.75 9 6.75C10.575 6.75 11.8125 5.5125 11.8125 3.9375C11.8125 3.6 12.0375 3.375 12.375 3.375C12.7125 3.375 12.9375 3.6 12.9375 3.9375C12.9375 6.13125 11.1937 7.875 9 7.875Z"/>
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                            </ul>  
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h6><a href="product-details.html">Frizz Control Gel</a></h6>
+                                        <p>Traditional perm for bouncy curls.</p>
+                                        <div class="price">
+                                            <span>$300.0 <del>$345.0</del></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <a href="product-details.html"><img src="../assets/image/hair-salon/product/product-04.png" alt=""></a>
+                                        <div class="view-and-cart-area">
+                                            <ul>
+                                                <li>
+                                                    <a class="view" data-bs-toggle="modal" data-bs-target="#product-view">
+                                                        
+                                                        <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M18 9C18 9 14.625 2.8125 9 2.8125C3.375 2.8125 0 9 0 9C0 9 3.375 15.1875 9 15.1875C14.625 15.1875 18 9 18 9ZM1.31963 9C1.86275 8.17266 2.48846 7.40259 3.18712 6.70162C4.635 5.2515 6.615 3.9375 9 3.9375C11.385 3.9375 13.3639 5.2515 14.814 6.70162C15.5127 7.40259 16.1384 8.17266 16.6815 9C16.617 9.0975 16.5439 9.2055 16.4621 9.324C16.0853 9.864 15.5284 10.584 14.814 11.2984C13.3639 12.7485 11.3839 14.0625 9 14.0625C6.61613 14.0625 4.63613 12.7485 3.186 11.2984C2.48734 10.5974 1.86275 9.82734 1.31963 9Z"/>
+                                                            <path d="M9 6.1875C8.25408 6.1875 7.53871 6.48382 7.01126 7.01126C6.48382 7.53871 6.1875 8.25408 6.1875 9C6.1875 9.74592 6.48382 10.4613 7.01126 10.9887C7.53871 11.5162 8.25408 11.8125 9 11.8125C9.74592 11.8125 10.4613 11.5162 10.9887 10.9887C11.5162 10.4613 11.8125 9.74592 11.8125 9C11.8125 8.25408 11.5162 7.53871 10.9887 7.01126C10.4613 6.48382 9.74592 6.1875 9 6.1875ZM5.0625 9C5.0625 7.95571 5.47734 6.95419 6.21577 6.21577C6.95419 5.47734 7.95571 5.0625 9 5.0625C10.0443 5.0625 11.0458 5.47734 11.7842 6.21577C12.5227 6.95419 12.9375 7.95571 12.9375 9C12.9375 10.0443 12.5227 11.0458 11.7842 11.7842C11.0458 12.5227 10.0443 12.9375 9 12.9375C7.95571 12.9375 6.95419 12.5227 6.21577 11.7842C5.47734 11.0458 5.0625 10.0443 5.0625 9Z"/>
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="whistlist.html">
+                                                        <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M13.3883 16.875H4.61328C2.75703 16.875 1.23828 15.3562 1.23828 13.5V13.3875L1.57578 4.3875C1.63203 2.53125 3.15078 1.125 4.95078 1.125H13.0508C14.8508 1.125 16.3695 2.53125 16.4258 4.3875L16.7633 13.3875C16.8195 14.2875 16.482 15.1313 15.8633 15.8063C15.2445 16.4812 14.4008 16.875 13.5008 16.875H13.3883ZM4.95078 2.25C3.71328 2.25 2.75703 3.20625 2.70078 4.3875L2.36328 13.5C2.36328 14.7375 3.37578 15.75 4.61328 15.75H13.5008C14.1195 15.75 14.682 15.4688 15.0758 15.0188C15.4695 14.5688 15.6945 14.0062 15.6945 13.3875L15.357 4.3875C15.3008 3.15 14.3445 2.25 13.107 2.25H4.95078Z"/>
+                                                            <path d="M9 7.875C6.80625 7.875 5.0625 6.13125 5.0625 3.9375C5.0625 3.6 5.2875 3.375 5.625 3.375C5.9625 3.375 6.1875 3.6 6.1875 3.9375C6.1875 5.5125 7.425 6.75 9 6.75C10.575 6.75 11.8125 5.5125 11.8125 3.9375C11.8125 3.6 12.0375 3.375 12.375 3.375C12.7125 3.375 12.9375 3.6 12.9375 3.9375C12.9375 6.13125 11.1937 7.875 9 7.875Z"/>
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                            </ul>  
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h6><a href="product-details.html">Scalp Therapy Oil</a></h6>
+                                        <p>Looser curls for a more relaxed.</p>
+                                        <div class="price">
+                                            <span>$234.0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <a href="product-details.html"><img src="../assets/image/hair-salon/product/product-05.png" alt=""></a>
+                                        <span class="batch">SALE!</span>
+                                        <div class="view-and-cart-area">
+                                            <ul>
+                                                <li>
+                                                    <a class="view" data-bs-toggle="modal" data-bs-target="#product-view">
+                                                        
+                                                        <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M18 9C18 9 14.625 2.8125 9 2.8125C3.375 2.8125 0 9 0 9C0 9 3.375 15.1875 9 15.1875C14.625 15.1875 18 9 18 9ZM1.31963 9C1.86275 8.17266 2.48846 7.40259 3.18712 6.70162C4.635 5.2515 6.615 3.9375 9 3.9375C11.385 3.9375 13.3639 5.2515 14.814 6.70162C15.5127 7.40259 16.1384 8.17266 16.6815 9C16.617 9.0975 16.5439 9.2055 16.4621 9.324C16.0853 9.864 15.5284 10.584 14.814 11.2984C13.3639 12.7485 11.3839 14.0625 9 14.0625C6.61613 14.0625 4.63613 12.7485 3.186 11.2984C2.48734 10.5974 1.86275 9.82734 1.31963 9Z"/>
+                                                            <path d="M9 6.1875C8.25408 6.1875 7.53871 6.48382 7.01126 7.01126C6.48382 7.53871 6.1875 8.25408 6.1875 9C6.1875 9.74592 6.48382 10.4613 7.01126 10.9887C7.53871 11.5162 8.25408 11.8125 9 11.8125C9.74592 11.8125 10.4613 11.5162 10.9887 10.9887C11.5162 10.4613 11.8125 9.74592 11.8125 9C11.8125 8.25408 11.5162 7.53871 10.9887 7.01126C10.4613 6.48382 9.74592 6.1875 9 6.1875ZM5.0625 9C5.0625 7.95571 5.47734 6.95419 6.21577 6.21577C6.95419 5.47734 7.95571 5.0625 9 5.0625C10.0443 5.0625 11.0458 5.47734 11.7842 6.21577C12.5227 6.95419 12.9375 7.95571 12.9375 9C12.9375 10.0443 12.5227 11.0458 11.7842 11.7842C11.0458 12.5227 10.0443 12.9375 9 12.9375C7.95571 12.9375 6.95419 12.5227 6.21577 11.7842C5.47734 11.0458 5.0625 10.0443 5.0625 9Z"/>
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="whistlist.html">
+                                                        <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M13.3883 16.875H4.61328C2.75703 16.875 1.23828 15.3562 1.23828 13.5V13.3875L1.57578 4.3875C1.63203 2.53125 3.15078 1.125 4.95078 1.125H13.0508C14.8508 1.125 16.3695 2.53125 16.4258 4.3875L16.7633 13.3875C16.8195 14.2875 16.482 15.1313 15.8633 15.8063C15.2445 16.4812 14.4008 16.875 13.5008 16.875H13.3883ZM4.95078 2.25C3.71328 2.25 2.75703 3.20625 2.70078 4.3875L2.36328 13.5C2.36328 14.7375 3.37578 15.75 4.61328 15.75H13.5008C14.1195 15.75 14.682 15.4688 15.0758 15.0188C15.4695 14.5688 15.6945 14.0062 15.6945 13.3875L15.357 4.3875C15.3008 3.15 14.3445 2.25 13.107 2.25H4.95078Z"/>
+                                                            <path d="M9 7.875C6.80625 7.875 5.0625 6.13125 5.0625 3.9375C5.0625 3.6 5.2875 3.375 5.625 3.375C5.9625 3.375 6.1875 3.6 6.1875 3.9375C6.1875 5.5125 7.425 6.75 9 6.75C10.575 6.75 11.8125 5.5125 11.8125 3.9375C11.8125 3.6 12.0375 3.375 12.375 3.375C12.7125 3.375 12.9375 3.6 12.9375 3.9375C12.9375 6.13125 11.1937 7.875 9 7.875Z"/>
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                            </ul>  
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h6><a href="product-details.html">Hair Repair Serum</a></h6>
+                                        <p>A shine serum is a lightweight oil.</p>
+                                        <div class="price">
+                                            <span>$200.0 <del>$300.0</del></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <a href="product-details.html"><img src="../assets/image/hair-salon/product/product-06.png" alt=""></a>
+                                        <div class="view-and-cart-area">
+                                            <ul>
+                                                <li>
+                                                    <a class="view" data-bs-toggle="modal" data-bs-target="#product-view">
+                                                        
+                                                        <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M18 9C18 9 14.625 2.8125 9 2.8125C3.375 2.8125 0 9 0 9C0 9 3.375 15.1875 9 15.1875C14.625 15.1875 18 9 18 9ZM1.31963 9C1.86275 8.17266 2.48846 7.40259 3.18712 6.70162C4.635 5.2515 6.615 3.9375 9 3.9375C11.385 3.9375 13.3639 5.2515 14.814 6.70162C15.5127 7.40259 16.1384 8.17266 16.6815 9C16.617 9.0975 16.5439 9.2055 16.4621 9.324C16.0853 9.864 15.5284 10.584 14.814 11.2984C13.3639 12.7485 11.3839 14.0625 9 14.0625C6.61613 14.0625 4.63613 12.7485 3.186 11.2984C2.48734 10.5974 1.86275 9.82734 1.31963 9Z"/>
+                                                            <path d="M9 6.1875C8.25408 6.1875 7.53871 6.48382 7.01126 7.01126C6.48382 7.53871 6.1875 8.25408 6.1875 9C6.1875 9.74592 6.48382 10.4613 7.01126 10.9887C7.53871 11.5162 8.25408 11.8125 9 11.8125C9.74592 11.8125 10.4613 11.5162 10.9887 10.9887C11.5162 10.4613 11.8125 9.74592 11.8125 9C11.8125 8.25408 11.5162 7.53871 10.9887 7.01126C10.4613 6.48382 9.74592 6.1875 9 6.1875ZM5.0625 9C5.0625 7.95571 5.47734 6.95419 6.21577 6.21577C6.95419 5.47734 7.95571 5.0625 9 5.0625C10.0443 5.0625 11.0458 5.47734 11.7842 6.21577C12.5227 6.95419 12.9375 7.95571 12.9375 9C12.9375 10.0443 12.5227 11.0458 11.7842 11.7842C11.0458 12.5227 10.0443 12.9375 9 12.9375C7.95571 12.9375 6.95419 12.5227 6.21577 11.7842C5.47734 11.0458 5.0625 10.0443 5.0625 9Z"/>
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="whistlist.html">
+                                                        <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M13.3883 16.875H4.61328C2.75703 16.875 1.23828 15.3562 1.23828 13.5V13.3875L1.57578 4.3875C1.63203 2.53125 3.15078 1.125 4.95078 1.125H13.0508C14.8508 1.125 16.3695 2.53125 16.4258 4.3875L16.7633 13.3875C16.8195 14.2875 16.482 15.1313 15.8633 15.8063C15.2445 16.4812 14.4008 16.875 13.5008 16.875H13.3883ZM4.95078 2.25C3.71328 2.25 2.75703 3.20625 2.70078 4.3875L2.36328 13.5C2.36328 14.7375 3.37578 15.75 4.61328 15.75H13.5008C14.1195 15.75 14.682 15.4688 15.0758 15.0188C15.4695 14.5688 15.6945 14.0062 15.6945 13.3875L15.357 4.3875C15.3008 3.15 14.3445 2.25 13.107 2.25H4.95078Z"/>
+                                                            <path d="M9 7.875C6.80625 7.875 5.0625 6.13125 5.0625 3.9375C5.0625 3.6 5.2875 3.375 5.625 3.375C5.9625 3.375 6.1875 3.6 6.1875 3.9375C6.1875 5.5125 7.425 6.75 9 6.75C10.575 6.75 11.8125 5.5125 11.8125 3.9375C11.8125 3.6 12.0375 3.375 12.375 3.375C12.7125 3.375 12.9375 3.6 12.9375 3.9375C12.9375 6.13125 11.1937 7.875 9 7.875Z"/>
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                            </ul>  
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h6><a href="product-details.html">Finishing Spray</a></h6>
+                                        <p>Adherence to strict hygiene and safety.</p>
+                                        <div class="price">
+                                            <span>$250.0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <a href="product-details.html"><img src="../assets/image/hair-salon/product/product-07.png" alt=""></a>
+                                        <div class="view-and-cart-area">
+                                            <ul>
+                                                <li>
+                                                    <a class="view" data-bs-toggle="modal" data-bs-target="#product-view">
+                                                        
+                                                        <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M18 9C18 9 14.625 2.8125 9 2.8125C3.375 2.8125 0 9 0 9C0 9 3.375 15.1875 9 15.1875C14.625 15.1875 18 9 18 9ZM1.31963 9C1.86275 8.17266 2.48846 7.40259 3.18712 6.70162C4.635 5.2515 6.615 3.9375 9 3.9375C11.385 3.9375 13.3639 5.2515 14.814 6.70162C15.5127 7.40259 16.1384 8.17266 16.6815 9C16.617 9.0975 16.5439 9.2055 16.4621 9.324C16.0853 9.864 15.5284 10.584 14.814 11.2984C13.3639 12.7485 11.3839 14.0625 9 14.0625C6.61613 14.0625 4.63613 12.7485 3.186 11.2984C2.48734 10.5974 1.86275 9.82734 1.31963 9Z"/>
+                                                            <path d="M9 6.1875C8.25408 6.1875 7.53871 6.48382 7.01126 7.01126C6.48382 7.53871 6.1875 8.25408 6.1875 9C6.1875 9.74592 6.48382 10.4613 7.01126 10.9887C7.53871 11.5162 8.25408 11.8125 9 11.8125C9.74592 11.8125 10.4613 11.5162 10.9887 10.9887C11.5162 10.4613 11.8125 9.74592 11.8125 9C11.8125 8.25408 11.5162 7.53871 10.9887 7.01126C10.4613 6.48382 9.74592 6.1875 9 6.1875ZM5.0625 9C5.0625 7.95571 5.47734 6.95419 6.21577 6.21577C6.95419 5.47734 7.95571 5.0625 9 5.0625C10.0443 5.0625 11.0458 5.47734 11.7842 6.21577C12.5227 6.95419 12.9375 7.95571 12.9375 9C12.9375 10.0443 12.5227 11.0458 11.7842 11.7842C11.0458 12.5227 10.0443 12.9375 9 12.9375C7.95571 12.9375 6.95419 12.5227 6.21577 11.7842C5.47734 11.0458 5.0625 10.0443 5.0625 9Z"/>
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="whistlist.html">
+                                                        <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M13.3883 16.875H4.61328C2.75703 16.875 1.23828 15.3562 1.23828 13.5V13.3875L1.57578 4.3875C1.63203 2.53125 3.15078 1.125 4.95078 1.125H13.0508C14.8508 1.125 16.3695 2.53125 16.4258 4.3875L16.7633 13.3875C16.8195 14.2875 16.482 15.1313 15.8633 15.8063C15.2445 16.4812 14.4008 16.875 13.5008 16.875H13.3883ZM4.95078 2.25C3.71328 2.25 2.75703 3.20625 2.70078 4.3875L2.36328 13.5C2.36328 14.7375 3.37578 15.75 4.61328 15.75H13.5008C14.1195 15.75 14.682 15.4688 15.0758 15.0188C15.4695 14.5688 15.6945 14.0062 15.6945 13.3875L15.357 4.3875C15.3008 3.15 14.3445 2.25 13.107 2.25H4.95078Z"/>
+                                                            <path d="M9 7.875C6.80625 7.875 5.0625 6.13125 5.0625 3.9375C5.0625 3.6 5.2875 3.375 5.625 3.375C5.9625 3.375 6.1875 3.6 6.1875 3.9375C6.1875 5.5125 7.425 6.75 9 6.75C10.575 6.75 11.8125 5.5125 11.8125 3.9375C11.8125 3.6 12.0375 3.375 12.375 3.375C12.7125 3.375 12.9375 3.6 12.9375 3.9375C12.9375 6.13125 11.1937 7.875 9 7.875Z"/>
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                            </ul>  
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h6><a href="product-details.html">Beard Conditioner</a></h6>
+                                        <p>Traditional perm for bouncy curls.</p>
+                                        <div class="price">
+                                            <span>$298.0 <del>$345.36</del></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <a href="product-details.html"><img src="../assets/image/hair-salon/product/product-09.png" alt=""></a>
+                                        <div class="view-and-cart-area">
+                                            <ul>
+                                                <li>
+                                                    <a class="view" data-bs-toggle="modal" data-bs-target="#product-view">
+                                                        
+                                                        <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M18 9C18 9 14.625 2.8125 9 2.8125C3.375 2.8125 0 9 0 9C0 9 3.375 15.1875 9 15.1875C14.625 15.1875 18 9 18 9ZM1.31963 9C1.86275 8.17266 2.48846 7.40259 3.18712 6.70162C4.635 5.2515 6.615 3.9375 9 3.9375C11.385 3.9375 13.3639 5.2515 14.814 6.70162C15.5127 7.40259 16.1384 8.17266 16.6815 9C16.617 9.0975 16.5439 9.2055 16.4621 9.324C16.0853 9.864 15.5284 10.584 14.814 11.2984C13.3639 12.7485 11.3839 14.0625 9 14.0625C6.61613 14.0625 4.63613 12.7485 3.186 11.2984C2.48734 10.5974 1.86275 9.82734 1.31963 9Z"/>
+                                                            <path d="M9 6.1875C8.25408 6.1875 7.53871 6.48382 7.01126 7.01126C6.48382 7.53871 6.1875 8.25408 6.1875 9C6.1875 9.74592 6.48382 10.4613 7.01126 10.9887C7.53871 11.5162 8.25408 11.8125 9 11.8125C9.74592 11.8125 10.4613 11.5162 10.9887 10.9887C11.5162 10.4613 11.8125 9.74592 11.8125 9C11.8125 8.25408 11.5162 7.53871 10.9887 7.01126C10.4613 6.48382 9.74592 6.1875 9 6.1875ZM5.0625 9C5.0625 7.95571 5.47734 6.95419 6.21577 6.21577C6.95419 5.47734 7.95571 5.0625 9 5.0625C10.0443 5.0625 11.0458 5.47734 11.7842 6.21577C12.5227 6.95419 12.9375 7.95571 12.9375 9C12.9375 10.0443 12.5227 11.0458 11.7842 11.7842C11.0458 12.5227 10.0443 12.9375 9 12.9375C7.95571 12.9375 6.95419 12.5227 6.21577 11.7842C5.47734 11.0458 5.0625 10.0443 5.0625 9Z"/>
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="whistlist.html">
+                                                        <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M13.3883 16.875H4.61328C2.75703 16.875 1.23828 15.3562 1.23828 13.5V13.3875L1.57578 4.3875C1.63203 2.53125 3.15078 1.125 4.95078 1.125H13.0508C14.8508 1.125 16.3695 2.53125 16.4258 4.3875L16.7633 13.3875C16.8195 14.2875 16.482 15.1313 15.8633 15.8063C15.2445 16.4812 14.4008 16.875 13.5008 16.875H13.3883ZM4.95078 2.25C3.71328 2.25 2.75703 3.20625 2.70078 4.3875L2.36328 13.5C2.36328 14.7375 3.37578 15.75 4.61328 15.75H13.5008C14.1195 15.75 14.682 15.4688 15.0758 15.0188C15.4695 14.5688 15.6945 14.0062 15.6945 13.3875L15.357 4.3875C15.3008 3.15 14.3445 2.25 13.107 2.25H4.95078Z"/>
+                                                            <path d="M9 7.875C6.80625 7.875 5.0625 6.13125 5.0625 3.9375C5.0625 3.6 5.2875 3.375 5.625 3.375C5.9625 3.375 6.1875 3.6 6.1875 3.9375C6.1875 5.5125 7.425 6.75 9 6.75C10.575 6.75 11.8125 5.5125 11.8125 3.9375C11.8125 3.6 12.0375 3.375 12.375 3.375C12.7125 3.375 12.9375 3.6 12.9375 3.9375C12.9375 6.13125 11.1937 7.875 9 7.875Z"/>
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                            </ul>  
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h6><a href="product-details.html">Matte Hair Clay</a></h6>
+                                        <p>A shine serum is a lightweight oil.</p>
+                                        <div class="price">
+                                            <span>$345.0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- new product section ends here -->
+
+    <!-- customer section strats here -->
+    <div class="nail-testimonial-section mb-120"
+        style="background-image: url(../assets/image/nail-salon/customer-review-bacground.jpg);">
+        <div class="container">
+            <div class="row mb-60 wow animate fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
+                <div class="col-lg-12 d-flex align-items-center justify-content-between flex-wrap">
+                    <div class="nail-section-title style-2">
+                        <span>Our Testimonials</span>
+                        <h2>love from customer</h2>
+                    </div>
+                    <div class="slider-btn-grp d-md-flex d-none">
+                        <div class="slider-btn process-slider-prev">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <mask id="mask0_1443_274" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                                    width="14" height="14">
+                                    <rect width="14" height="14" fill="#DA8E8E" />
+                                </mask>
+                                <g mask="url(#mask0_1443_274)">
+                                    <path d="M11 13C10 10.5 5 8 2 7C5 6 9.5 4.5 11 1" stroke="#1E1E1E"
+                                        stroke-width="1.5" stroke-linecap="round" />
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="slider-btn process-slider-next">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <mask id="mask0_1443_269" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                                    width="14" height="14">
+                                    <rect width="14" height="14" transform="matrix(-1 0 0 1 14 0)" fill="#DA8E8E" />
+                                </mask>
+                                <g mask="url(#mask0_1443_269)">
+                                    <path d="M3 13C4 10.5 9 8 12 7C9 6 4.5 4.5 3 1" stroke="#1E1E1E" stroke-width="1.5"
+                                        stroke-linecap="round" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+                <div class="col-lg-12 mb-50">
+                    <div class="swiper nail-customer-review-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="customer-review-card">
+                                    <strong>(Nail Extension!)</strong>
+                                    <p>Amazing Salon! They are very helpful & mindblowing to get services. Providing
+                                        comprehensive care & creativity for nail salon clients.Having these sections
+                                        will help potential clients find the information they need quickly and
+                                        efficiently</p>
+                                    <div class="author-content">
+                                        <div class="author-image">
+                                            <img src="../assets/image/nail-salon/author-image.png" alt="">
+                                        </div>
+                                        <div class="author-info">
+                                            <h6>Diana Penelope</h6>
+                                            <span>1 Month Ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="customer-review-card">
+                                    <strong>(Medicures!)</strong>
+                                    <p>Amazing Salon! They are very helpful & mindblowing to get services. Providing
+                                        comprehensive care & creativity for nail salon clients.Having these sections
+                                        will help potential clients find the information they need quickly and
+                                        efficiently</p>
+                                    <div class="author-content">
+                                        <div class="author-image">
+                                            <img src="../assets/image/nail-salon/author-image2.png" alt="">
+                                        </div>
+                                        <div class="author-info">
+                                            <h6>Amelia Kate</h6>
+                                            <span>1 Month Ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="customer-review-card">
+                                    <strong>(Nail Extension!)</strong>
+                                    <p>Amazing Salon! They are very helpful & mindblowing to get services. Providing
+                                        comprehensive care & creativity for nail salon clients.Having these sections
+                                        will help potential clients find the information they need quickly and
+                                        efficiently</p>
+                                    <div class="author-content">
+                                        <div class="author-image">
+                                            <img src="../assets/image/nail-salon/author-image.png" alt="">
+                                        </div>
+                                        <div class="author-info">
+                                            <h6>Diana Penelope</h6>
+                                            <span>1 Month Ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="customer-review-card">
+                                    <strong>(Medicures!)</strong>
+                                    <p>Amazing Salon! They are very helpful & mindblowing to get services. Providing
+                                        comprehensive care & creativity for nail salon clients.Having these sections
+                                        will help potential clients find the information they need quickly and
+                                        efficiently</p>
+                                    <div class="author-content">
+                                        <div class="author-image">
+                                            <img src="../assets/image/nail-salon/author-image2.png" alt="">
+                                        </div>
+                                        <div class="author-info">
+                                            <h6>Amelia Kate</h6>
+                                            <span>1 Month Ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="partner-logo-section style-2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 pt-50">
+                            <div class="logo-wrap">
+                                <div class="logo-title">
+                                    <h5>We have 5 Brands & 20+ Trusted Partner</h5>
+                                </div>
+                                <div class="logo-area">
+                                    <div class="marquee_text2">
+                                        <a href="#"><img src="../assets/image/skin-care/partner-logo6.png" alt=""></a>
+                                        <a href="#"><img src="../assets/image/skin-care/partner-logo7.png" alt=""></a>
+                                        <a href="#"><img src="../assets/image/skin-care/partner-logo8.png" alt=""></a>
+                                        <a href="#"><img src="../assets/image/skin-care/partner-logo9.png" alt=""></a>
+                                        <a href="#"><img src="../assets/image/skin-care/partner-logo10.png" alt=""></a>
+                                        <a href="#"><img src="../assets/image/skin-care/partner-logo11.png" alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- customer section ends here -->
+
+    <!-- work gallery section strats here -->
+    <div class="nail-work-gallery-section mb-120">
+        <div class="container">
+            <div class="row mb-60 wow animate fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
+                <div class="col-lg-12">
+                    <div class="nail-section-title text-center">
+                        <span>Gallery</span>
+                        <h2>our work gallery</h2>
+                        <p>Offering a wide range of services ensures that your nail salon can cater to different client
+                            needs and preferences,</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center gy-4">
+                <div class="col-lg-3 col-md-5 col-sm-6 wow animate fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
+                    <div class="gallery-image">
+                        <a data-fancybox="video-player" href="../assets/video/nail-care.mp4" class="video-area">
+                            <div class="icon">
+                                <svg class="video-circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" viewBox="0 0 206 206" style="enable-background:new 0 0 206 206;" xml:space="preserve">
+                                    <circle class="circle" stroke-miterlimit="10" cx="103" cy="103" r="100"></circle>
+                                    <path class="circle-half top-half" stroke-width="4" stroke-miterlimit="10" d="M16.4,53C44,5.2,105.2-11.2,153,16.4s64.2,88.8,36.6,136.6"></path>
+                                    <path class="circle-half bottom-half" stroke-width="4" stroke-miterlimit="10" d="M189.6,153C162,200.8,100.8,217.2,53,189.6S-11.2,100.8,16.4,53"></path>
+                                </svg>
+                                <i class="bi bi-play-fill"></i>
+                            </div> 
+                        </a>
+                        <img src="../assets/image/nail-salon/our-gallery-image.png" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-7 col-sm-6 wow animate fadeInDown" data-wow-delay="400ms" data-wow-duration="1500ms">
+                    <div class="gallery-image">
+                        <a data-fancybox="video-player" href="../assets/video/nail-care.mp4" class="video-area">
+                            <div class="icon">
+                                <svg class="video-circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" viewBox="0 0 206 206" style="enable-background:new 0 0 206 206;" xml:space="preserve">
+                                    <circle class="circle" stroke-miterlimit="10" cx="103" cy="103" r="100"></circle>
+                                    <path class="circle-half top-half" stroke-width="4" stroke-miterlimit="10" d="M16.4,53C44,5.2,105.2-11.2,153,16.4s64.2,88.8,36.6,136.6"></path>
+                                    <path class="circle-half bottom-half" stroke-width="4" stroke-miterlimit="10" d="M189.6,153C162,200.8,100.8,217.2,53,189.6S-11.2,100.8,16.4,53"></path>
+                                </svg>
+                                <i class="bi bi-play-fill"></i>
+                            </div> 
+                        </a>
+                        <img src="../assets/image/nail-salon/our-gallery-image2.png" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-7 col-sm-6 wow animate fadeInDown" data-wow-delay="600ms" data-wow-duration="1500ms">
+                    <div class="gallery-image">
+                        <a data-fancybox="video-player" href="../assets/video/nail-care.mp4" class="video-area">
+                            <div class="icon">
+                                <svg class="video-circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" viewBox="0 0 206 206" style="enable-background:new 0 0 206 206;" xml:space="preserve">
+                                    <circle class="circle" stroke-miterlimit="10" cx="103" cy="103" r="100"></circle>
+                                    <path class="circle-half top-half" stroke-width="4" stroke-miterlimit="10" d="M16.4,53C44,5.2,105.2-11.2,153,16.4s64.2,88.8,36.6,136.6"></path>
+                                    <path class="circle-half bottom-half" stroke-width="4" stroke-miterlimit="10" d="M189.6,153C162,200.8,100.8,217.2,53,189.6S-11.2,100.8,16.4,53"></path>
+                                </svg>
+                                <i class="bi bi-play-fill"></i>
+                            </div> 
+                        </a>
+                        <img src="../assets/image/nail-salon/our-gallery-image3.png" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-6 wow animate fadeInDown" data-wow-delay="800ms" data-wow-duration="1500ms">
+                    <div class="gallery-image">
+                        <a data-fancybox="video-player" href="../assets/video/nail-care.mp4" class="video-area">
+                            <div class="icon">
+                                <svg class="video-circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" viewBox="0 0 206 206" style="enable-background:new 0 0 206 206;" xml:space="preserve">
+                                    <circle class="circle" stroke-miterlimit="10" cx="103" cy="103" r="100"></circle>
+                                    <path class="circle-half top-half" stroke-width="4" stroke-miterlimit="10" d="M16.4,53C44,5.2,105.2-11.2,153,16.4s64.2,88.8,36.6,136.6"></path>
+                                    <path class="circle-half bottom-half" stroke-width="4" stroke-miterlimit="10" d="M189.6,153C162,200.8,100.8,217.2,53,189.6S-11.2,100.8,16.4,53"></path>
+                                </svg>
+                                <i class="bi bi-play-fill"></i>
+                            </div> 
+                        </a>
+                        <img src="../assets/image/nail-salon/our-gallery-image4.png" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-7 col-sm-6 wow animate fadeInDown" data-wow-delay="600ms" data-wow-duration="1500ms">
+                    <div class="gallery-image">
+                        <a data-fancybox="video-player" href="../assets/video/nail-care.mp4" class="video-area">
+                            <div class="icon">
+                                <svg class="video-circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" viewBox="0 0 206 206" style="enable-background:new 0 0 206 206;" xml:space="preserve">
+                                    <circle class="circle" stroke-miterlimit="10" cx="103" cy="103" r="100"></circle>
+                                    <path class="circle-half top-half" stroke-width="4" stroke-miterlimit="10" d="M16.4,53C44,5.2,105.2-11.2,153,16.4s64.2,88.8,36.6,136.6"></path>
+                                    <path class="circle-half bottom-half" stroke-width="4" stroke-miterlimit="10" d="M189.6,153C162,200.8,100.8,217.2,53,189.6S-11.2,100.8,16.4,53"></path>
+                                </svg>
+                                <i class="bi bi-play-fill"></i>
+                            </div> 
+                        </a>
+                        <img src="../assets/image/nail-salon/our-gallery-image5.png" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-5 col-sm-6 wow animate fadeInDown" data-wow-delay="400ms" data-wow-duration="1500ms">
+                    <div class="gallery-image">
+                        <a data-fancybox="video-player" href="../assets/video/nail-care.mp4" class="video-area">
+                            <div class="icon">
+                                <svg class="video-circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" viewBox="0 0 206 206" style="enable-background:new 0 0 206 206;" xml:space="preserve">
+                                    <circle class="circle" stroke-miterlimit="10" cx="103" cy="103" r="100"></circle>
+                                    <path class="circle-half top-half" stroke-width="4" stroke-miterlimit="10" d="M16.4,53C44,5.2,105.2-11.2,153,16.4s64.2,88.8,36.6,136.6"></path>
+                                    <path class="circle-half bottom-half" stroke-width="4" stroke-miterlimit="10" d="M189.6,153C162,200.8,100.8,217.2,53,189.6S-11.2,100.8,16.4,53"></path>
+                                </svg>
+                                <i class="bi bi-play-fill"></i>
+                            </div> 
+                        </a>
+                        <img src="../assets/image/nail-salon/our-gallery-image6.png" alt="">
+                    </div>
+                </div>
+                <div class="btn-area">
+                    <a class="primary-btn5 gallery-btn" href="our-gallery.html">
+                        VIEW ALL GALLERY
+                        <svg class="arrow" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 9L9 1M9 1C7.22222 1.33333 3.33333 2 1 1M9 1C8.66667 2.66667 8 6.33333 9 9"
+                                stroke="#1E1E1E" stroke-width="1.5" stroke-linecap="round"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- work gallery section ends here -->
+
+    <!-- our newsletter section strats here -->
+    <div class="nail-newsletter-section mb-120"
+        style="background-image:  url(../assets/image/nail-salon/our-newsletter-bacground.jpg);">
+        <div class="container">
+            <div class="row justify-content-center wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+                <div class="col-lg-8">
+                    <div class="nail-newsletter-email-section">
+                        <div class="nail-section-title text-center text-center">
+                            <span>Subscribe Newsletter</span>
+                            <h2>our NEWSLETTER</h2>
+                            <p>With subscribe by your email to get notify every single moment.</p>
+                            <div class="input-area">
+                                <input type="email" placeholder="Enter Email" class="">
+                                <button type="submit">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M15.9647 0.685806C16.0011 0.594942 16.01 0.495402 15.9904 0.399526C15.9707 0.303649 15.9233 0.215653 15.8541 0.146447C15.7849 0.0772403 15.6969 0.0298668 15.601 0.0101994C15.5052 -0.0094681 15.4056 -0.000564594 15.3147 0.0358061L0.76775 5.85481H0.76675L0.31475 6.03481C0.22914 6.06895 0.154635 6.1261 0.0994654 6.19994C0.0442956 6.27377 0.0106078 6.36142 0.00212322 6.4532C-0.00636132 6.54497 0.0106876 6.63731 0.0513867 6.72001C0.0920859 6.8027 0.154851 6.87254 0.23275 6.92181L0.64275 7.18181L0.64375 7.18381L5.63875 10.3618L8.81675 15.3568L8.81875 15.3588L9.07875 15.7688C9.12817 15.8464 9.19805 15.9089 9.28068 15.9493C9.36332 15.9897 9.45551 16.0066 9.54711 15.998C9.63871 15.9894 9.72617 15.9558 9.79985 15.9007C9.87354 15.8456 9.9306 15.7712 9.96475 15.6858L15.9647 0.685806ZM14.1317 2.57581L6.63775 10.0698L6.42275 9.73181C6.38336 9.66978 6.33078 9.6172 6.26875 9.57781L5.93075 9.36281L13.4247 1.86881L14.6027 1.39781L14.1327 2.57581H14.1317Z">
+                                        </path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="email-bottom-text">
+                                <svg width="12" height="12" viewBox="0 0 12 12"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g>
+                                        <path
+                                            d="M12 6C12 7.5913 11.3679 9.11742 10.2426 10.2426C9.11742 11.3679 7.5913 12 6 12C4.4087 12 2.88258 11.3679 1.75736 10.2426C0.632141 9.11742 0 7.5913 0 6C0 4.4087 0.632141 2.88258 1.75736 1.75736C2.88258 0.632141 4.4087 0 6 0C7.5913 0 9.11742 0.632141 10.2426 1.75736C11.3679 2.88258 12 4.4087 12 6ZM9.0225 3.7275C8.96893 3.67411 8.90514 3.63208 8.83495 3.60391C8.76476 3.57574 8.68961 3.56202 8.61399 3.56356C8.53838 3.5651 8.46385 3.58187 8.39486 3.61288C8.32588 3.64388 8.26385 3.68848 8.2125 3.744L5.60775 7.06275L4.038 5.49225C3.93137 5.39289 3.79033 5.3388 3.64461 5.34137C3.49888 5.34394 3.35984 5.40297 3.25678 5.50603C3.15372 5.60909 3.09469 5.74813 3.09212 5.89386C3.08955 6.03958 3.14364 6.18062 3.243 6.28725L5.2275 8.2725C5.28096 8.32586 5.34462 8.36791 5.41469 8.39614C5.48475 8.42437 5.55979 8.43819 5.63531 8.43679C5.71083 8.43539 5.7853 8.4188 5.85427 8.38799C5.92324 8.35719 5.9853 8.31281 6.03675 8.2575L9.03075 4.515C9.13282 4.40887 9.18921 4.26696 9.18781 4.11972C9.1864 3.97248 9.12732 3.83166 9.02325 3.7275H9.0225Z"/>
+                                    </g>
+                                </svg>
+                                No Credit Card Required
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- our newsletter section ends here -->
+
+    <!-- our articel section strats here -->
+    <div class="nail-articel-section mb-120">
+        <div class="container">
+            <div class="row mb-60 wow animate fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
+                <div class="col-lg-12">
+                    <div class="nail-section-title text-center">
+                        <span>Read More Article</span>
+                        <h2>Our latest article</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row gy-5 justify-content-center">
+                <div class="col-lg-4 col-md-6 col-sm-6 wow animate fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <a href="blog-details.html">
+                                <img src="../assets/image/nail-salon/articel-section-image.png" alt="">
+                            </a>
+                        </div>
+                        <div class="blog-content">
+                            <ul>
+                                <li><a href="blog-grid.html">Nail Extension</a></li>
+                                <li><a class="publish-date" href="blog-grid.html">02 July, 2024</a></li>
+                            </ul>
+                            <h5><a href="blog-details.html">How to Remove Gel Polish Safely at Home.</a></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 wow animate fadeInDown" data-wow-delay="400ms" data-wow-duration="1500ms">
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <a href="blog-details.html">
+                                <img src="../assets/image/nail-salon/articel-section-image2.png" alt="">
+                            </a>
+                        </div>
+                        <div class="blog-content">
+                            <ul>
+                                <li><a href="blog-grid.html">Hair Treatment</a></li>
+                                <li><a class="publish-date" href="blog-grid.html">05 July, 2024</a></li>
+                            </ul>
+                            <h5><a href="blog-details.html">The Benefits of Regular Self-Care and Pampering.</a></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 wow animate fadeInDown" data-wow-delay="600ms" data-wow-duration="1500ms">
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <a href="blog-details.html">
+                                <img src="../assets/image/nail-salon/articel-section-image3.png" alt="">
+                            </a>
+                        </div>
+                        <div class="blog-content">
+                            <ul>
+                                <li><a href="blog-grid.html">Medicures</a></li>
+                                <li><a class="publish-date" href="blog-grid.html">02 May, 2024</a></li>
+                            </ul>
+                            <h5><a href="blog-details.html">The Connection Between Nail Health and Overall Wellbeing.</a></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- our articel section ends here -->
+
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-button-area">
+                <div class="row g-4 mb-100">
+                    <div class="col-lg-4 col-md-6">
+                        <a class="primary-btn1 footer-btn" href="contact.html">
+                            BOOK AN APPOINTMNET
+                            <svg class="arrow" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 9L9 1M9 1C7.22222 1.33333 3.33333 2 1 1M9 1C8.66667 2.66667 8 6.33333 9 9"
+                                    stroke="#1E1E1E" stroke-width="1.5" stroke-linecap="round"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <a class="primary-btn1 footer-btn" href="contact.html">
+                            ASK ANY QUESTIONS
+                            <svg class="arrow" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 9L9 1M9 1C7.22222 1.33333 3.33333 2 1 1M9 1C8.66667 2.66667 8 6.33333 9 9"
+                                    stroke="#1E1E1E" stroke-width="1.5" stroke-linecap="round"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <a class="primary-btn1 footer-btn" href="mailto:infoexample@gmail.com">
+                            EMAIL - infoexample@gmail.com
+                            <svg class="arrow" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 9L9 1M9 1C7.22222 1.33333 3.33333 2 1 1M9 1C8.66667 2.66667 8 6.33333 9 9"
+                                    stroke="#1E1E1E" stroke-width="1.5" stroke-linecap="round"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-lg-4 gy-5 mb-70">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-logo-section">
+                        <div class="footer-top-section">
+                            <a href="index.html" class="footer-logo">
+                                <img src="../assets/image/icon/light-logo.svg" alt="">
+                            </a>
+                            <p>Barkinghum, 42 Elm Street Windsor Berkshire, SL4 1NF</p>
+                            <ul>
+                                <li>
+                                    <a href="https://www.facebook.com/">
+                                        <svg width="6" height="12" viewBox="0 0 6 12"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M3.81526 11.2483V6.46735H5.42818L5.66793 4.59543H3.81526V3.4031C3.81526 2.86293 3.96576 2.4931 4.74101 2.4931H5.72334V0.824182C5.24538 0.77296 4.76495 0.748228 4.28426 0.750099C2.85859 0.750099 1.87976 1.62043 1.87976 3.21818V4.59193H0.277344V6.46385H1.88326V11.2483H3.81526Z" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://youtube.com/">
+                                        <svg width="14" height="14" viewBox="0 0 14 14"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.04462 1.74902H7.1225C7.84175 1.75165 11.4861 1.7779 12.4688 2.04215C12.7658 2.1228 13.0365 2.27999 13.2538 2.49803C13.471 2.71607 13.6273 2.98731 13.7069 3.28465C13.7952 3.61715 13.8574 4.05727 13.8994 4.5114L13.9081 4.6024L13.9274 4.8299L13.9344 4.9209C13.9913 5.72065 13.9983 6.46965 13.9991 6.63327V6.6989C13.9983 6.86865 13.9904 7.6684 13.9274 8.5014L13.9204 8.59327L13.9125 8.68427C13.8687 9.18477 13.804 9.68177 13.7069 10.0475C13.6273 10.3449 13.471 10.6161 13.2538 10.8341C13.0365 11.0522 12.7658 11.2094 12.4688 11.29C11.4537 11.563 7.59587 11.5823 7.06125 11.5831H6.937C6.66663 11.5831 5.54838 11.5779 4.37587 11.5376L4.22712 11.5324L4.151 11.5289L4.00138 11.5228L3.85175 11.5166C2.8805 11.4738 1.95563 11.4046 1.5295 11.2891C1.23255 11.2086 0.961931 11.0515 0.74467 10.8336C0.527409 10.6158 0.371108 10.3447 0.291375 10.0475C0.19425 9.68265 0.1295 9.18477 0.08575 8.68427L0.07875 8.5924L0.07175 8.5014C0.028318 7.90851 0.0043884 7.31436 0 6.7199L0 6.61227C0.00175 6.42415 0.00875 5.77402 0.056 5.05652L0.062125 4.9664L0.06475 4.9209L0.07175 4.8299L0.091 4.6024L0.09975 4.5114C0.14175 4.05727 0.203875 3.61627 0.29225 3.28465C0.371849 2.98731 0.528091 2.71607 0.74536 2.49803C0.96263 2.27999 1.23332 2.1228 1.53038 2.04215C1.9565 1.9284 2.88137 1.8584 3.85262 1.81465L4.00138 1.80852L4.15188 1.80327L4.22712 1.80065L4.37675 1.79452C5.2095 1.76775 6.04258 1.75287 6.87575 1.7499L7.04462 1.74902ZM5.6 4.55777V8.77352L9.23738 6.66652L5.6 4.55777Z" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://x.com/">
+                                        <svg width="14" height="14" viewBox="0 0 14 14"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g>
+                                                <path
+                                                    d="M11.025 0.65625H13.1722L8.48225 6.0305L14 13.3438H9.68012L6.2965 8.9075L2.42462 13.3438H0.2765L5.29287 7.595L0 0.65625H4.43013L7.48825 4.71012L11.025 0.65625ZM10.2725 12.0557H11.4625L3.78262 1.87687H2.50688L10.2725 12.0557Z" />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/">
+                                        <svg width="14" height="14" viewBox="0 0 14 14"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M2.90719 4.1972C3.61209 4.1972 4.18353 3.62576 4.18353 2.92086C4.18353 2.21597 3.61209 1.64453 2.90719 1.64453C2.20229 1.64453 1.63086 2.21597 1.63086 2.92086C1.63086 3.62576 2.20229 4.1972 2.90719 4.1972Z" />
+                                            <path
+                                                d="M5.38752 5.16523V12.2463H7.5861V8.74457C7.5861 7.82057 7.75994 6.92573 8.9056 6.92573C10.0355 6.92573 10.0495 7.98215 10.0495 8.8029V12.2469H12.2493V8.36365C12.2493 6.45615 11.8386 4.99023 9.60911 4.99023C8.53869 4.99023 7.82119 5.57765 7.52777 6.13357H7.49802V5.16523H5.38752ZM1.80469 5.16523H4.00677V12.2463H1.80469V5.16523Z" />
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer-contact-section">
+                            <div class="call-now-section">
+                                <span>Call Now</span>
+                                <h4><a href="tel:990737621432">+990-737621432</a></h4>
+                            </div>
+                            <p>N:B - Sunday Closed,<span> otherswsie you can call anytime within opening hours.</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 d-flex justify-content-xl-end justify-content-lg-center justify-content-md-end">
+                    <div class="footer-list">
+                        <div class="footer-widget">
+                            <div class="widget-title">
+                                <h4>OUR SERVICES</h4>
+                            </div>
+                            <ul class="widget-list">
+                                <li>
+                                    <a href="services01.html">
+                                        Nail Extension
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="services01.html">
+                                        Manicures
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="services01.html">
+                                        Pedicures
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="services01.html">
+                                        Nail Art
+                                    </a>
+                                </li> 
+                                <li>
+                                    <a href="services01.html">
+                                        Specialty Services
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="services01.html">
+                                        Bridal Nail
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="services01.html">
+                                        Nail Repair
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 d-flex justify-content-lg-end">
+                    <div class="footer-list">
+                        <div class="footer-widget">
+                            <div class="widget-title">
+                                <h4>OPENING HOURS</h4>
+                            </div>
+                            <ul>
+                                <li>
+                                    SAT - TUE <span>(9AM - 7PM)</span>
+                                </li>
+                                <li>
+                                    WED - THU <span>(8AM - 6PM)</span>
+                                </li>
+                                <li>
+                                    SUNDAY- <span>CLOSED</span>
+                                </li>
+                            </ul>
+                            <p class="star-text"><span class="star-icon">*</span>Visit our Buret & take your favourite beauty & spa.</p>
+                            <div class="map-area">
+                                <h6>
+                                    <a href="https://www.google.com/maps/place/Egens+Lab/@23.8340712,90.3631117,17z/data=!3m1!4b1!4m6!3m5!1s0x3755c14c8682a473:0xa6c74743d52adb88!8m2!3d23.8340663!4d90.3656866!16s%2Fg%2F11rs9vlwsk?entry=ttu&g_ep=EgoyMDI0MDkxNi4wIKXMDSoASAFQAw%3D%3D">
+                                        Get Direction
+                                        <svg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 9L9 1M9 1C7.22222 1.33333 3.33333 2 1 1M9 1C8.66667 2.66667 8 6.33333 9 9"
+                                                stroke-width="1.5" stroke-linecap="round" />
+                                        </svg>
+                                    </a>
+                                </h6>
+                                <div class="map">
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3649.5647631857846!2d90.36311167605992!3d23.83407118555764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c14c8682a473%3A0xa6c74743d52adb88!2sEgens%20Lab!5e0!3m2!1sen!2sbd!4v1700138349574!5m2!1sen!2sbd"
+                                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-btm">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="footer-btm-content">
+                            <div class="copyright-area">
+                                <p> © Copyright 2024 <a href="https://www.egenslab.com/"> Egens Lab </a> | All Right
+                                    Reserved </p>
+                            </div>
+                            <div class="right-area">
+                                <svg width="12" height="12" viewBox="0 0 12 12"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g>
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M0 5.99981C0 5.83405 0.0632157 5.67508 0.17574 5.55787C0.288264 5.44066 0.44088 5.37481 0.600014 5.37481H8.7518L6.17534 2.69231C6.06267 2.57496 5.99938 2.41578 5.99938 2.24981C5.99938 2.08384 6.06267 1.92467 6.17534 1.80731C6.28801 1.68995 6.44081 1.62402 6.60015 1.62402C6.75948 1.62402 6.91229 1.68995 7.02496 1.80731L10.625 5.55731C10.6809 5.61537 10.7252 5.68434 10.7555 5.76027C10.7857 5.8362 10.8013 5.9176 10.8013 5.99981C10.8013 6.08202 10.7857 6.16342 10.7555 6.23935C10.7252 6.31529 10.6809 6.38426 10.625 6.44231L7.02496 10.1923C6.91229 10.3097 6.75948 10.3756 6.60015 10.3756C6.44081 10.3756 6.28801 10.3097 6.17534 10.1923C6.06267 10.075 5.99938 9.91578 5.99938 9.74981C5.99938 9.58384 6.06267 9.42467 6.17534 9.30731L8.7518 6.62481H0.600014C0.44088 6.62481 0.288264 6.55897 0.17574 6.44176C0.0632157 6.32455 0 6.16557 0 5.99981Z"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M11.3998 1C11.559 1 11.7116 1.06585 11.8241 1.18306C11.9366 1.30027 11.9998 1.45924 11.9998 1.625V10.375C11.9998 10.5408 11.9366 10.6997 11.8241 10.8169C11.7116 10.9342 11.559 11 11.3998 11C11.2407 11 11.0881 10.9342 10.9755 10.8169C10.863 10.6997 10.7998 10.5408 10.7998 10.375V1.625C10.7998 1.45924 10.863 1.30027 10.9755 1.18306C11.0881 1.06585 11.2407 1 11.3998 1Z"/>
+                                    </g>
+                                </svg>
+                                <p>Our Business <a href="#"> Policy, Terms & Condition</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- jquery js link -->
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/jquery-ui.js"></script>
+    <!-- counterup js -->
+    <script src="../assets/js/waypoints.js"></script>
+    <script src="../assets/js/jquery.counterup.js"></script>
+    <script src="../assets/js/jquery.counterup.min.js"></script>
+    <!-- marquee js -->
+    <script src="../assets/js/jquery.marquee.min.js"></script>
+    <!-- poper js -->
+    <script src="../assets/js/popper.min.js"></script>
+    <!-- swiper js -->
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+    <!-- fancybox js -->
+    <script src="../assets/js/jquery.fancybox.min.js"></script>
+    <script src="../assets/js/jquery.nice-select.min.js"></script>
+    <!-- wow js -->
+    <script src="../assets/js/wow.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <!-- main js -->
+    <script src="../assets/js/main.js"></script>
+    <script>
+        $(".marquee_text2").marquee({
+            direction: "left",
+            duration: 25000,
+            gap: 50,
+            delayBeforeStart: 0,
+            duplicated: true,
+            startVisible: true,
+        });
+    </script>
+</body>
+
+</html>
