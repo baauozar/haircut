@@ -37,6 +37,7 @@ namespace DataLayer
         public DbSet<HaircutServicesCategory>? HaircutServicesCategories { get; set; }
         public DbSet<HaircutService>? HaircutServices { get; set; }
         public DbSet<HaircutSupService>? HairCutSupServices { get; set; }
+        public DbSet<HaircutTeamMember>? haircutTeamMembers { get; set; }
     
 
     
